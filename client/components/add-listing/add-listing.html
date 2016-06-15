@@ -1,0 +1,6 @@
+<template name="add-listing">
+{{#if currentUser}}
+	{{> quickForm collection="Listings" id="addListingForm" type="insert"}}
+{{/if}}
+	{{> loginButtons}}
+</template>
