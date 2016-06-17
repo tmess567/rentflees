@@ -1,5 +1,5 @@
 Template.listings.helpers({
   listingsCollection() {
-    return Listings.find();
+    return Listings.find({}, { sort: { createdAt:  -1} });
   },
 });
