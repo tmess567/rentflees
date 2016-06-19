@@ -26,3 +26,5 @@ aldeed:collection2
 accounts-google
 accounts-password
 accounts-ui
+tomi:upload-server
+tomi:upload-jquery
