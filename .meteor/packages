@@ -28,3 +28,5 @@ accounts-password
 accounts-ui
 tomi:upload-server
 tomi:upload-jquery
+accounts-twitter
+accounts-facebook

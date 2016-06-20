@@ -98,7 +98,7 @@ Listings.attachSchema(new SimpleSchema({
 		type: String,
 		label: "Owner's Email",
 		autoValue: function() {
-    		if( Meteor.user() )
+    		if( Meteor.user().emails[0].address )
     		{
     			getData = Meteor.user();
     			getData.context = Meteor.user().emails[0].address;
