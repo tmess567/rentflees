@@ -1,3 +1,16 @@
+coordsSchema = new SimpleSchema({
+  XCoordinate: {
+  	label: "X - Coordinate",
+    type: String,
+    max: 100
+  },
+  YCoordinate: {
+  	label: "Y - Coordinate",
+    type: String,
+    max: 100
+  },
+});
+
 Listings.attachSchema(new SimpleSchema({
 	title: {
 		type: String,
@@ -122,7 +135,12 @@ Listings.attachSchema(new SimpleSchema({
 		autoform: {
 			type: "hidden"
 		}
-}
+	},
+
+	coords: {
+		label: "Coordinates",
+		type: [coordsSchema]
+	},
 
 
 

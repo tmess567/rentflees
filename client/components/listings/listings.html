@@ -12,6 +12,15 @@
 		Amenities: {{amenities}} <br/>
 		Owner's User name: {{ownerUname}} <br/>
 		Owner's Name: {{owner}} <br/>
-		Owner's Email: {{ownerEmail}} <br/> <br/> <br/>
+		Owner's Email: {{ownerEmail}} <br/> 
+		X - Coordinate: {{ this.current.coords.XCoordinate }} <br/>
+		Y - Coordinate: {{ YCoordinate }} <br/>
+		<!--
+		<button id= "{{_id}}" class="traceMap">Map</button>
+		-->
+		<br/> <br/>
 	{{/each}}
+	 <div class="map-container">
+    	{{> googleMap name="exampleMap" options=exampleMapOptions}}
+  	</div>
 </template>
