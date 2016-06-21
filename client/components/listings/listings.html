@@ -13,14 +13,22 @@
 		Owner's User name: {{ownerUname}} <br/>
 		Owner's Name: {{owner}} <br/>
 		Owner's Email: {{ownerEmail}} <br/> 
-		X - Coordinate: {{ this.current.coords.XCoordinate }} <br/>
+		X - Coordinate: {{ XCoordinate }} <br/>
 		Y - Coordinate: {{ YCoordinate }} <br/>
-		<!--
 		<button id= "{{_id}}" class="traceMap">Map</button>
-		-->
 		<br/> <br/>
 	{{/each}}
+	<!--
 	 <div class="map-container">
-    	{{> googleMap name="exampleMap" options=exampleMapOptions}}
+    	{{> googleMap id="traceMap" name="exampleMap" options=exampleMapOptions}}
   	</div>
+  	-->
+  	{{> map}}
 </template>
+
+<template name="map">  
+  <div class="map-container">
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
+</template> 
