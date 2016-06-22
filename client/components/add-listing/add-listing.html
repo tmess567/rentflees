@@ -2,15 +2,15 @@
 {{#if currentUser}}
 	{{> quickForm collection="Listings" id="addListingForm" type="insert"}}
 {{/if}}
+
+{{> traceMap}}
+
 <img id="uploadedImg" src="" style="display: none; width: 500px; height: 500px; " />
 {{> upload_bootstrap }}
 </template>
-<!--
-<template name="register">
-    <form>
-        <input type="email" name="registerEmail">
-        <input type="password" name="registerPassword">
-        <input type="submit" value="Register">
-    </form>
+
+<template name="traceMap">
+	<body>
+    	<div id="map"></div>
+    </body>
 </template>
--->

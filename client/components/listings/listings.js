@@ -50,7 +50,7 @@ Template.map.onCreated(function() {
     function placeMarkerAndPanTo(latLng, map) { 
     var marker = new google.maps.Marker(
       { position: latLng, map: map });
-    alert(latLng.lat());
+    //alert(latLng.lat());
     map.panTo(latLng); 
   }
 
@@ -58,13 +58,22 @@ Template.map.onCreated(function() {
     });
 
 
+/*
+    placeSearchBox(map);
+    function placeSearchBox(map)
+    {
+      var input = document.getElementById('pac-input');
+      var searchBox = new google.maps.places.SearchBox(input)({
+          setMap : map
+      });
+      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    }
+*/
 
 
 
-
-
-
-    // The code shown below goes here
+    // Implementing marker watch and add
     var markers = {};
 
     Markers.find().observe({  
