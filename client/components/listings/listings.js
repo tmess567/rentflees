@@ -1,3 +1,4 @@
+flag = 1;
 Template.listings.helpers({
   listingsCollection() {
     return Listings.find({}, { sort: { createdAt:  -1} });
@@ -45,8 +46,11 @@ Template.map.onCreated(function() {
 
 
 
-
-    placeMarkerAndPanTo(event.latLng, map); 
+    if(flag)
+    {
+      placeMarkerAndPanTo(event.latLng, map);
+      flag = 0;
+    }
     function placeMarkerAndPanTo(latLng, map) { 
     var marker = new google.maps.Marker(
       { position: latLng, map: map });
