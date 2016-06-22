@@ -1,17 +1,10 @@
-flag = 1;
 Template.listings.helpers({
   listingsCollection() {
     return Listings.find({}, { sort: { createdAt:  -1} });
-  },
-  markersCollection() {
-    return Markers.find({});
-  },
+  }
 });
 
-Template.map.helpers({  
-  markersCollection() {
-    return Markers.find({});
-  },
+Template.map.helpers({
   mapOptions: function() {
     if (GoogleMaps.loaded()) {
       return {
@@ -24,100 +17,36 @@ Template.map.helpers({
 });
 
 Template.map.onRendered(function() {
-  //GoogleMaps.load();
   GoogleMaps.load({ 
-      v: '3', 
-      key: 'AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8', 
-      libraries: 'geometry,places' 
-    });
+    v: '3', 
+    key: 'AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8', 
+    libraries: 'geometry,places' 
+  });
 });
 
-Template.map.onCreated(function() {  
+Template.map.onCreated(function() { 
+  var marker;
   GoogleMaps.ready('map', function(map) {
-    google.maps.event.addListener(map.instance, 'click', function(event) {
-      Markers.insert({ lat: event.latLng.lat(), lng: event.latLng.lng() });
-      //console.log(event.latLng.lat());
 
+    marker = new google.maps.Marker(
+      { position: {lat: -37.8136, lng: 144.9631}, map: map.instance, draggable: true });
 
-        //var mapRef = document.getElementsByClassName("map-canvas")[0];
-        //var input = document.getElementById('pac-input');
-        //var searchBox = new google.maps.places.SearchBox(input);
-        //mapRef.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
 
-
-
-    if(flag)
-    {
-      placeMarkerAndPanTo(event.latLng, map);
-      flag = 0;
-    }
-    function placeMarkerAndPanTo(latLng, map) { 
-    var marker = new google.maps.Marker(
-      { position: latLng, map: map });
-    //alert(latLng.lat());
-    map.panTo(latLng); 
-  }
-
-
-    });
-
-
-/*
-    placeSearchBox(map);
-    function placeSearchBox(map)
-    {
-      var input = document.getElementById('pac-input');
-      var searchBox = new google.maps.places.SearchBox(input)({
-          setMap : map
-      });
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-    }
-*/
-
-
-
-    // Implementing marker watch and add
-    var markers = {};
-
-    Markers.find().observe({  
-      added: function(document) {
-        // Create a marker for this document
-        var marker = new google.maps.Marker({
-          draggable: true,
-          animation: google.maps.Animation.DROP,
-          position: new google.maps.LatLng(document.lat, document.lng),
-          map: map.instance,
-          // We store the document _id on the marker in order 
-          // to update the document within the 'dragend' event below.
-          id: document._id
-        });
-
-        // This listener lets us drag markers on the map and update their corresponding document.
-        google.maps.event.addListener(marker, 'dragend', function(event) {
-          Markers.update(marker.id, { $set: { lat: event.latLng.lat(), lng: event.latLng.lng() }});
-        });
-        alert("Hello " + event.latLng.lat());
-        // Store this marker instance within the markers object.
-        markers[document._id] = marker;
-      },
-      changed: function(newDocument, oldDocument) {
-        markers[newDocument._id].setPosition({ lat: newDocument.lat, lng: newDocument.lng });
-      },
-      removed: function(oldDocument) {
-        // Remove the marker from the map
-        markers[oldDocument._id].setMap(null);
-
-        // Clear the event listener
-        google.maps.event.clearInstanceListeners(
-          markers[oldDocument._id]);
-
-        // Remove the reference to this marker instance
-        delete markers[oldDocument._id];
+    searchBox.addListener('places_changed', function() {
+      var places = searchBox.getPlaces();
+      if (places.length == 0) {
+        return;
+      } 
+      if (places.length == 1){
+        map.instance.panTo(places[0].geometry.location);
+        marker.setPosition(places[0].geometry.location);
       }
     });
 
-
-
+    google.maps.event.addListener(map.instance, 'click', function(event) {
+      marker.setPosition(event.latLng);
+    });
   });
 });

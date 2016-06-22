@@ -13,6 +13,11 @@ coordsSchema = new SimpleSchema({
 });
 */
 Listings.attachSchema(new SimpleSchema({
+	image: {
+		type: String,
+		label: "Image",
+		optional: true
+	},
 	title: {
 		type: String,
 		label: "Title",

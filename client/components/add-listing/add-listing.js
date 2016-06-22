@@ -1,23 +1,24 @@
 Meteor.subscribe('listings');
+var imageName = null;
 Uploader.finished = function(index, fileInfo, templateContext) {
 	console.log(fileInfo.uploadedName);
 	//console.log(Meteor.user().services.facebook.id);
 	document.getElementById("uploadedImg").style.display = "block";
 	document.getElementById("uploadedImg").src = 'http://localhost:3000/upload/' + fileInfo.uploadedName;
+	imageName = fileInfo.uploadedName;
 }
-
-Template.traceMap.helpers({
-	/*
-	var map;
-	function initMap() {
-	  map = new google.maps.Map(document.getElementById('map'), {
-	    center: {lat: -34.397, lng: 150.644},
-	    zoom: 8
-	  });
-	}
-	*/
-});
-
-Template.traceMap.onRendered(function() {
-	   $.getScript("https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8&libraries=geometry,places&callback=GoogleMaps.initialize");
-});
+AutoForm.hooks({
+  addListingForm: {
+  	onSubmit: function (insertDoc, updateDoc, currentDoc) {
+  		this.event.preventDefault()
+  		if(imageName != null){
+  			insertDoc.image = imageName;
+  			Listings.insert(insertDoc);
+  			console.log("Done");
+  		} else {
+  			this.done(new Error("Submission failed"));
+  		}
+  		return false;
+  	}
+  }
+ });

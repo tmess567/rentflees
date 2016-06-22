@@ -1,5 +1,6 @@
 <template name="listings">
 	{{#each listingsCollection}}
+		<img src="upload/{{image}}" width="200px" height="200px" /> <br />
 		Title: {{title}} <br/>
 		Address: {{addess}} <br/>
 		Rent: {{rent}} <br/>
@@ -28,7 +29,7 @@
 
 <template name="map">  
   <div class="map-container">
-  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <input id="pac-input" class="controls form-control input-lg" type="text" placeholder="Search Box">
     {{> googleMap name="map" options=mapOptions}}
   </div>
 </template> 

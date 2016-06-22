@@ -6,9 +6,3 @@ Listings.allow({
 		return !!userId;
 	}
 });
-Markers.allow({
-	insert: function(userId, doc)
-	{
-		return !!userId;
-	}
-});
