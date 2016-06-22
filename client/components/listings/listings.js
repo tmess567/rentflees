@@ -35,7 +35,7 @@ Template.map.onCreated(function() {
   GoogleMaps.ready('map', function(map) {
     google.maps.event.addListener(map.instance, 'click', function(event) {
       Markers.insert({ lat: event.latLng.lat(), lng: event.latLng.lng() });
-      console.log(event.latLng.lat());
+      //console.log(event.latLng.lat());
 
 
         //var mapRef = document.getElementsByClassName("map-canvas")[0];
