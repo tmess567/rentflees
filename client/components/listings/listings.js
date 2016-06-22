@@ -23,14 +23,12 @@ Template.map.helpers({
 });
 
 Template.map.onRendered(function() {
-  GoogleMaps.load();
-  /*
+  //GoogleMaps.load();
   GoogleMaps.load({ 
       v: '3', 
       key: 'AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8', 
       libraries: 'geometry,places' 
     });
-  */
 });
 
 Template.map.onCreated(function() {  
