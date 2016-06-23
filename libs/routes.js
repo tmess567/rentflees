@@ -8,3 +8,14 @@ FlowRouter.route('/addListing', {
     BlazeLayout.render("mainLayout", {content: "add-listing"});
   }
 });
+
+//Useraccounts
+
+
+//Routes
+AccountsTemplates.configureRoute('changePwd');
+AccountsTemplates.configureRoute('forgotPwd');
+AccountsTemplates.configureRoute('resetPwd');
+AccountsTemplates.configureRoute('signIn');
+AccountsTemplates.configureRoute('signUp');
+AccountsTemplates.configureRoute('verifyEmail');

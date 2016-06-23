@@ -16,3 +16,15 @@ Meteor.startup(() => {
    	}
   });
 });
+
+Accounts.onCreateUser(function(options, user) {
+  //user.role = "owner";
+  console.log(options);
+  console.log("Next:");
+  if (options.profile)
+   user.profile = options.profile;
+  console.log(user);
+  console.log("Fruit Selected : ");
+  console.log(user.profile.fruit);
+  return user;
+});

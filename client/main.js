@@ -9,3 +9,5 @@ Template.body.onCreated(function bodyOnCreated() {
   Meteor.subscribe('listings');
 });
 */
+//AccountsTemplates.setState("signIn");
+T9n.setLanguage('en');
