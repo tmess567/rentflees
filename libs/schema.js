@@ -31,7 +31,7 @@ Listings.attachSchema(new SimpleSchema({
     		if( Meteor.userId() )
     		{
     			//console.log(Meteor.userId);
-    			console.log(Meteor.userId());
+    			//console.log(Meteor.userId());
     			return(Meteor.userId());
     			//return getData;
     			//return(Meteor.user().username)
@@ -147,15 +147,20 @@ Listings.attachSchema(new SimpleSchema({
   	label: "X - Coordinate",
 	optional: true,
     type: String,
-    max: 100
+    max: 100,
+		autoform: {
+			type: "hidden"
+		}
   },
   YCoordinate: {
   	label: "Y - Coordinate",
 	optional: true,
     type: String,
-    max: 100
+    max: 100,
+		autoform: {
+			type: "hidden"
+		}
   }
-
 
 
 }));

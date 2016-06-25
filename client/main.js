@@ -10,4 +10,3 @@ Template.body.onCreated(function bodyOnCreated() {
 });
 */
 //AccountsTemplates.setState("signIn");
-T9n.setLanguage('en');

@@ -5,4 +5,14 @@
 
 <img id="uploadedImg" src="" style="display: none; width: 500px; height: 500px; " />
 {{> upload_bootstrap }}
+<hr>
+{{> mapAdd }}
+</template>
+
+
+<template name="mapAdd">  
+  <div class="map-container">
+    <input id="pac-input" class="controls form-control input-lg" type="text" placeholder="Search Box">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
 </template>

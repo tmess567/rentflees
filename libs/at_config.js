@@ -70,6 +70,7 @@ AccountsTemplates.addField({
     _id: "role",
     type: "radio",
     displayName: "Role",
+    required: true,
     select: [
         {
         text: "Owner",

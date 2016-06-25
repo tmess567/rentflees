@@ -1,17 +1,35 @@
+
 FlowRouter.route('/', {
   action: function() {
     BlazeLayout.render("mainLayout", {content: "listings"});
   }
 });
+
+
 FlowRouter.route('/addListing', {
   action: function() {
     BlazeLayout.render("mainLayout", {content: "add-listing"});
   }
 });
 
+FlowRouter.route('/nav', {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "nav"});
+  }
+});
+
 //Useraccounts
-
-
+/*
+FlowRouter.route('/', {
+  name: "home",
+  action: function(params, queryParams) {
+    BlazeLayout.render('mainLayout', {
+      nav: "nav",
+      content: "listings",
+    });
+  }
+});
+*/
 //Routes
 AccountsTemplates.configureRoute('changePwd');
 AccountsTemplates.configureRoute('forgotPwd');
