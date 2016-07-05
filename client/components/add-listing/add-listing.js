@@ -1,7 +1,8 @@
+import {FlowRouter} from 'meteor/kadira:flow-router';
 Meteor.subscribe('listings');
 var imageName = null;
-var latitude;
-var longitude;
+var latitude = -37.8136;
+var longitude = 144.9631;
 Uploader.finished = function(index, fileInfo, templateContext) {
 	//console.log(fileInfo.uploadedName);
 	//console.log(Meteor.user().services.facebook.id);
@@ -20,6 +21,7 @@ AutoForm.hooks({
   			insertDoc.image = imageName;
   			Listings.insert(insertDoc);
   			console.log("Done");
+        //Router.go('/');
   		} else {
   			this.done(new Error("Submission failed"));
   		}
@@ -40,9 +42,9 @@ Template.mapAdd.helpers({
   mapOptions: function() {
     if (GoogleMaps.loaded()) {
       return {
-        center: new google.maps.LatLng(-37.8136, 144.9631),
+        center: new google.maps.LatLng(latitude, longitude),
         zoom: 8
-      };
+      }
     }
   }
 
@@ -51,7 +53,11 @@ Template.mapAdd.helpers({
 Template.mapAdd.onRendered(function() {
   GoogleMaps.load({ 
     v: '3', 
-    key: 'AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8', 
+    //previous key : AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8
+    key: 'AIzaSyBiTVrSTOhuNSaxTT29FqS1bsa3OXHhulc',
+    //'AIzaSyBGuxb2ewAPUA2TZScpgdXqKAiLYYEJ3fw', //places key for local testing
+    //'AIzaSyBiTVrSTOhuNSaxTT29FqS1bsa3OXHhulc' //JS key
+       
     libraries: 'geometry,places' 
   });
 });
@@ -62,7 +68,7 @@ Template.mapAdd.onCreated(function() {
 
     marker = new google.maps.Marker(
       { 
-        position: {lat: -37.8136, lng: 144.9631}, map: map.instance, draggable: true });
+        position: {lat: latitude, lng: longitude}, map: map.instance, draggable: true });
 
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);

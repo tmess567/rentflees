@@ -1,6 +1,6 @@
 Template.listings.helpers({
   listingsCollection() {
-    return Listings.find({}, { sort: { createdAt:  -1} });
+    console.log(Listings.find({}, { sort: { createdAt:  -1} }) );
   }
 });
 
@@ -19,11 +19,12 @@ Template.map.helpers({
 Template.map.onRendered(function() {
   GoogleMaps.load({ 
     v: '3', 
-    key: 'AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8', 
+    //Authentic Rentflees key: 'AIzaSyC9amBqawUy7qsmaCoQ7eMZkuNxadgn24g', 
+    key: 'AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8',
+
     libraries: 'geometry,places' 
   });
 });
-
 Template.map.onCreated(function() { 
   var marker;
   GoogleMaps.ready('map', function(map) {

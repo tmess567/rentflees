@@ -10,3 +10,10 @@ Template.body.onCreated(function bodyOnCreated() {
 });
 */
 //AccountsTemplates.setState("signIn");
+Template.nav.events({
+    'click.sign-out': function(event)
+    {
+        event.preventDefault();
+        Meteor.logout();
+    }
+});

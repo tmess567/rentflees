@@ -1,0 +1,169 @@
+<template name="index">
+    <div class="container-table">
+     <div class="row vertical-center-row">
+      <div class="col-md-12">
+       <div class="section-header" id="section2-header">
+        Rentflees. Launching Soon.
+       </div>
+      </div>
+      <div class="col-md-offset-2 col-md-8 col-xs-12">
+       <div id="searchbox">
+        <div class="searchbox">
+         <button class="input-item select" id="city-selector">
+          Delhi 
+          <span class="caret">
+          </span>
+         </button>
+         <ul class="select-menu">
+          <li class="active">
+           Delhi
+          </li>
+          <li>
+           Mumbai
+          </li>
+          <li>
+           Banglore
+          </li>
+          <li>
+           Chennai
+          </li>
+         </ul>
+         <input class="input-item" id="search-input"/>
+         <button class="input-item select" id="type-selector">
+          Family
+          <span class="caret">
+          </span>
+         </button>
+         <ul class="select-menu">
+          <li class="active">
+           Families
+          </li>
+          <li>
+           Single Girls
+          </li>
+          <li>
+           Single Boys
+          </li>
+         </ul>
+         <button class="input-item" id="go-button">
+          Go!
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+       <div class="col-md-12" style="padding:60px;">
+        <div class="banners-heading">Top Searched Cities</div>
+        <div class="banner">
+         <img alt="Delhi" src="images/indiagate.jpg"/>
+         <div class="body">
+           Delhi
+         </div>
+         <div class="overlay"></div>
+        </div>
+        <div class="banner">
+         <img alt="Mumbai" src="images/mumbai.jpg"/>
+         <div class="body">
+           Mumbai
+         </div>
+         <div class="overlay"></div>
+        </div>
+        <div class="banner">
+         <img alt="Delhi" src="images/banglore.jpg"/>
+         <div class="body">
+           Banglore
+         </div>
+         <div class="overlay"></div>
+        </div>
+        <div class="banner">
+         <img alt="Delhi" src="images/gurgoan.jpg"/>
+         <div class="body">
+           Gurgoan
+         </div>
+          <div class="overlay"></div>
+        </div>
+        <div class="banner">
+         <img alt="Delhi" src="images/noida.jpg"/>
+         <div class="body">
+           Noida
+         </div>
+         <div class="overlay"></div>
+        </div>
+        <div class="banner">
+         <img alt="Delhi" src="images/chennai.jpg"/>
+         <div class="body">
+           Chennai
+         </div>
+         <div class="overlay"></div>
+        </div>
+       </div>
+      </div>
+      <div class="modal fade" id="login-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="internal-login">
+          <label id="sign-in-label">Sign In</label>
+          {{> loginForm}}
+          <div id="forget-pass"><a href="#">Forgot Password?</a></div>
+          <div id="create-acc"><a href="#">Create an account.</a></div> 
+          </div>
+          <div class="external-login">
+            <a class="btn btn-block btn-social btn-facebook">
+              <span class="fa fa-facebook"></span> Sign in with Facebook
+            </a>
+            <a class="btn btn-block btn-social btn-google">
+              <span class="fa fa-google"></span> Sign in with Google
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--
+   <script src="jquery-1.11.3.js" type="text/javascript">
+   </script>
+   -->
+   <!--
+   <script src="bootstrap/js/bootstrap.js" type="text/javascript">
+   </script>
+   -->
+   <script src="/apps/searchbox.js" type="text/javascript">
+   </script>
+   <script src="iCheck/icheck.min.js"></script>
+   <script type="text/javascript">
+    $('.banner').hover(function(e){
+      console.log('Hover');
+      $(this).children('.overlay').toggleClass('hidden');
+    });
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+          checkboxClass: 'icheckbox_minimal-blue',
+          radioClass: 'iradio_minimal-blue'
+        });
+   </script>
+</template>
+
+<template name="loginForm">
+            <form class="login">
+          <div class="form-group has-feedback">
+            <input type="email" name="email" class="form-control" placeholder="Email">
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" name="password" class="form-control" placeholder="Password">
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="row">
+             <div class="checkbox">
+                <label>
+                  <input type="checkbox" class="minimal"> Remember Me
+                </label>
+            </div>
+          </div>
+          <div id="sign-in-container">
+            <input type="submit" class="btn btn-primary btn-block btn-flat" value="Login">
+          </div>
+        </form>
+</template>

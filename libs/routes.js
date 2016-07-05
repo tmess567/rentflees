@@ -12,12 +12,11 @@ FlowRouter.route('/addListing', {
   }
 });
 
-FlowRouter.route('/nav', {
+FlowRouter.route('/login', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "nav"});
+    BlazeLayout.render("mainLayout", {content: "index"});
   }
 });
-
 //Useraccounts
 /*
 FlowRouter.route('/', {
