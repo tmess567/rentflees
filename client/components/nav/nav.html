@@ -1,16 +1,16 @@
 <template name="nav">
-<header class="main-header">
+  <header class="main-header">
    <div class="logo">
     <img src="images/sl2.png">
    </div>
-   <div id="header-container">
-    <div id="menu-container">
-      <button id="list-my-house" class="slide left">&nbsp;</button>
-      {{#if currentUser}}
-        <div class="sign-in">Sign Out</div>
-        {{else}}
-        <div class="sign-in" data-toggle="modal" data-target="#login-modal" >Sign In</div>
-      {{/if}}
+   <div class="header-container">
+    <div class="menu-container">
+     <button class="slide left" id="list-my-house"></button>
+    {{#if currentUser}}
+      <div class="sign-in">Sign Out</div>
+      {{else}}
+      <div class="sign-in" data-toggle="modal" data-target="#login-modal" >Sign In</div>
+    {{/if}}
     </div>
    </div>
   </header>
