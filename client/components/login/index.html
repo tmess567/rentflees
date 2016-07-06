@@ -166,5 +166,14 @@
           <div id="sign-in-container">
             <input type="submit" class="btn btn-primary btn-block btn-flat" value="Login">
           </div>
+          
+        {{#if currentUser}}
+            <script type="text/javascript">
+              //document.getElementById("login-modal").className = "close";
+            </script>
+        {{/if}}
+          <!--
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          -->
         </form>
 </template>
