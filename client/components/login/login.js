@@ -1,6 +1,7 @@
 Template.loginForm.events({
     'submit form': function(event)
     {
+        print = document.getElementById('login-msg');
         event.preventDefault();
         var email = $('[name=email]').val();
         var password = $('[name=password]').val();

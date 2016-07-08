@@ -47,3 +47,10 @@ Accounts.onCreateUser(function(options, user) {
   //console.log(user.profile.fruit);
   return user;
 });
+
+
+Meteor.methods({
+  registerUser: function (user) {
+    Accounts.createUser(user);
+  }
+});
