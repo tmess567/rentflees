@@ -1,7 +1,6 @@
 <template name="loginForm">
   <form class="login">
       <div class="form-group has-feedback">
-        <span id=sign-in-msg></span>
         <input type="email" name="email" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
@@ -26,6 +25,7 @@
   <div class="modal fade" id="login-modal">
     <div class="modal-dialog">
      <div class="modal-content">
+      <div class="col-md-6">
       <div class="internal-login">
        <label id="sign-in-label">
         Sign In
@@ -53,6 +53,8 @@
         </a>
        </div>
       </div>
+      </div>
+      <div class="col-md-6">
       <div class="external-login">
        <a class="btn btn-block btn-social btn-facebook">
         <span class="fa fa-facebook">
@@ -64,6 +66,7 @@
         </span>
         Sign in with Google
        </a>
+      </div>
       </div>
      </div>
     </div>

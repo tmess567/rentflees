@@ -6,12 +6,13 @@ Template.loginForm.events({
         var password = $('[name=password]').val();
         Meteor.loginWithPassword(email, password, function(error)
         {
-        	if(error)
+        	if(error){
 				print.innerHTML = error.reason;
-				//console.log(error.reason);
-			else
+			}
+            else
 			{
-				print.innerHTML = "Login Successfull";
+				$('#login-modal').modal('hide');
+                console.log(Meteor.user());
 			}
 		});
     }

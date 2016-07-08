@@ -8,8 +8,17 @@ Template.signupForm.events({
         var role = $('[name=userrole]').val();
         
         Accounts.createUser({
+            name: name,
             email: email,
-            password: password
+            role: role,
+            password: password1,
+        },function(error){
+            if(error){
+                console.log(error);
+            }
+            else{
+                console.log('OK');
+            }
         });
     }
 });
