@@ -17,6 +17,12 @@ FlowRouter.route('/login', {
     BlazeLayout.render("mainLayout", {content: "index"});
   }
 });
+
+FlowRouter.route('/map', {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "mapview"});
+  }
+});
 //Useraccounts
 /*
 FlowRouter.route('/', {
