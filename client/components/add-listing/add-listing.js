@@ -1,4 +1,5 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
+
 Meteor.subscribe('listings');
 var imageName = null;
 var latitude = -37.8136;
@@ -10,6 +11,7 @@ Uploader.finished = function(index, fileInfo, templateContext) {
 	document.getElementById("uploadedImg").src = 'http://localhost:3000/upload/' + fileInfo.uploadedName;
 	imageName = fileInfo.uploadedName;
 }
+
 AutoForm.hooks({
   addListingForm: {
   	onSubmit: function (insertDoc, updateDoc, currentDoc) {
@@ -28,13 +30,7 @@ AutoForm.hooks({
       //Listings.insert(insertDoc);
   		return false;
   	},
-
-
   },
-
-   
-
-
  });
 
 
@@ -66,9 +62,9 @@ Template.mapAdd.onCreated(function() {
   var marker;
   GoogleMaps.ready('map', function(map) {
 
-    marker = new google.maps.Marker(
-      { 
-        position: {lat: latitude, lng: longitude}, map: map.instance, draggable: true });
+    marker = new google.maps.Marker({ 
+        position: {lat: latitude, lng: longitude}, 
+        map: map.instance, draggable: true });
 
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
@@ -89,8 +85,6 @@ Template.mapAdd.onCreated(function() {
       latitude = event.latLng.lat();
       longitude = event.latLng.lng();
     });
-
-
   });
 });
 

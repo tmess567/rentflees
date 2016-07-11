@@ -1,5 +1,5 @@
 <template name="nav">
-  <header class="main-header">
+  <header class="main-header shadow">
    <div class="logo">
     <img src="images/sl2.png">
    </div>
@@ -7,7 +7,7 @@
     <div class="menu-container">
      <button class="slide left" id="list-my-house"></button>
     {{#if currentUser}}
-      <div class="sign-in">Sign Out</div>
+      <div class="sign-out">Sign Out</div>
       {{else}}
       <div class="sign-in" data-toggle="modal" data-target="#login-modal" >Sign In</div>
     {{/if}}

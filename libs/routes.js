@@ -8,7 +8,7 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/addListing', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "add-listing"});
+    BlazeLayout.render("mainLayout", {content: "addListing"});
   }
 });
 
@@ -17,6 +17,7 @@ FlowRouter.route('/login', {
     BlazeLayout.render("mainLayout", {content: "index"});
   }
 });
+
 //Useraccounts
 /*
 FlowRouter.route('/', {

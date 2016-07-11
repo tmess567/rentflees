@@ -1,5 +1,5 @@
 Template.nav.events({
-    'click div.sign-in': function(event)
+    'click div.sign-out': function(event)
     {
         event.preventDefault();
         Meteor.logout();
