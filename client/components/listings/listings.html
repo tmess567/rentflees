@@ -1,33 +1,30 @@
 <template name="listings">
-	{{#each listingsCollection}}
-		<img src="upload/{{image}}" width="200px" height="200px" /> <br />
-		Title: {{title}} <br/>
-		Address: {{addess}} <br/>
-		Rent: {{rent}} <br/>
-		Security{{security}} <br/>
-		Type: {{type}} <br/>
-		Category: {{category}} <br/>
-		Description: {{description}} <br/>
-		FoodServices: {{foodServices}} <br/>
-		Rules: {{rules}} <br/>
-		Amenities: {{amenities}} <br/>
-		Owner's User name: {{ownerUname}} <br/>
-		Owner's Name: {{owner}} <br/>
-		Owner's Email: {{ownerEmail}} <br/> 
-		X - Coordinate: {{ XCoordinate }} <br/>
-		Y - Coordinate: {{ YCoordinate }} <br/>
-		<button id= "{{_id}}" class="traceMap">Map</button>
-		<br/> <br/>
-	{{/each}}
-	<!--
-	 <div class="map-container">
-    	{{> googleMap id="traceMap" name="exampleMap" options=exampleMapOptions}}
-  	</div>
-  	-->
-  	{{> map}}
+    <div class="col-md-6">
+  	  {{> map}}
+    </div>
+    <div class="col-md-6">
+      {{#each listingsCollection}}
+        <img src="upload/{{image}}" width="200px" height="200px" /> <br />
+        Title: {{title}} <br/>
+        Address: {{addess}} <br/>
+        Rent: {{rent}} <br/>
+        Security{{security}} <br/>
+        Type: {{type}} <br/>
+        Category: {{category}} <br/>
+        Description: {{description}} <br/>
+        FoodServices: {{foodServices}} <br/>
+        Rules: {{rules}} <br/>
+        Amenities: {{amenities}} <br/>
+        Owner's User name: {{ownerUname}} <br/>
+        Owner's Name: {{owner}} <br/>
+        Owner's Email: {{ownerEmail}} <br/>
+        <button id= "{{_id}}" class="traceMap">Map</button>
+        <br/> <br/>
+      {{/each}}
+    </div>
 </template>
 
-<template name="map">  
+<template name="map">
   <div class="map-container">
     <input id="pac-input" class="controls form-control input-lg" type="text" placeholder="Search Box">
     {{> googleMap name="map" options=mapOptions}}

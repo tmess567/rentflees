@@ -1,11 +1,11 @@
 <template name="nav">
   <header class="main-header">
-   <div class="logo">
+   <div class="logo" onClick="window.location = '/';">
     <img src="images/sl2.png">
    </div>
    <div class="header-container">
     <div class="menu-container">
-     <button class="slide left" id="list-my-house"></button>
+     <button class="slide left" id="list-my-house" onClick="window.location = '/addListing';"></button>
     {{#if currentUser}}
       <div class="sign-in">Sign Out</div>
       {{else}}
@@ -14,4 +14,5 @@
     </div>
    </div>
   </header>
+  {{> loginModal}}
 </template>

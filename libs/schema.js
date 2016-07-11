@@ -16,7 +16,11 @@ Listings.attachSchema(new SimpleSchema({
 	image: {
 		type: String,
 		label: "Image",
-		optional: true
+		optional: true,
+    autoform: {
+      type: "hidden",
+      label: false
+    }
 	},
 	title: {
 		type: String,
@@ -26,7 +30,7 @@ Listings.attachSchema(new SimpleSchema({
 	author: {
 		type: String,
 		label: "author name",
-		
+
 		autoValue: function() {
     		if( Meteor.userId() )
     		{
@@ -36,12 +40,12 @@ Listings.attachSchema(new SimpleSchema({
     			//return getData;
     			//return(Meteor.user().username)
     		}
-	    	
+
 	},
 		autoform: {
 			type: "hidden"
 		}
-		
+
 	},
 	address: {
 		type: String,
@@ -89,7 +93,7 @@ Listings.attachSchema(new SimpleSchema({
 	ownerUname: {
 		type: String,
 		label: "Owner UserName",
-		
+
 		autoValue: function() {
     		if( Meteor.user().username )
     		{
@@ -99,18 +103,19 @@ Listings.attachSchema(new SimpleSchema({
     			return(Meteor.user().username);
     			//return getData;
     			//return(Meteor.user().username)
-    		}
-	    	
+    		} else {
+          return("");
+        }
 	},
 		autoform: {
 			type: "hidden"
 		}
-		
+
 	},
 
 	owner: {
 		type: String,
-		label: "Owner's Name",		
+		label: "Owner's Name",
 	},
 
 	ownerEmail: {
@@ -125,7 +130,7 @@ Listings.attachSchema(new SimpleSchema({
     			//return getData;
     			//return(Meteor.user().emails[0].address)
     		}
-	    	
+
 	},
 		autoform: {
 			type: "hidden"
