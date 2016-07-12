@@ -27,6 +27,12 @@ userRoutes.route('/addListing', {
   }
 });
 
+anonRoutes.route('/map', {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "mapview"});
+  }
+});
+
 //Routes
 AccountsTemplates.configureRoute('changePwd');
 AccountsTemplates.configureRoute('forgotPwd');
