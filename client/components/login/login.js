@@ -1,20 +1,17 @@
-Template.loginForm.events({
-    'submit form': function(event)
-    {
-        print = document.getElementById('login-msg');
-        event.preventDefault();
-        var email = $('[name=email]').val();
-        var password = $('[name=password]').val();
-        Meteor.loginWithPassword(email, password, function(error)
-        {
-        	if(error){
-				print.innerHTML = error.reason;
-			}
-            else
-			{
-				$('#login-modal').modal('hide');
-                console.log(Meteor.user());
-			}
-		});
+Meteor.autorun(function () {
+  if (Meteor.userId()) {
+    console.log("logged in")
+    $('#nav-btn-accounts').text("Logout");
+    if(Meteor.user()){
+        $('#welcome-text').text("Welcome, "+Meteor.user().username);
+        console.log(Meteor.user().username);
     }
+    if(document.getElementById('login-modal'))
+        $('#login-modal').modal('hide');
+
+  } else {
+    console.log("logged out")
+    $('#welcome-text').text("");
+    $('#nav-btn-accounts').text("Sign In");
+  }
 });

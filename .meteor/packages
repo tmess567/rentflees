@@ -24,11 +24,10 @@ mrt:bootstrap-3
 aldeed:simple-schema
 aldeed:collection2
 accounts-password
-accounts-ui
 tomi:upload-server
 tomi:upload-jquery
 accounts-facebook
 dburles:google-maps
-useraccounts:bootstrap
 useraccounts:flow-routing
 service-configuration
+useraccounts:bootstrap

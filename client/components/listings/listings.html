@@ -1,24 +1,53 @@
 <template name="listings">
+    <style type="text/css">
+        .listing-img{
+            height: 300px;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+        @media only screen and (max-width: 990px) {
+            .listing-img{
+                height: 300px;
+                width: 100%;
+                vertical-align: middle;
+            }
+            .map-canvas{
+                height: 90% !important;
+            }
+            .map-container{
+                width: 100%;
+            }
+        }
+    </style>
     <div class="col-md-6">
   	  {{> map}}
     </div>
     <div class="col-md-6">
       {{#each listingsCollection}}
-        <img src="upload/{{image}}" width="200px" height="200px" /> <br />
-        Title: {{title}} <br/>
-        Address: {{addess}} <br/>
-        Rent: {{rent}} <br/>
-        Security{{security}} <br/>
-        Type: {{type}} <br/>
-        Category: {{category}} <br/>
-        Description: {{description}} <br/>
-        FoodServices: {{foodServices}} <br/>
-        Rules: {{rules}} <br/>
-        Amenities: {{amenities}} <br/>
-        Owner's User name: {{ownerUname}} <br/>
-        Owner's Name: {{owner}} <br/>
-        Owner's Email: {{ownerEmail}} <br/>
-        <button id= "{{_id}}" class="traceMap">Map</button>
+      <div clas="card-listing" style="
+            border-radius: 3px;
+            box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+            min-height: 330px;">
+        <img class="listing-img col-md-6" src="upload/{{image}}" /> 
+        <div class="col-md-6">
+            <h2 style="display:inline-block;">{{title}}</h2>
+            <button id= "{{_id}}" class="traceMap" style="display:inline-block;float:right;">Map</button>
+            <div style="display:block;">
+                <strong>Address: </strong>{{address}} <br/>
+                <strong>Rent: </strong>{{rent}} <br/>
+                <strong>Security</strong>{{security}} <br/>
+                <strong>Type: </strong>{{type}} <br/>
+                <strong>Category: </strong>{{category}} <br/>
+                <strong>Description: </strong>{{description}} <br/>
+                <strong>FoodServices: </strong>{{foodServices}} <br/>
+                <strong>Rules: </strong>{{rules}} <br/>
+                <strong>Amenities: </strong>{{amenities}} <br/>
+                <strong>Owner's User name: </strong>{{ownerUname}} <br/>
+                <strong>Owner's Name: </strong>{{owner}} <br/>
+                <strong>Owner's Email: </strong>{{ownerEmail}} <br/>
+            </div>
+        </div>
+        </div>
         <br/> <br/>
       {{/each}}
     </div>

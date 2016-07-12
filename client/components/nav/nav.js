@@ -1,7 +1,29 @@
-Template.nav.events({
-    'click div.sign-in': function(event)
-    {
-        event.preventDefault();
-        Meteor.logout();
+Template.nav.helpers({
+	btnContent: function(){
+		if(this.isLoggedIn)
+			return 'Hello, '+ this.username();
+		else
+			return 'Sign In';
+	},
+    isLoggedIn: function(){
+    	if(Meteor.user)
+    		return true;
+    	return false;
+    },
+    username: function(){
+    	return Meteor.user.username;
     }
+});
+
+Template.nav.events({
+	'click #nav-btn-accounts': function(){
+		if (Meteor.user() !== null) {
+			//user is logged in sign Out 
+			Meteor.logout();
+			$('#nav-btn-accounts').text("Sign In");
+		} else {
+			//user not logged in open sign in modal
+			$('#login-modal').modal();
+		}
+	}
 });

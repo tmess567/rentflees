@@ -1,34 +1,32 @@
+//for non registered users
+var anonRoutes = FlowRouter.group({
+  name: 'anon'
+});
 
-FlowRouter.route('/', {
+var userRoutes = FlowRouter.group({
+  name: 'user',
+  triggersEnter: [function(context, redirect) {
+    if(Meteor.user() === null){
+      console.log("/addListing called without logging in");
+      redirect('/');
+    }
+  }],
+});
+
+
+anonRoutes.route('/', {
   action: function() {
     BlazeLayout.render("mainLayout", {content: "listings"});
   }
 });
 
 
-FlowRouter.route('/addListing', {
+userRoutes.route('/addListing', {
   action: function() {
     BlazeLayout.render("mainLayout", {content: "add-listing"});
   }
 });
 
-FlowRouter.route('/login', {
-  action: function() {
-    BlazeLayout.render("mainLayout", {content: "index"});
-  }
-});
-//Useraccounts
-/*
-FlowRouter.route('/', {
-  name: "home",
-  action: function(params, queryParams) {
-    BlazeLayout.render('mainLayout', {
-      nav: "nav",
-      content: "listings",
-    });
-  }
-});
-*/
 //Routes
 AccountsTemplates.configureRoute('changePwd');
 AccountsTemplates.configureRoute('forgotPwd');
