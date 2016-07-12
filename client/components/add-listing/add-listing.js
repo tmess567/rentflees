@@ -8,7 +8,7 @@ Uploader.finished = function(index, fileInfo, templateContext) {
 	//console.log(fileInfo.uploadedName);
 	//console.log(Meteor.user().services.facebook.id);
 	document.getElementById("uploadedImg").style.display = "block";
-	document.getElementById("uploadedImg").src = 'http://localhost:3000/upload/' + fileInfo.uploadedName;
+	document.getElementById("uploadedImg").src = '/upload/' + fileInfo.uploadedName;
 	imageName = fileInfo.uploadedName;
 }
 
@@ -28,7 +28,7 @@ AutoForm.hooks({
   			this.done(new Error("Submission failed"));
   		}
       //Listings.insert(insertDoc);
-  		return false;
+  		return true;
   	},
   },
  });
@@ -47,24 +47,23 @@ Template.mapAdd.helpers({
 });
 
 Template.mapAdd.onRendered(function() {
-  GoogleMaps.load({ 
-    v: '3', 
+  GoogleMaps.load({
+    v: '3',
     //previous key : AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8
     key: 'AIzaSyBiTVrSTOhuNSaxTT29FqS1bsa3OXHhulc',
     //'AIzaSyBGuxb2ewAPUA2TZScpgdXqKAiLYYEJ3fw', //places key for local testing
     //'AIzaSyBiTVrSTOhuNSaxTT29FqS1bsa3OXHhulc' //JS key
-       
-    libraries: 'geometry,places' 
+
+    libraries: 'geometry,places'
   });
 });
 
-Template.mapAdd.onCreated(function() { 
+Template.mapAdd.onCreated(function() {
   var marker;
   GoogleMaps.ready('map', function(map) {
-
-    marker = new google.maps.Marker({ 
-        position: {lat: latitude, lng: longitude}, 
-        map: map.instance, draggable: true });
+    marker = new google.maps.Marker(
+      {
+        position: {lat: latitude, lng: longitude}, map: map.instance, draggable: true });
 
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
@@ -73,7 +72,7 @@ Template.mapAdd.onCreated(function() {
       var places = searchBox.getPlaces();
       if (places.length == 0) {
         return;
-      } 
+      }
       if (places.length == 1){
         map.instance.panTo(places[0].geometry.location);
         marker.setPosition(places[0].geometry.location);

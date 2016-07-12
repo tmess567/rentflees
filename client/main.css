@@ -149,7 +149,7 @@ body {
   width: 300px;
   height: 260px;
   margin-top: 5px auto;
-  padding: 5px; 
+  padding: 5px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15),
               -1px 0 0 rgba(0,0,0,0.03),
               1px 0 0 rgba(0,0,0,0.03),
@@ -178,7 +178,7 @@ body {
 
 .house-desc .house-title{
   display: inline;
-  font-weight: 600; 
+  font-weight: 600;
   padding-top: 5px;
   font-size: 16px;
   text-decoration: none;
@@ -194,7 +194,7 @@ body {
 .house-rating{
   color: yellow;
   background-color: transparent;
-  position: relative; 
+  position: relative;
   bottom: 20px;
   padding-left: 8px;
   font-size: 15px;
@@ -358,7 +358,7 @@ a,a:hover,a:visited{
   height: 18vh;
   -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out; 
+    transition: all .3s ease-in-out;
 }
 
 .titlebar .title{
@@ -395,7 +395,7 @@ a,a:hover,a:visited{
 }
 
 .carousel-inner > .item > img,
-.carousel-inner > .item > a > img {    
+.carousel-inner > .item > a > img {
     margin: auto;
     max-width: 100%;
 }
@@ -503,7 +503,7 @@ a,a:hover,a:visited{
 #map2{
   float: right;
   width: 80%;
-  height: 505px; 
+  height: 505px;
   border: none;
 }
 
@@ -583,7 +583,7 @@ a,a:hover,a:visited{
 }
 
 .nearby-item:hover{
-  background-color: rgba(0,0,0,0.15); 
+  background-color: rgba(0,0,0,0.15);
 }
 
 .nearby-item-name{
@@ -609,7 +609,7 @@ a,a:hover,a:visited{
 .photogroup .photo2{
   position: absolute;
   width: 208px;
-  height: 137px; 
+  height: 137px;
   top: 0;
   left: 625px;
 }
@@ -617,7 +617,7 @@ a,a:hover,a:visited{
 .photogroup .photo3{
   position: absolute;
   width: 208px;
-  height: 137px; 
+  height: 137px;
   top: 138px;
   left: 625px;
 }
@@ -625,7 +625,7 @@ a,a:hover,a:visited{
 .photogroup .photo4{
   position: absolute;
   width: 208px;
-  height: 137px; 
+  height: 137px;
   top: 276px;
   left: 625px;
 }
@@ -700,7 +700,7 @@ a,a:hover,a:visited{
 #house-rating{
   color: yellow;
   background-color: transparent;
-  font-size: 15px; 
+  font-size: 15px;
 }
 
 .main-header{
@@ -771,7 +771,7 @@ a,a:hover,a:visited{
 
   .main-header .header-container{
       width: 100%;
-      float: none; 
+      float: none;
       margin: 0;
   }
   body{
@@ -838,7 +838,7 @@ a,a:hover,a:visited{
   left:0;
   top:5px;
   text-align:center;
-  -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+  -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
   /*all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550); */
 }
 
@@ -851,7 +851,7 @@ a,a:hover,a:visited{
   left:-100%;
   top:5px;
   opacity: 0;
-  -webkit-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+  -webkit-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 
 .slide:hover{
@@ -875,7 +875,7 @@ a,a:hover,a:visited{
 .slide.left:before {
   left:100%;
   color:#000;
-  -webkit-transition: all 425ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+  -webkit-transition: all 425ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 
 .slide.left:hover:before{
@@ -899,7 +899,7 @@ a,a:hover,a:visited{
 .banner img{
   display: inline;
   width: 85px;
-  height: 85px;  
+  height: 85px;
   border-radius: 50%;
   position: absolute;
   top: 7px;
@@ -974,7 +974,7 @@ a,a:hover,a:visited{
   padding: 40px 50px;
   position: relative;
   width: 901px;
-  height: 417px;
+  min-height: 417px;
   border-radius: 3px;
 }
 
@@ -987,7 +987,7 @@ a,a:hover,a:visited{
 }
 
 .form-control:not(select) {
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
@@ -1100,4 +1100,9 @@ a,a:hover,a:visited,a:link{
 }
 .has-feedback .form-control-feedback{
   top:0 !important;
+}
+
+.input-group-addon{
+  border-radius: 0;
+  background-color: #fff;
 }

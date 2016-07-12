@@ -1,6 +1,7 @@
 Template.listings.helpers({
   listingsCollection() {
     console.log(Listings.find({}, { sort: { createdAt:  -1} }) );
+    return Listings.find({}, { sort: { createdAt:  -1} }) ;
   }
 });
 
@@ -17,20 +18,20 @@ Template.map.helpers({
 });
 
 Template.map.onRendered(function() {
-  GoogleMaps.load({ 
-    v: '3', 
-    //Authentic Rentflees key: 'AIzaSyC9amBqawUy7qsmaCoQ7eMZkuNxadgn24g', 
+  GoogleMaps.load({
+    v: '3',
+    //Authentic Rentflees key: 'AIzaSyC9amBqawUy7qsmaCoQ7eMZkuNxadgn24g',
     key: 'AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8',
 
-    libraries: 'geometry,places' 
+    libraries: 'geometry,places'
   });
 });
-Template.map.onCreated(function() { 
+Template.map.onCreated(function() {
   var marker;
   GoogleMaps.ready('map', function(map) {
 
     marker = new google.maps.Marker(
-      { 
+      {
         position: {lat: -37.8136, lng: 144.9631}, map: map.instance, draggable: true });
 
     var input = document.getElementById('pac-input');
@@ -40,7 +41,7 @@ Template.map.onCreated(function() {
       var places = searchBox.getPlaces();
       if (places.length == 0) {
         return;
-      } 
+      }
       if (places.length == 1){
         map.instance.panTo(places[0].geometry.location);
         marker.setPosition(places[0].geometry.location);
