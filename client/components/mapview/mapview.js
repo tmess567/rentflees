@@ -1,13 +1,8 @@
-Template.mapview.events({
-	"click .dropdown-menu > li > a": function(evt){
-		$('#city-sel-btn').text(evt.target.innerText);
-	}
+Template.searchBox.helpers({
+  listingsIndex: () => ListingsIndex
 });
-Template.mapview.helpers({
-	cityOptions: function(){
-		return [{ val : 'Bangalore'},{ val : 'Delhi'},{ val : 'Mumbai'},{ val : 'Chennai'}];
-	},
-	pplOptions: function(){
-		return [{ val : 'Family'},{ val : 'Single Girl'},{ val : 'Single Boy'}];
-	}
-});
+Template.searchBox.rendered = function(){
+	$('.easy-search-input-container > input').addClass('form-control');
+	$('.easy-search-input-container > input').addClass('search-input');
+	$('.easy-search-input-container > input').attr('placeholder', 'Search')
+};

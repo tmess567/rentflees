@@ -1,3 +1,14 @@
+var lastScrollTop = 0;
+$(document).on('scroll', function(){
+    var currentScrollTop = $(this).scrollTop();
+    if(currentScrollTop > lastScrollTop+5) {
+    	$('nav').addClass('hide');
+    }
+    else if(currentScrollTop < lastScrollTop-5){
+    	$('nav').removeClass('hide');
+    }
+    lastScrollTop = currentScrollTop;
+});
 Template.nav.helpers({
 	btnContent: function(){
 		if(this.isLoggedIn)

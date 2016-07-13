@@ -6,3 +6,16 @@ Listings.allow({
 		return !!userId;
 	}
 });
+ListingsIndex = new EasySearch.Index({
+  collection: Listings,
+  fields: [
+  	'title', 
+  	'address', 
+  	'type', 
+  	'category', 
+  	'owner', 
+  	'amenities',
+  	'description'
+  ],
+  engine: new EasySearch.Minimongo()
+});

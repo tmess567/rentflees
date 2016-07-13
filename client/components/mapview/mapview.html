@@ -1,510 +1,134 @@
 <template name="mapview">
-  
-  <link href="/css/robotofonts.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/all.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/index.css" rel="stylesheet" type="text/css"/>
-  <link href="/css/font-awesome.min.css" type="text/css"/>
-  <link href="/css/bootstrap-social.css" rel="stylesheet" type="text/css"/>
+  {{> searchBox}}
+</template>
 
-
-  <div class="container-fluid" style="padding:0px;">
-   <div id="filter-sliding">
-    <p style="padding-top:10px;text-align:center;">
-     <i class="glyphicon glyphicon-filter">
-     </i>
-     Filters
-    </p>
-    <div class="filter-container">
-     <div class="filter-section">
-      <div class="filter-name">
-       Property Type
-      </div>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Shared Room
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Private Room
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Private House
-      </label>
-      <br/>
-     </div>
-     <div class="filter-section">
-      <div class="filter-name">
-       Monthly Rent
-      </div>
-      <div id="price-range-div" style="text-align:center;padding-bottom:10px;">
-       ₹ 1000 - ₹ 10000
-      </div>
-      <input data-from="2000" data-hasgrid="false" data-prefix="₹ " data-step="500" data-to="50000" data-type="double" id="price-range" name="price-range" type="text" value="1000;10000"/>
-     </div>
-     <div class="filter-section">
-      <div class="filter-name">
-       Tenant Type
-      </div>
-      <input class="minimal" name="tenant-type" type="radio"/>
-      <label>
-       Single Boy
-      </label>
-      <br/>
-      <input class="minimal" name="tenant-type" type="radio"/>
-      <label>
-       Private Girl
-      </label>
-      <br/>
-      <input class="minimal" name="tenant-type" type="radio"/>
-      <label>
-       Family
-      </label>
-      <br/>
-     </div>
-     <div class="filter-section">
-      <div class="filter-name">
-       House Type
-      </div>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Apartment
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Independent
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Villa
-      </label>
-      <br/>
-     </div>
-     <div class="filter-section">
-      <div class="filter-name">
-       Furnishing
-      </div>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Fully Furnished
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Semi Furnished
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Unfurnished
-      </label>
-      <br/>
-     </div>
-     <div class="filter-section">
-      <div class="filter-name">
-       Facilities
-      </div>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Wi-Fi
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Food Service
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Room Service
-      </label>
-      <br/>
-      <input class="minimal" type="checkbox"/>
-      <label>
-       Domestic Help
-      </label>
-      <br/>
-     </div>
-    </div>
-   </div>
-   <div class="col-md-8 hidden-xs " style="padding:0px">
-    <div class="mapcontainer" id="map">
-    </div>
-   </div>
-   <div class="col-md-4" style="padding:0px">
-    <div class="item-list-container">
-     <a href="details.html">
-     </a>
-     <div class="list-item">
-      <a href="details.html">
-      </a>
-      <div class="house-img">
-       <a href="details.html">
-        <img src="/images/thumb_home2.jpg"/>
-        <div class="house-rating">
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-        </div>
-        <div class="house-for">
-         BOYS
-        </div>
-       </a>
-       <div class="whishlist">
-        <a href="details.html">
-        </a>
-        <a>
-         <i class="glyphicon glyphicon-heart-empty">
-         </i>
-        </a>
-       </div>
-      </div>
-      <div class="house-desc">
-       <div class="house-title">
-        Choudhary House
-       </div>
-       <div class="house-data">
-        Pandav Nagar | 2BHK
-       </div>
-       <div class="house-rent">
-        ₹ 5000
-       </div>
-      </div>
-     </div>
-     <a href="details.html">
-     </a>
-     <div class="list-item">
-      <a href="details.html">
-      </a>
-      <div class="house-img">
-       <a href="details.html">
-        <img src="/images/theme_pic.png"/>
-        <div class="house-rating">
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-        </div>
-        <div class="house-for">
-         BOYS
-        </div>
-       </a>
-       <div class="whishlist">
-        <a href="details.html">
-        </a>
-        <a>
-         <i class="glyphicon glyphicon-heart-empty">
-         </i>
-        </a>
-       </div>
-      </div>
-      <div class="house-desc">
-       <div class="house-title">
-        Choudhary House
-       </div>
-       <div class="house-data">
-        Pandav Nagar | 2BHK
-       </div>
-       <div class="house-rent">
-        ₹ 5000
-       </div>
-      </div>
-     </div>
-     <a href="details.html">
-     </a>
-     <div class="list-item">
-      <a href="details.html">
-      </a>
-      <div class="house-img">
-       <a href="details.html">
-        <img src="/images/thumb_home.jpg"/>
-        <div class="house-rating">
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-        </div>
-        <div class="house-for">
-         BOYS
-        </div>
-       </a>
-       <div class="whishlist">
-        <a href="details.html">
-        </a>
-        <a>
-         <i class="glyphicon glyphicon-heart-empty">
-         </i>
-        </a>
-       </div>
-      </div>
-      <div class="house-desc">
-       <div class="house-title">
-        Choudhary House
-       </div>
-       <div class="house-data">
-        Pandav Nagar | 2BHK
-       </div>
-       <div class="house-rent">
-        ₹ 5000
-       </div>
-      </div>
-     </div>
-     <a href="details.html">
-     </a>
-     <div class="list-item">
-      <a href="details.html">
-      </a>
-      <div class="house-img">
-       <a href="details.html">
-        <img src="/images/thumb_home2.jpg"/>
-        <div class="house-rating">
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-        </div>
-        <div class="house-for">
-         BOYS
-        </div>
-       </a>
-       <div class="whishlist">
-        <a href="details.html">
-        </a>
-        <a>
-         <i class="glyphicon glyphicon-heart-empty">
-         </i>
-        </a>
-       </div>
-      </div>
-      <div class="house-desc">
-       <div class="house-title">
-        Choudhary House
-       </div>
-       <div class="house-data">
-        Pandav Nagar | 2BHK
-       </div>
-       <div class="house-rent">
-        ₹ 5000
-       </div>
-      </div>
-     </div>
-     <a href="details.html">
-     </a>
-     <div class="list-item">
-      <a href="details.html">
-      </a>
-      <div class="house-img">
-       <a href="details.html">
-        <img src="/images/thumb_home2.jpg"/>
-        <div class="house-rating">
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-        </div>
-        <div class="house-for">
-         BOYS
-        </div>
-       </a>
-       <div class="whishlist">
-        <a href="details.html">
-        </a>
-        <a>
-         <i class="glyphicon glyphicon-heart-empty">
-         </i>
-        </a>
-       </div>
-      </div>
-      <div class="house-desc">
-       <div class="house-title">
-        Choudhary House
-       </div>
-       <div class="house-data">
-        Pandav Nagar | 2BHK
-       </div>
-       <div class="house-rent">
-        ₹ 5000
-       </div>
-      </div>
-     </div>
-     <a href="details.html">
-     </a>
-     <div class="list-item">
-      <a href="details.html">
-      </a>
-      <div class="house-img">
-       <a href="details.html">
-        <img src="/images/thumb_home2.jpg"/>
-        <div class="house-rating">
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-         <span class="glyphicon glyphicon-star">
-         </span>
-        </div>
-        <div class="house-for">
-         BOYS
-        </div>
-       </a>
-       <div class="whishlist">
-        <a href="details.html">
-        </a>
-        <a>
-         <i class="glyphicon glyphicon-heart-empty">
-         </i>
-        </a>
-       </div>
-      </div>
-      <div class="house-desc">
-       <div class="house-title">
-        Choudhary House
-       </div>
-       <div class="house-data">
-        Pandav Nagar | 2BHK
-       </div>
-       <div class="house-rent">
-        ₹ 5000
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
-  <script src="/js/icheck.min.js"></script>
-  <script src="/js/ion.rangeSlider.min.js"></script>
-  <script src="/js/jquery.slimscroll.min.js"></script>
-  <script src="js/bootstrap.js" type="text/javascript"></script>
-  <script type="text/javascript">
-  document.addEventListener('load', function(){
-    $('#filter-toggle').click(function(e){
-          $("#filter-sliding").toggleClass("filter-sliding-open");
-      });
-    $('.item-list-container').slimScroll({
-      height: '92vh',
-      alwaysVisible: true
-    });
-    $('.filter-container').slimScroll({
-      height: '85vh',
-      alwaysVisible: true
-    });
-    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-          checkboxClass: 'icheckbox_minimal-blue',
-          radioClass: 'iradio_minimal-blue'
-        });
-    $('#price-range').ionRangeSlider({
-      onChange:function (data) {
-        var value = '&#8377; ' + data.fromNumber + ' - &#8377; ' + data.toNumber;
-        $('#price-range-div').html(value);
+<template name="searchBox">
+  <style type="text/css">
+    .search-input{
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    });
-  });
-  </script>
-  <script>
-   function CenterControl(controlDiv, map) {
+  </style>
+  <div class="input-group easy-search-input-container col-md-6 col-md-offset-3">
+      {{> EasySearch.Input index=listingsIndex}}
+  </div>
 
-        // Set CSS for the control border.
-        var controlUI = document.createElement('div');
-        controlUI.style.backgroundColor = '#fff';
-        controlUI.style.border = '1px solid #fff';
-        controlUI.style.borderRadius = '2px';
-        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-        controlUI.style.cursor = 'pointer';
-        controlUI.style.marginBottom = '22px';
-        controlUI.style.textAlign = 'center';
-        controlUI.style.marginTop = '8px';
-        controlUI.style.marginRight = '8px';
-        //controlUI.title = 'Click to recenter the map';
-        controlDiv.appendChild(controlUI);
+    {{#EasySearch.IfSearching index=listingsIndex }}
+      <div>Searching...</div>
+    {{/EasySearch.IfSearching }}  
+    
+    <ol class="leaderboard">
+      {{#EasySearch.Each index=listingsIndex }}
+        {{> listingCard}}
+      {{/EasySearch.Each}}
+    </ol>
 
-        // Set CSS for the control interior.
-        var controlText = document.createElement('a');
-        controlText.style.color = 'rgb(25,25,25)';
-        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-        controlText.style.fontSize = '12px';
-        controlText.style.lineHeight = '28px';
-        controlText.style.height = '34px';
-        controlText.style.width = '80px';
-        controlText.style.paddingLeft = '5px';
-        controlText.style.paddingRight = '5px';
-        controlText.style.marginLeft = '1px solid rgba(0,0,0,0.1)';
-        controlText.innerHTML = '<i class="glyphicon glyphicon-filter"></i> Filters';
-        controlUI.appendChild(controlText);
+    {{#EasySearch.IfNoResults index=listingsIndex }}
+      <div class="padded no-results">No results found</div>
+    {{/EasySearch.IfNoResults }}
 
-        // Setup the click event listeners: simply set the map to Chicago.
-        controlText.addEventListener('click', function() {
-          $("#filter-sliding").toggleClass("filter-sliding-open");
-        });
+    {{> EasySearch.Pagination index=listingsIndex maxPages=10 }}
+</template>
 
-        controlText = document.createElement('a');
-        controlText.style.color = 'rgb(25,25,25)';
-        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-        controlText.style.fontSize = '12px';
-        controlText.style.lineHeight = '28px';
-        controlText.style.height = '34px';
-        controlText.style.width = '80px';
-        controlText.style.paddingLeft = '5px';
-        controlText.style.paddingRight = '5px';
-        controlText.href = 'listview.html';
-        controlText.innerHTML = '<i class="glyphicon glyphicon-th"></i> Grid View';
-        controlUI.appendChild(controlText);
-      }
+<template name="listingCard">
+  <style type="text/css">
+    .traceMap{
+      margin: 10px;
+      padding: 10px;
+      width: 150px;
+    }
+    .card-listing{
+      border-radius: 3px;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+      min-height: 330px;
+      max-width: 390px;
+      margin: 20px;
+    }
+    .card-listing > .listing-img{
+      width:100%;
+    }
+    .listing-table{
+      text-align: left;
+    }
+    .listing-table > tr > td{
+      padding-left: 10px;
+    }
+    .listing-container{
+      text-align: center;
+    }
 
-      function initMap() {
-        var mapDiv = document.getElementById('map');
-        var map = new google.maps.Map(mapDiv, {
-            center: {lat: 44.540, lng: -78.546},
-            zoom: 8
-        });
-        var centerControlDiv = document.createElement('div');
-        var centerControl = new CenterControl(centerControlDiv, map);
+  </style>
+  <div class="card-listing col-md-4">
+    <img class="listing-img col-md-4" src="upload/{{image}}"/> 
+    <div class="listing-container">
+      <h2>{{title}}</h2>
+      <div>
+        <table class="listing-table">
+          <tr>
+            <td><strong>Address:</strong> </td>
+            <td>{{address}}</td> <br/>
+          </tr>
 
-        centerControlDiv.index = 1;
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
-      }
-  </script>
-  <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-  </script>
+          <tr>
+            <td><strong>Rent:</strong> </td>
+            <td>{{rent}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Security:</strong></td>
+            <td>{{security}}</td><br/>
+          </tr>
+
+          <tr>
+            <td><strong>Type:</strong> </td>
+            <td>{{type}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Category:</strong> </td>
+            <td>{{category}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Description:</strong> </td>
+            <td>{{description}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>FoodServices:</strong> </td>
+            <td>{{foodServices}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Rules:</strong> </td>
+            <td>{{rules}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Amenities:</strong> </td>
+            <td>{{amenities}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Owner's User name:</strong> </td>
+            <td>{{ownerUname}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Owner's Name:</strong> </td>
+            <td>{{owner}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Owner's Email:</strong> </td>
+            <td>{{ownerEmail}}</td> <br/>
+          </tr>
+
+        </table>
+      </div>
+      <button id= "{{_id}}" class="traceMap btn btn-primary">
+      View on Map</button>
+    </div>
+  </div>
 </template>
