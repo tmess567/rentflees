@@ -23,6 +23,12 @@ FlowRouter.route('/map', {
     BlazeLayout.render("mainLayout", {content: "mapview"});
   }
 });
+
+FlowRouter.route('/:templateName', {
+  action(params, queryParams) {
+    BlazeLayout.render("mainLayout", {content: params.templateName});
+  }
+});
 //Useraccounts
 /*
 FlowRouter.route('/', {

@@ -1068,6 +1068,10 @@ a,a:hover,a:visited,a:link{
   float: left;
 }
 
+.border{
+  border: 1px solid #f4f4f4 !important;
+}
+
 .border-right {
     border-right: 1px solid #f4f4f4 !important;
 }
@@ -1105,4 +1109,129 @@ a,a:hover,a:visited,a:link{
 .input-group-addon{
   border-radius: 0;
   background-color: #fff;
+}
+
+/*form-progress*/
+.form-progress {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+
+.form-progress li {
+  list-style-type: none;
+  color: #c1c1c1;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 25%;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+.form-progress li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: #f1f1f1;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+  padding: 0 7px;
+
+}
+
+/*progressbar connectors*/
+.form-progress li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #f1f1f1;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1; /*put it behind the numbers*/
+}
+
+.form-progress li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+.form-progress li.active:before,  .form-progress li.active:after{
+  background: #27AE60;
+  color: white;
+}
+
+.step-form fieldset{
+  display: none;
+}
+
+.step-form fieldset.active{
+  display: block;
+}
+
+.upload-photo-div{
+  height: 200px;
+  width: 100%;
+}
+
+.upload-photo-container{
+  position: relative;
+  display: inline-block;
+  height: inherit;
+  width: calc(100% - 100px);
+  overflow: overlay;
+}
+
+.upload-photo-div .left-control,
+.upload-photo-div .right-control{
+  width: 50px;
+  height: inherit;
+  display: inline-block;
+  margin: 0;
+  line-height: 15;
+  text-align: center;
+}
+
+.upload-photo-div .left-control > i,
+.upload-photo-div .right-control > i{
+  cursor: pointer;
+}
+
+.upload-photo-div .left-control{
+  float: left;
+}
+
+.upload-photo-div .right-control{
+  float: right;
+}
+
+.upload-photo-carousel{
+  position: relative;
+  height: inherit;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.upload-photo-carousel li{
+  text-align: center;
+  height: inherit;
+  display: block;
+  float: left;
+}
+
+li .img-container{
+  height: inherit;
+  display: block;
+}
+
+.upload-photo-carousel li img{
+  max-height: 100%;
 }

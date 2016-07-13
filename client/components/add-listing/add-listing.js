@@ -1,9 +1,51 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
 
+Template.addListing.onRendered(function(){
+  console.log('rendered');
+});
+
+Template.addListing.onCreated(function(){
+  console.log('created' + $(this));
+});
+
+Template.addListing.events({
+  "click fieldset[data-next] .next" : function(event) {
+      event.preventDefault();
+      var current_fs = $(event.target).closest('fieldset');
+      var next_fs = $('#' + current_fs.attr("data-next"));
+      if(next_fs != null){
+        var form = current_fs.parent();
+        console.log(current_fs);
+        console.log(next_fs);
+        var progress = form.find("ul.form-progress > li.active").last();
+        progress.next("li").addClass("active");
+        current_fs.removeClass("active");
+        next_fs.addClass("active");
+      }
+    },
+  "click fieldset[data-prev] .prev" : function(event) {
+    event.preventDefault();
+    var current_fs = $(event.target).closest('fieldset');
+    var prev_fs = $('#' + current_fs.attr("data-prev"));
+    if(prev_fs != null){
+      var form = current_fs.parent();
+      console.log(current_fs);
+      console.log(prev_fs);
+      var progress = form.find("ul.form-progress > li.active").last();
+      progress.removeClass("active");
+      current_fs.removeClass("active");
+      prev_fs.addClass("active");
+    }
+  },
+
+});
+
+
 Meteor.subscribe('listings');
 var imageName = null;
 var latitude = -37.8136;
 var longitude = 144.9631;
+
 Uploader.finished = function(index, fileInfo, templateContext) {
 	//console.log(fileInfo.uploadedName);
 	//console.log(Meteor.user().services.facebook.id);
@@ -37,6 +79,7 @@ AutoForm.hooks({
 Template.mapAdd.helpers({
   mapOptions: function() {
     if (GoogleMaps.loaded()) {
+      console.log('Map Loaded');
       return {
         center: new google.maps.LatLng(latitude, longitude),
         zoom: 8
@@ -56,15 +99,18 @@ Template.mapAdd.onRendered(function() {
 
     libraries: 'geometry,places'
   });
+  console.log("Map Rendered");
 });
 
 Template.mapAdd.onCreated(function() {
   var marker;
   GoogleMaps.ready('map', function(map) {
-    marker = new google.maps.Marker(
-      {
-        position: {lat: latitude, lng: longitude}, map: map.instance, draggable: true });
-
+    console.log("Map Ready");
+    marker = new google.maps.Marker({
+      position: {lat: latitude, lng: longitude}, 
+      map: map.instance, draggable: true, 
+    });
+    
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
 
