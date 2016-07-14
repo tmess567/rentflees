@@ -1,0 +1,142 @@
+#x{
+  padding: 20px;
+  height: 200px;
+}
+
+#top-cities-div{
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg==") repeat;
+}
+
+.bg-india{
+  background-image: none;
+}
+
+.bg-delhi{
+  background-image: url("images/bg-delhi-sm.png");
+}
+
+.bg-noida{
+  background-image: url("images/bg-noida-sm.png");
+}
+
+.bg-gurgaon{
+  background-image: url("images/bg-gurgaon-sm.png");
+}
+
+.bg-chandigarh{
+  background-image: url("images/bg-chandigarh-sm.png");
+}
+
+.bg-dehradun{
+  background-image: url("images/bg-dehradun-sm.png");
+}
+
+.bg-mumbai{
+  background-image: url("images/bg-mumbai-sm.png");
+}
+
+.bg-banglore{
+  background-image: url("images/bg-banglore-sm.png");
+}
+
+.bg-chennai{
+  background-image: url("images/bg-chennai-sm.png");
+}
+
+@media (min-width: 768px){
+#top-cities-div{
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.bg-india{
+  background-image: url("images/bg-india.png");
+}
+
+.bg-delhi{
+  background-image: url("images/bg-delhi.png");
+}
+
+.bg-noida{
+  background-image: url("images/bg-noida.png");
+}
+
+.bg-gurgaon{
+  background-image: url("images/bg-gurgaon.png");
+}
+
+.bg-chandigarh{
+  background-image: url("images/bg-chandigarh.png");
+}
+
+.bg-dehradun{
+  background-image: url("images/bg-dehradun.png");
+}
+
+.bg-mumbai{
+  background-image: url("images/bg-mumbai.png");
+}
+
+.bg-banglore{
+  background-image: url("images/bg-banglore.png");
+}
+
+.bg-chennai{
+  background-image: url("images/bg-chennai.png");
+}
+}
+
+.banner{
+  display: block;
+  width: 100%;
+  height: 100px;
+  background-color: transparent;
+  border: 0;
+  position: relative;
+  border-radius: 50px;
+  margin: 10px auto;
+  margin-top: 30px;
+  cursor: pointer;
+  padding-left: 97px;
+}
+
+.banner img{
+  display: inline;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+}
+
+.banner .overlay{
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.15);
+  border-radius: 50px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner .body{
+  display: block;
+  text-align: center;
+  height: 100%;
+  padding: 26px 0;
+  vertical-align: middle;
+  font-size: 32px;
+  margin: 0 auto;
+}
+
+.banners-heading{
+  text-align: center;
+  color: grey;
+  font-size: 35px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #990909;
+}

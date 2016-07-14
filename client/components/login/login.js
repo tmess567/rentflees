@@ -1,3 +1,9 @@
+Template.loginForm.onRendered(function(){
+    $('.close-button').click(function(){
+        $('#login-modal').modal('hide');
+    });
+});
+
 Template.loginForm.events({
     'submit form': function(event)
     {

@@ -26,9 +26,11 @@ FlowRouter.route('/map', {
 
 FlowRouter.route('/:templateName', {
   action(params, queryParams) {
+    console.log(params.templateName);
     BlazeLayout.render("mainLayout", {content: params.templateName});
   }
 });
+
 //Useraccounts
 /*
 FlowRouter.route('/', {

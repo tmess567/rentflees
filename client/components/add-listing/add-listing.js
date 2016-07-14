@@ -1,5 +1,45 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
 
+function setWidth(){
+  var e = $("#photo");
+  var width = 0;
+  $("#photo .img-container").each(function (){
+    $(this).load();
+    width += $(this).width();
+  });
+  console.log(width);
+
+  $("#photo .upload-photo-carousel").css('width', width + 'px');
+  
+  $(".upload-photo-div .left-control > i").click(function(){
+    var cont = $("#photo .upload-photo-container");
+    var carousel = $("#photo .upload-photo-carousel");
+    var left = parseInt(carousel.css("left").replace(/[^-\d\.]/g, ''));
+    console.log(carousel);
+    var container_width = cont.width();
+    var newLeft = left + container_width;
+    console.log('oldLeft '+ left);
+    console.log('newLeft '+ newLeft);
+    if(newLeft <= 0){
+      carousel.css("left",newLeft + "px");
+    }
+  });
+
+  $(".upload-photo-div .right-control > i").click(function(){
+    var cont = $("#photo .upload-photo-container");
+    var carousel = $("#photo .upload-photo-carousel");
+    var left = parseInt(carousel.css("left").replace(/[^-\d\.]/g, ''));
+    console.log(carousel);
+    var container_width = cont.width();
+    var newLeft = left - container_width;
+    console.log('oldLeft '+ left);
+    console.log('newLeft '+ newLeft);
+    if(-newLeft <= width){
+      carousel.css("left", newLeft + "px");
+    }
+  });
+}
+
 Template.addListing.onRendered(function(){
   console.log('rendered');
 });
@@ -20,7 +60,11 @@ Template.addListing.events({
         var progress = form.find("ul.form-progress > li.active").last();
         progress.next("li").addClass("active");
         current_fs.removeClass("active");
+        var flag = current_fs.attr("data-next") === 'photo';
         next_fs.addClass("active");
+        if(flag){
+          setWidth();
+        }
       }
     },
   "click fieldset[data-prev] .prev" : function(event) {

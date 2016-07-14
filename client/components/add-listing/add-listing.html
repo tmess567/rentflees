@@ -28,10 +28,10 @@
 </template>
 
 <template name="addListing">
-<div class="container">
+<div class="container-fluid">
 <h4>Add Listings</h4>
 
-<div class="">
+<div class="col-md-12 col-sm-12col-xs-12">
 <form class="from-horizontal step-form" role="form">
     
   <ul class="form-progress">
@@ -42,7 +42,7 @@
   </ul>
 
   <!-- Step 1. Basic Details-->
-  <fieldset class="active col-md-6 col-md-offset-3" id="basic" data-next="amenities">
+  <fieldset class="active col-md-6 col-md-offset-3 col-sm-12 col-xs-12" id="basic" data-next="amenities">
   <div class="form-group">
   <label>Title</label>
   <input name="text" class="form-control">
@@ -69,13 +69,13 @@
   <div class="form-group">
   <label>Tentant Preference (Gender)</label>
   <div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Male
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Female
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Family
   </div>
   </div>
@@ -84,10 +84,10 @@
   <div class="form-group">
   <label>Tentant Preference (Occupation)</label>
   <div>
-  <div class="col-md-6">
+  <div class="col-md-6 col-sm-12 col-xs-12">
   <input type="checkbox"> Student
   </div>
-  <div class="col-md-6 pull-right">
+  <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
   <input type="checkbox"> Employee
   </div>
   </div>
@@ -115,96 +115,96 @@
   </fieldset>
 
   <!-- Step 2. Amenities-->
-  <fieldset  class="col-md-12" id="amenities" data-prev="basic" data-next="location">
+  <fieldset  class="col-md-12 col-sm-12 col-xs-12" id="amenities" data-prev="basic" data-next="location">
   <label>Food Services</label>
   <div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox" name="breakfast"> Breakfast
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox" name="lunch"> Lunch
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox" name="dinner"> Dinner
   </div>
   </div>
 
   <label>House Amenities and Services</label>
   <div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> TV
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> DTH Service
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Wi-Fi
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Fridge
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> AC
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Geyser
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Water Purifier 
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Washing Machine
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Sofa
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Table
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Cupboards
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Shoe Rack
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Gas Stove
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Modular Kitchen
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Room Service
   </div>
   </div>
 
   <label>Building Amenities and Service</label>
   <div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> CCTV
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Security
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Power Backup
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Water Supply
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Clubhouse
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Parking
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Swimming Pool
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Gym
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12 col-xs-12">
   <input type="checkbox"> Elevator
   </div>
   </div>
@@ -220,10 +220,10 @@
   <!--step 3: location-->
   <fieldset id="location" data-prev="amenities" data-next="photo">
     <div>
-    <div class="col-md-8"> 
+    <div class="col-md-8 col-sm-12 col-xs-12"> 
     {{> mapAdd}}
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-12 col-xs-12">
       <div class="form-group">
         <label>City</label>
         <select class="form-control">
@@ -256,8 +256,8 @@
     </div>
   </fieldset>
 
-  <fieldset class="col-md-12" id="photo" data-prev="location">
-    <div class="col-md-12 upload-photo-div ">
+  <fieldset class="col-md-12 col-sm-12 col-xs-12" id="photo" data-prev="location">
+    <div class="col-md-12 upload-photo-div">
       <div class="left-control">
         <i class="fa fa-angle-left fa-4x"></i>
       </div>
@@ -305,16 +305,9 @@
 </div>
 </div>
 <script type="text/javascript">
-    var width = 0;
+    var width = 1000;
     $(window).load(function () {
-        $(".img-container").each(function () {
-          $(this).load();
-          var width = $(this).width();
-          var height = $(this).height();
-          console.log(width);
-        });
     });
     console.log('Width :' + width);
-    //$('.upload-photo-carousel').css('width',width + 'px');
 </script>
 </template>
