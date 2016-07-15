@@ -19,8 +19,6 @@ Meteor.startup(() => {
       http.get({
         host: 'rentflees.com',
         path: '/uploadimg.php?file='+uploadedName+'&url='+newurl
-      }, function(response){
-        console.log(response);
       });
    	},
     mimeTypes: {
