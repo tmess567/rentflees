@@ -1,18 +1,57 @@
 <template name="nav">
   <header class="main-header shadow">
-   <div class="logo" onClick="window.location = '/';">
-    <img src="images/sl2.png">
-   </div>
-   <div class="header-container">
-    <div class="menu-container">
-     <button class="slide left" id="list-my-house" onClick="window.location = '/addListing';"></button>
-    {{#if currentUser}}
-      <div class="sign-out">Sign Out</div>
-      {{else}}
-      <div class="sign-in" data-toggle="modal" data-target="#login-modal" >Sign In</div>
-    {{/if}}
-    </div>
-   </div>
+    <a class="logo" href="/login">
+      {{> rentfleesLogo}}
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+      
+      <div class="col-xs-1 hidden-md hidden-sm hidden-lg">
+      <a href="#" class="nav-open" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      </div>
+      <div class="col-xs-10 hidden-md hidden-sm hidden-lg">
+        <a  href="#" class="search-modal-toggle" role="button"><i class="fa fa-search fa-lg"></i> Search your Location</a>
+      </div>
+      <div class="col-xs-1 hidden-md hidden-sm hidden-lg">
+        <a href="#" class="wishlist-btn"></a>
+      </div>
+      <div class="navbar-custom-menu hidden-xs">
+        <ul class="nav navbar-nav">
+          <li class=""><a href="addListing" id="list-your-house" class="slide left">&nbsp;</a></li>
+          <li class="dropdown whishlist"><a><i class="fa fa-heart-o fa-lg"></i><span class="hidden-xs">&nbsp;Whishlist</span></a></li>
+          {{#if currentUser}}
+          <li class="dropdown user-menu hidden-xs"><a>User Menu</a></li>
+          {{else}}
+          <li class="sign-in hidden-xs"><a data-target="#login-modal" data-toggle="modal"><i class="fa fa-sign-in fa-lg"></i> Sign in</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
   </header>
-  {{> loginModal}}
+  <div class="mobile-nav-container">
+  <div class="mobile-screen-mask"></div>
+  <div class="mobile-nav">
+    <div class="col-xs-8">
+      <a class="logo" href="#">
+        {{> rentfleesLogo}}
+      </a>
+    </div>
+    <div class="col-xs-2 pull-right">
+      <a href="#" class="nav-close pull-right" role="button">
+        <i class="fa fa-close fa-lg"></i>
+      </a>
+    </div>
+    <div class="col-xs-8">
+    <ul class="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">How it Works</a></li>
+      <li><a href="#">Sign Out</a></li>
+    </ul>
+    </div>
+  </div>
+  </div>
+  {{>loginModal}}
 </template>

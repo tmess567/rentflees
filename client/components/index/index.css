@@ -1,46 +1,6 @@
+/* temporary */
 #x{
-  padding: 20px;
-  height: 200px;
-}
-
-#top-cities-div{
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPUlEQVQYV2NkQAO6m73+X/bdxogujiIAU4RNMVwhuiQ6H6wQl3XI4oy4FMHcCJPHcDS6J2A2EqUQpJhohQAyIyYy0nBAGgAAAABJRU5ErkJggg==") repeat;
-}
-
-.bg-india{
-  background-image: none;
-}
-
-.bg-delhi{
-  background-image: url("images/bg-delhi-sm.png");
-}
-
-.bg-noida{
-  background-image: url("images/bg-noida-sm.png");
-}
-
-.bg-gurgaon{
-  background-image: url("images/bg-gurgaon-sm.png");
-}
-
-.bg-chandigarh{
-  background-image: url("images/bg-chandigarh-sm.png");
-}
-
-.bg-dehradun{
-  background-image: url("images/bg-dehradun-sm.png");
-}
-
-.bg-mumbai{
-  background-image: url("images/bg-mumbai-sm.png");
-}
-
-.bg-banglore{
-  background-image: url("images/bg-banglore-sm.png");
-}
-
-.bg-chennai{
-  background-image: url("images/bg-chennai-sm.png");
+  height: 200px
 }
 
 @media (min-width: 768px){
@@ -115,20 +75,20 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.15);
-  border-radius: 50px;
+  border-radius: inherit;
   display: block;
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.banner .body{
+.banner .city-name{
   display: block;
   text-align: center;
   height: 100%;
   padding: 26px 0;
   vertical-align: middle;
-  font-size: 32px;
+  font-size: 2em;
   margin: 0 auto;
 }
 

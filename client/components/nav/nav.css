@@ -1,106 +1,4 @@
-.main-header{
-  width: 100%;
-  max-height: 100px;
-  border-radius: 0px;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: block;
-  z-index: 500;
-}
-
-.main-header .logo{
-  -webkit-transition: width .3s ease-in-out;
-  -o-transition: width .3s ease-in-out;
-  transition: width .3s ease-in-out;
-
-  display: block;
-  float: left;
-  height: 50px;
-  font-size: 20px;
-  line-height: 50px;
-  text-align: center;
-  width: 230px;
-  padding: 0 15px;
-  font-weight: 300;
-  overflow: hidden;
-  background-color: #fff;
-  color: white;
-  cursor: pointer;
-}
-
-.logo img{
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.main-header .nav{
-  -webkit-transition: margin-left .3s ease-in-out;
-  -o-transition: margin-left .3s ease-in-out;
-  transition: margin-left .3s ease-in-out;
-
-  margin-bottom: 0;
-  margin-left: 70vw;
-  border: none;
-  height: 50px;
-  background-color: #3c8dbc;
-}
-
-.main-header .header-container{
-  display: block;
-  height: 50px;
-  margin-left: 230px;
-  position: relative;
-  background-color: #fff;
-  -webkit-transition: margin-left .3s ease-in-out;
-  -o-transition: margin-left .3s ease-in-out;
-  transition: margin-left .3s ease-in-out;
-}
-
-@media (max-width: 767px){
-  .main-header .logo {
-      width: 100%;
-      float: none;
-  }
-
-  .main-header .header-container{
-      width: 100%;
-      float: none;
-      margin: 0;
-  }
-  body{
-    padding-top: 100px !important;
-  }
-}
-
-.menu-container{
-  padding: 0;
-  float: right;
-  height: 48px;
-  margin: 0;
-  border: 0;
-  display: inline-block;
-}
-
-.menu-container .sign-in,
-.menu-container .sign-out{
-  padding: 14px;
-  margin: 0;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  width: 120px;
-  float: right;
-}
-
-.menu-container .sign-in:hover,
-.menu-container .sign-out:hover{
-  color: white;
-  background-color: #2483b5;
-}
-
-#list-my-house{
+#list-your-house{
   position: relative;
   height: 30px;
   width: 180px;
@@ -118,6 +16,7 @@
   background: none;
   z-index: 1;
   cursor: pointer;
+
   transition:         0.08s ease-in;
   -o-transition:      0.08s ease-in;
   -ms-transition:     0.08s ease-in;
@@ -138,7 +37,7 @@
 }
 
 .slide:before {
-  content: "Register Now &#8594;";
+  content: " Register Now";
   height:100%;
   width:100%;
   position:absolute;
@@ -176,3 +75,159 @@
 .slide.left:hover:before{
   left:0;
 }
+/* Header */
+.main-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  max-height: 100px;
+  z-index: 1030;
+  background-color: #fff;
+}
+
+.main-header .logo {
+  -webkit-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  display: none;
+  float: none;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+.logo svg{
+  max-height: 100%;
+  max-width: 90%;
+}
+
+.main-header > .navbar {
+  -webkit-transition: margin-left 0.3s ease-in-out;
+  -o-transition: margin-left 0.3s ease-in-out;
+  transition: margin-left 0.3s ease-in-out;
+  margin: 0;
+  border: none;
+  min-height: 50px;
+  border-radius: 0;
+}
+
+.main-header .nav-open,
+.main-header .wishlist-btn{
+  float: left;
+  background-color: transparent;
+  background-image: none;
+  font-family: fontAwesome;
+  font-size: 21px;
+  padding: 10px 3px;
+}
+
+.main-header .nav-open:before {
+  content: "\f0c9";
+}
+
+.main-header .wishlist-btn:before {
+  content: "\f08a";
+}
+
+.main-header .nav-open:hover,
+.main-header .wishlist-btn:hover {
+  color: #000;
+}
+
+.main-header .nav-open:focus,
+.main-header .nav-open:active {
+  background: transparent;
+}
+
+.main-header .search-modal-toggle{
+  border: 1px solid #f4f4f4;
+  border-radius: 2px;
+  display: inline-block;
+  margin: 9px 0;
+  padding: 4px;
+  width: 100%;
+  text-align:center;
+}
+
+.main-header .navbar-custom-menu{
+  float: right;
+}
+
+@media(min-width: 768px){
+  .main-header > .navbar{
+    margin-left: 230px;
+  }
+  .main-header > .logo{
+    float: left;
+    display: inline-block;
+    padding: 0 15px;
+    width: 230px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-custom-menu .navbar-nav > li {
+    float: left;
+  }
+  .navbar-custom-menu .navbar-nav {
+    margin: 0;
+    float: left;
+  }
+  .navbar-custom-menu .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+  }
+}
+
+.mobile-nav-container{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100%;
+  -webkit-transition: left .3s ease-in-out;
+       -o-transition: left .3s ease-in-out;
+          transition: left .3s ease-in-out;
+  z-index: 2000;
+
+}
+
+.mobile-nav{
+  position: fixed;
+  width: 75%;
+  height: 100%;
+  background: #fff;
+}
+
+.mobile-nav .logo{
+  height: 50px;
+  display: block;
+}
+
+.mobile-nav .nav{
+  padding: 20px;
+}
+
+.mobile-nav-container.open{
+  left: 0;
+}
+
+@media (min-width: 768px){
+  .mobile-nav-container{
+    display: none;
+  }
+}
+
+.nav-close{
+  display: block;
+  padding: 10px; 
+}
+

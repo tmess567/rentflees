@@ -1,7 +1,74 @@
 <template name="temp">
-	<ul id="progressbar">
-		<li class="active">Account Setup</li>
-		<li>Social Profiles</li>
-		<li>Personal Details</li>
-	</ul>
+	<div class="col-md-4 col-sm-4 col-lg-4 hidden-xs panel">
+  		<div class="filter-panel">
+  			<div class="filter-heading"> Filter your Search </div>
+  			<div class="filter-container">
+	  			<div class="filter-section">
+					<div class="filter-name">Property Type</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<input type="checkbox"> <label> Flat</label>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<input type="checkbox"> <label> PG</label>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<input type="checkbox"> <label> House</label>
+						</div>
+					</div>
+	  			</div>
+	  			<div class="filter-section">
+		        	<div class="filter-name">
+		       			Monthly Rent
+		      		</div>
+		      		<div id="price-range-div" style="text-align:center;padding-bottom:10px;">
+		       			₹ 1000 - ₹ 10000
+		      		</div>
+		      		<input data-from="2000" data-hasgrid="false" data-prefix="₹ " data-step="500" data-to="50000" data-type="double" id="price-range" name="price-range" type="text" value="1000;10000"/>
+		     	</div>
+		     	<div class="filter-section">
+					<div class="filter-name">Tenant Type</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<input type="checkbox"> <label> Boys</label>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<input type="checkbox"> <label> Girls</label>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-4">
+							<input type="checkbox"> <label> Family</label>
+						</div>
+					</div>
+	  			</div>
+			    <div class="filter-section">
+					<div class="filter-name">Furnishing</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<input type="checkbox"> <label> Furnished</label>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<input type="checkbox"> <label> Semi furnished</label>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<input type="checkbox"> <label> Unfurnished</label>
+						</div>
+					</div>
+	  			</div>
+			    <div class="filter-section">
+					<div class="filter-name">Amenities and Services</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<input type="checkbox"> <label> Parking</label>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<input type="checkbox"> <label> Power Backup</label>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<input type="checkbox"> <label> Room Service</label>
+						</div>
+					</div>
+	  			</div>
+  			</div>
+  		</div>
+  	</div>
 </template>
