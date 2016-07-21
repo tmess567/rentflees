@@ -1,0 +1,158 @@
+/*
+.list-card{
+	padding: 10px 0;
+	position: relative;
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #d0d0d0;
+}
+
+@media(min-width: 768px){
+	.list-card{
+		height: 235px;
+	}
+}
+
+.list-card .img-wrapper{
+	position: relative;
+	display: block;
+	float: none;
+	width: 100%;
+	height: auto;
+}
+
+@media(min-width: 768px){
+	.list-card .img-wrapper{
+		float: left;
+		width: 40%;
+		height: 100%;
+	}
+}
+
+.img-wrapper img{
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0 auto;
+	display: block;
+}
+
+.list-card .info-wrapper{
+	position: relative;
+	display: block;
+	float: left;
+	width: 100%;
+	height: auto;
+	padding : 0 5px;
+}
+
+@media(min-width: 768px){
+	.list-card .info-wrapper{
+		float: left;
+		width: 60%;
+		height: 100%;
+		padding : 0 10px;
+	}
+}
+
+.info-wrapper > .row{
+	padding: 5px 0;
+}
+
+@media(min-width: 768px){
+	.info-wrapper > .row{
+		padding: 10px 0;
+	}
+}
+
+.info-wrapper .info-head{
+	border-bottom: 1px solid #f4f4f4;
+}
+
+.info-head .title{
+	font-weight: 300;
+	font-size: 2rem;
+	display: inline-block;
+}
+
+.info-head .location:before{
+	font-family: fontAwesome;
+	content: "\f041 ";
+}
+
+.info-head .location{
+	color: grey;
+	font-size: 12px;
+}
+
+.info-head .build-info{
+	font-size: 12px;
+}
+
+@media(min-width: 768px){
+	.info-head .location{
+		font-size: 14px;
+	}
+	.info-head .build-info{
+		font-size: 14px;
+	}
+}
+
+.info-head .rent{
+	display: block;
+}
+
+.info-wrapper .detail{
+	border-bottom: 1px solid #f4f4f4;
+}
+
+.info-wrapper .footer .rating{
+	text-align: center;
+	color: 	#FFD700;
+}
+
+.info-wrapper .footer .btn{
+	width: 100%;
+}
+*/
+
+#uploaded-image-carousel{
+	height: 200px;
+}
+
+
+.slick-slide:before{
+	position: absolute;
+	color: black;
+	background-color: white;
+	content: attr(index);
+	z-index: 5;
+}
+
+.slick-slider img{
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	height: inherit;
+	margin: auto;
+	padding: 0 5px; 
+}
+
+img[style="opacity: 0;"]{ 
+	background: #fff url('packages/udondan_slick/vendor/slick/slick/ajax-loader.gif') center center no-repeat !important; 
+	opacity: 1 !important;
+}
+
+.slick-list, .slick-track{
+	height: 100%;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: black;
+}
+
+.slick-next{
+	right: 5px !important;
+}
+.slick-prev{
+	left: 5px !important;
+}

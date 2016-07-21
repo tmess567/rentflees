@@ -8,7 +8,7 @@
 @media (min-width: 768px) {
   .login-modal-dialog{
     width: 90%;
-    height: 420px;
+    height: auto;
     margin: 7vh auto;
   }
 }
@@ -16,14 +16,13 @@
 @media (min-width: 992px) {
   .login-modal-dialog{
     width: 900px;
-    height: 420px;
   }
 }
 
 @media (min-width: 1200px) {
   
 }
-
+/*
 .login-modal-content{
   padding: 40px 0;
   width: 100%;
@@ -36,14 +35,7 @@
     padding: 40px 25px;
   }
 }
-
-.login-modal-content .close-button{
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
+*/
 
 .internal-login,
 .external-login,
@@ -89,4 +81,103 @@
 
 #sign-in-container{
   padding-top: 5px;
+}
+
+.login-modal-dialog .side-bar{
+  height: 500px;
+  background-color: #000;
+}
+
+.login-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  -webkit-transition: left .3s ease-in-out;
+       -o-transition: left .3s ease-in-out;
+          transition: left .3s ease-in-out;
+}
+
+.login-container.center {
+  left: 0 !important;
+  visibility: visible !important;
+  z-index: 100 !important;
+}
+
+.login-container.right{
+  left: 100%;
+}
+
+.login-container.left{
+  left: -100%;
+  z-index: -1;
+}
+
+.login-content{
+  padding: 0 10px;
+}
+
+.social-login{
+  display: block;
+  margin: 40px auto;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  width: 350px;
+}
+
+.social-login:hover{
+  color: white;
+}
+
+.social-login.facebook{
+  background-color: #3b5998;
+}
+
+.social-login.google{
+  background-color: #dd4b39;
+}
+
+.email-login{
+  margin-top: 20px !important;
+}
+
+.email-login button{
+  display: block;
+  margin: 20px auto;
+}
+
+.login-modal-dialog .side-content{
+  background-color: black;
+  z-index: 200;
+}
+
+.login-modal-dialog .main-content,
+.login-modal-dialog .side-content {
+  height: 100vh; 
+}
+
+.signup-btn,
+.login-btn{
+  width: 100%;
+}
+.signup-form{
+  padding-top: 20px;
+}
+.login-form{
+  padding-top: 20px;
+}
+.signup-form,
+.login-form{
+  padding-left: 50px;
+  padding-right: 50px
+}
+
+@media(min-width: 768px){
+  .login-modal-dialog .main-content,
+  .login-modal-dialog .side-content {
+    height: 500px; 
+  }
 }

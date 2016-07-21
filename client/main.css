@@ -758,19 +758,82 @@ a,a:hover,a:visited,a:link{
   text-align: center;
 }
 
+.rent:before{
+  content: "₹";
+  font-size: 12px;
+  vertical-align: super;
+}
+
 .amount:before{
   content: "₹";
+  font-size: 10px;
+  vertical-align: super;
 }
-.amount{
-  font-size: 16px;
+
+.rent{
+  font-size: 20px;
   font-weight: 600;
+  text-align: center;
+}
+
+.amount{
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rent:after{
+  content: " /m";
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.bold-text{
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 -10px;
 }
 .sm-text{
-  font-size: 12px;
+  font-size: 10px;
+  text-align: center;
+  margin: 0 -10px;
 }
 .xs-text{
-  font-size: 10px;
+  font-size: 8px;
 }
+
+@media (min-width: 768px){
+  .bold-text{
+    font-size: 14px;
+  }
+  .sm-text{
+    font-size: 12px;
+  }
+  .xs-text{
+    font-size: 10px;
+  }
+
+  .rent:before{
+    font-size: 15px;
+  }
+
+  .amount:before{
+    font-size: 12px;
+  }
+
+  .rent{
+    font-size: 24px;
+  }
+  .amount{
+    font-size: 16px;
+  }
+
+  .rent:after{
+    font-size: 15px;
+  }
+}
+
 .caps{
   text-transform: uppercase;
 }
@@ -783,137 +846,6 @@ a,a:hover,a:visited,a:link{
   background-color: #fff;
 }
 
-/*form-progress*/
-.form-progress {
-  margin-bottom: 30px;
-  overflow: hidden;
-  /*CSS counters to number the steps*/
-  counter-reset: step;
-}
-
-.form-progress li {
-  list-style-type: none;
-  color: #c1c1c1;
-  text-transform: uppercase;
-  font-size: 9px;
-  width: 25%;
-  float: left;
-  position: relative;
-  text-align: center;
-}
-
-.form-progress li:before {
-  content: counter(step);
-  counter-increment: step;
-  width: 20px;
-  line-height: 20px;
-  display: block;
-  font-size: 10px;
-  color: #333;
-  background: #f1f1f1;
-  border-radius: 3px;
-  margin: 0 auto 5px auto;
-  padding: 0 7px;
-
-}
-
-/*progressbar connectors*/
-.form-progress li:after {
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: #f1f1f1;
-  position: absolute;
-  left: -50%;
-  top: 9px;
-  z-index: -1; /*put it behind the numbers*/
-}
-
-.form-progress li:first-child:after {
-  /*connector not needed before the first step*/
-  content: none; 
-}
-
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-.form-progress li.active:before,  .form-progress li.active:after{
-  background: #27AE60;
-  color: white;
-}
-
-.step-form fieldset{
-  display: none;
-}
-
-.step-form fieldset.active{
-  display: block;
-}
-
-.upload-photo-div{
-  height: 200px;
-  width: 100%;
-}
-
-.upload-photo-container{
-  position: relative;
-  display: inline-block;
-  height: inherit;
-  width: calc(100% - 100px);
-  overflow: hidden;
-}
-
-.upload-photo-div .left-control,
-.upload-photo-div .right-control{
-  width: 50px;
-  height: inherit;
-  display: inline-block;
-  margin: 0;
-  line-height: 15;
-  text-align: center;
-}
-
-.upload-photo-div .left-control > i,
-.upload-photo-div .right-control > i{
-  cursor: pointer;
-}
-
-.upload-photo-div .left-control{
-  float: left;
-}
-
-.upload-photo-div .right-control{
-  float: right;
-}
-
-.upload-photo-carousel{
-  position: absolute;
-  height: inherit;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  top:0;
-  left:0;
-  -webkit-transition: left .3s ease-in-out;
-  -o-transition: left .3s ease-in-out;
-  transition: left .3s ease-in-out;
-}
-
-.upload-photo-carousel li{
-  text-align: center;
-  height: inherit;
-  display: block;
-  float: left;
-}
-
-li .img-container{
-  height: inherit;
-  display: block;
-  margin: 0 1px;
-}
-
-.upload-photo-carousel li img{
-  max-height: 100%;
-}
 
 .mobile-screen-mask{
   background-color: #000;
@@ -937,6 +869,50 @@ li .img-container{
   }
 }
 
-.modal{
-  overflow: hidden;
+@media (min-width: 768px){
+  .modal{
+    overflow: hidden;
+  }
+}
+
+.modal-content{
+  border-radius: 0;
+  height: 100%;
+}
+
+.modal-header{
+  border:none;
+}
+
+.logo svg{
+  max-height: 90%;
+  max-width: 100%;
+}
+
+.modal-header .logo{
+  height: 50px;
+  display: block;
+  position: relative;
+}
+
+.modal-body{
+  padding: 20px 40px;
+  width: 100%;
+}
+
+.modal.fade:not(.in).left .modal-dialog {
+    -webkit-transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-25%, 0, 0);
+}
+
+.no-padding{
+  padding:0;
+}
+
+.row{
+  margin:0;
+}
+
+.panel{
+  border-radius:0;
 }

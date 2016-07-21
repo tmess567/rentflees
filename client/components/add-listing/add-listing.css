@@ -15,3 +15,183 @@
     margin-top: 80px;
   }
 }
+
+/*form-progress*/
+.form-progress {
+  margin-bottom: 30px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+
+.form-progress li {
+  list-style-type: none;
+  color: #c1c1c1;
+  text-transform: uppercase;
+  font-size: 9px;
+  width: 25%;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+.form-progress li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: #f1f1f1;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+  padding: 0 7px;
+
+}
+
+/*progressbar connectors*/
+.form-progress li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #f1f1f1;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1; /*put it behind the numbers*/
+}
+
+.form-progress li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none; 
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+.form-progress li.active:before,  .form-progress li.active:after{
+  background: #27AE60;
+  color: white;
+}
+
+.step-form fieldset{
+  display: none;
+}
+
+.step-form fieldset.active{
+  display: block;
+}
+
+.upload-photo-div{
+  height: 200px;
+  width: 100%;
+}
+
+.upload-photo-container{
+  position: relative;
+  height: inherit;
+  width: 100%;
+  overflow: hidden;
+}
+
+.upload-photo-div .left-control,
+.upload-photo-div .right-control{
+  position: absolute;
+  top : 0;
+  width: 30px;
+  height: inherit;
+  margin: 0;
+  line-height: 15;
+  text-align: center;
+  z-index: 300;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.upload-photo-div .left-control > i,
+.upload-photo-div .right-control > i{
+  cursor: pointer;
+  color: white;
+}
+
+.upload-photo-div .left-control{
+  left :0;
+}
+
+.upload-photo-div .right-control{
+  right :0;
+}
+
+.upload-photo-carousel{
+  position: absolute;
+  height: inherit;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  top:0;
+  left:0;
+  -webkit-transition: left .3s ease-in-out;
+  -o-transition: left .3s ease-in-out;
+  transition: left .3s ease-in-out;
+}
+
+.upload-photo-carousel li{
+  text-align: center;
+  height: inherit;
+  display: block;
+  float: left;
+  position: absolute;
+}
+
+.img-container{
+  height: inherit;
+  width: 100%;
+  margin: 0 1px;
+}
+
+.upload-photo-carousel li img{
+  max-width: 100%;
+  margin: auto;
+}
+
+
+#uploaded-image-carousel{
+  height: 200px;
+}
+
+
+.slick-slide:before{
+  position: absolute;
+  color: black;
+  background-color: white;
+  content: attr(index);
+  z-index: 5;
+}
+
+.slick-slider img{
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  height: inherit;
+  margin: auto;
+  padding: 0 5px; 
+}
+
+img[style="opacity: 0;"]{ 
+  background: #fff url('packages/udondan_slick/vendor/slick/slick/ajax-loader.gif') center center no-repeat !important; 
+  opacity: 1 !important;
+}
+
+.slick-list, .slick-track{
+  height: 100%;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: black;
+}
+
+.slick-next{
+  right: 5px !important;
+}
+.slick-prev{
+  left: 5px !important;
+}

@@ -1,5 +1,5 @@
 <template name="signupForm">
-<form class="register" method="post">
+<form class="signup-form" method="post">
 <span id="signup-msg"></span>
 <div class="form-group has-feedback">
  <input class="form-control" placeholder="Name" type="text" name="realName"/>
@@ -20,16 +20,16 @@
  </span>
 </div>
 <div class="row">
- <div class="checkbox">
+ You are a &nbsp; 
   <label>
    <input class="minimal" type="radio" name="userrole" value="tenant"/>
-   Tenant
+   Tenant 
   </label>
+   &nbsp; or an &nbsp; 
   <label>
    <input class="minimal" type="radio" name="userrole" value="owner" />
    Owner
   </label>
- </div>
 </div>
 <div id="sign-in-container">
  <button class="btn btn-primary btn-block btn-flat" type="submit">

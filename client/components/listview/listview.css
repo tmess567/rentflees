@@ -1,3 +1,4 @@
+/*
 .box{
 	position: relative;
   	height: 300px;
@@ -5,8 +6,8 @@
   	padding: 0;
     background-color: #fff;
     margin: 15px 0;
-    /*border-radius: 2px;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);*/
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
     transition: width 0.3s ease-in-out;
 }
 
@@ -18,7 +19,7 @@
 
 .box .box-image > img{
 	display: block;
-    /*border-radius: 2px 2px 0 0;*/
+    border-radius: 2px 2px 0 0;
     position: relative;
     left: 0;
     right: 0;
@@ -54,7 +55,7 @@
     z-index: 2;
     background-color: inherit;
 }
-
+*/
 .filter-panel{
     width: 100%;
     height: 100%;
@@ -79,10 +80,123 @@
     border-top: 1px solid #f4f4f4;
 }
 
+.list-card{
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.list-card .img-wrapper{
+    position: relative;
+    display: block;
+    float: none;
+    width: 100%;
+    height: 300px;
+    margin: 0;
+}
+
+.img-wrapper img{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.list-card .info-wrapper{
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    height: auto;
+    padding : 0 5px;
+}
+
+.info-wrapper > .row{
+    padding: 5px 0;
+}
+
+.info-wrapper .info-head{
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.info-head .title{
+    font-weight: 300;
+    font-size: 2rem;
+    display: inline-block;
+}
+
+.info-head .location:before{
+    font-family: fontAwesome;
+    content: "\f041 ";
+}
+
+.info-head .location{
+    color: grey;
+    font-size: 12px;
+}
+
+.info-head .build-info{
+    font-size: 12px;
+}
+
+@media(min-width: 768px){
+    .list-card{
+        height: 235px;
+    }
+
+    .list-card .img-wrapper{
+        float: left;
+        width: 30%;
+        height: 100%;
+    }
+
+    .list-card .info-wrapper{
+        float: left;
+        width: 70%;
+        height: 100%;
+        padding : 0 10px;
+    }
+
+    .info-wrapper > .row{
+        padding: 10px 0;
+    }
+
+    .info-head .location{
+        font-size: 14px;
+    }
+
+    .info-head .build-info{
+        font-size: 14px;
+    }
+}
+
+.info-head .rent{
+    display: block;
+}
+
+.info-wrapper .detail{
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.info-wrapper .footer .rating{
+    text-align: center;
+    color:  #FFD700;
+}
+
+.info-wrapper .footer .btn{
+    width: 100%;
+}
+
 #show-map{
     padding: 10px 0;
 }
 
 #sort{
     margin-top: 3px;   
+}
+
+.list-container{
+    padding:0 5px;
 }

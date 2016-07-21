@@ -1,6 +1,11 @@
 .searchbox{
   border: 2px solid #fff;
   background-color: #fff;
+  width: 100%;
+}
+
+.searchbox .input-group{
+  width: 100%;
 }
 
 .searchbox .city-selector{

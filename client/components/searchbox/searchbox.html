@@ -1,6 +1,6 @@
 <template name="searchbox">
 <div class="input-group searchbox shadow">
-    <div class="input-group-btn">
+    <div class="input-group-btn hidden-xs">
         <button type="button" class="btn dropdown-toggle city-selector border-right" data-toggle="dropdown">
           <span id="city-span">City</span> <span class="caret"></span>
         </button>
@@ -12,14 +12,14 @@
           <li><a href="#Chennai">Chennai</a></li>
           <li><a href="#Dehradun">Dehradun</a></li>
         </ul>
-    </div>        
+    </div>
     <input type="hidden" id="city">
     <div class="input-group">
-    <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
-    <input type="search" class="form-control location" placeholder="Search location">
+      <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+      <input type="search" class="form-control location" placeholder="Search location">
+      <span class="input-group-btn">
+          <button class="btn go" type="button"><span class="glyphicon glyphicon-search"></span></button>
+      </span>
     </div>
-    <span class="input-group-btn">
-        <button class="btn go" type="button"><span class="glyphicon glyphicon-search"></span></button>
-    </span>
 </div>
 </template>

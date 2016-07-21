@@ -33,3 +33,4 @@ useraccounts:bootstrap
 useraccounts:flow-routing
 service-configuration
 themeteorchef:jquery-validation
+udondan:slick

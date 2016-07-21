@@ -1,5 +1,13 @@
 Template.listview.helpers({
-	listingsCollection: function() {
-		return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-	}
+	images:['home1.jpg' ,'home2.jpg','home3.jpg','home4.jpg','home5.jpg','home6.jpg','home7.jpg','home8.jpg','home10.jpg']
+});
+
+Template.listview.onRendered(function(){
+	$('.img-wrapper').slick({
+		lazyLoad: 'ondemand',
+		arrows: true,
+		infinite: false,
+		slidesToShow: 1,
+		slidesToScroll: 1
+	});
 });

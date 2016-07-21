@@ -24,3 +24,28 @@ Template.loginForm.events({
 		});
     }
 });
+
+Template.loginModal.onRendered(function(){
+    $("#email-login .back").click(function(){
+        $("#social-connect").addClass("center");
+        $("#email-login").removeClass("center");
+    });
+    $("#forget-password .back").click(function(){
+        $("#email-login").addClass("center");
+        $("#email-login").removeClass("left");
+    });
+    $('#signup .back').click(function () {
+        $('#social-connect').addClass('center');
+        $('#signup').removeClass('center');
+    });
+    $('#social-connect .login-btn').click(function(){
+        $('#social-connect').removeClass('center');
+        $('#social-connect').addClass('left');
+        $('#email-login').addClass('center');
+    });
+    $('#social-connect .signup-btn').click(function(){
+        $('#social-connect').removeClass('center');
+        $('#social-connect').addClass('left');
+        $('#signup').addClass('center');
+    });
+});
