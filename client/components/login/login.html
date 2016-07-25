@@ -9,10 +9,11 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-         <div class="checkbox">
-            <label>
+         <div class="pull-left">
               <input type="checkbox"> Remember Me
-            </label>
+        </div>
+        <div class="pull-right">
+        <a id="forget-pass-link" href="#">Forget Password?</a>
         </div>
       </div>
       <div id="sign-in-container">
@@ -22,7 +23,7 @@
 </template>
 
 <template name="loginModal">
-  <div class="modal fade" id="login-modal">
+  <div class="modal fade in" id="login-modal">
     <div class="modal-dialog login-modal-dialog">
      <div class="modal-content">
       <!--
@@ -83,75 +84,62 @@
       -->
       <div class="modal-body no-padding">
         <div class="row">
-          <div class="col-md-6 no-padding hidden-xs" style="z-index:200">
+          <span class="close-btn" data-dismiss="modal" aria-hidden="true">&times;</span>
+          <div class="col-md-6 no-padding hidden-xs">
             <div class="side-content">
+              <img class="img-responsive" src="images/login_page.svg">
             </div>
           </div>
+
           <div class="col-md-6 col-xs-12">
             <div class="main-content">
-              <div id="social-connect" class="login-container center">
-                <div class="row">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <i class="fa fa-close"></i>
-                  </button>
-                </div>
-                <div class="row">
-                  <a class="social-login facebook">
-                    <i class="fa fa-facebook fa-lg"></i> Login with Facebook
-                  </a>
-                  <a class="social-login google">
-                    <i class="fa fa-google fa-lg"></i> Login with Google
-                  </a>
-                </div>
-                <div class="row sm-text">
-                  or use your email address
-                </div>
-                <div class="row email-login">
-                  <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2" >
-                      <button class="btn btn-primary login-btn"> Sign In </button> 
-                      <button class="btn btn-default signup-btn"> Sign Up </button>
+                
+                <div id="social-connect" class="login-slide">
+                  <div class="row">
+                    <a class="social-login facebook">
+                      <i class="fa fa-facebook fa-lg"></i> Login with Facebook
+                    </a>
+                    <a class="social-login google">
+                      <i class="fa fa-google fa-lg"></i> Login with Google
+                    </a>
+                  </div>
+                  <div class="row sm-text">
+                    or use your email address
+                  </div>
+                  <div class="row email-login">
+                    <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2" >
+                        <button class="btn btn-primary login-btn"> Sign In </button> 
+                        <button class="btn btn-default signup-btn"> Sign Up </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div id="email-login" class="login-container right">
-                <div class="row">
-                  <button type="button" class="back" aria-hidden="true">
-                    <i class="fa fa-arrow-left"></i>
-                  </button>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <i class="fa fa-close"></i>
-                  </button>
+              
+                <div id="email-login" class="login-slide">
+                  <div class="row">
+                    <span class="back" aria-hidden="true">&larr;</span><h4>Sign In</h4>
+                  </div>
+                  <div class="row">
+                    {{> loginForm}}
+                  </div>
                 </div>
-                <div class="row">
-                  {{> loginForm}}
+
+                <div id="forget-password" class="login-slide">
+                  <div class="row">
+                    <span class="back" aria-hidden="true">&larr;</span><h4>Password Reset</h4>
+                  </div>
+                  <div class="row">
+                    FORGET PASSWORD
+                  </div>
                 </div>
-              </div>
-              <div id="forget-password" class="login-container right">
-                <div class="row">
-                  <button type="button" class="back" aria-hidden="true">
-                    <i class="fa fa-arrow-left"></i>
-                  </button>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <i class="fa fa-close"></i>
-                  </button>
+
+                <div id="signup" class="login-slide">
+                  <div class="row">
+                    <span class="back" aria-hidden="true">&larr;</span><h4>Sign Up</h4>
+                  </div>
+                  <div class="row">
+                    {{>signupForm}}
+                  </div>
                 </div>
-                <div class="row">
-                  FORGET PASSWORD
-                </div>
-              </div>
-              <div id="signup" class="login-container right">
-                <div class="row">
-                  <button type="button" class="back" aria-hidden="true">
-                    <i class="fa fa-arrow-left"></i>
-                  </button>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    <i class="fa fa-close"></i>
-                  </button>
-                </div>
-                <div class="row">
-                  {{>signupForm}}
-                </div>
-              </div>
             </div>
           </div>
         </div>

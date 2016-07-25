@@ -4,24 +4,29 @@
       {{> rentfleesLogo}}
     </a>
     <nav class="navbar navbar-static-top" role="navigation">
-      <div class="col-xs-2 hidden-md hidden-sm hidden-lg">
-      <div class="row">
-      <a href="#" class="nav-open" data-target="#mobile-nav-modal" data-toggle="modal" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-      </div>
-      </div>
-      <div class="col-xs-8 hidden-md hidden-sm hidden-lg">
-        <a  href="#" class="search-modal-toggle" role="button"><i class="fa fa-search fa-lg"></i> Search your Location</a>
-      </div>
-      <div class="col-xs-2 hidden-md hidden-sm hidden-lg">
-        <div class="row">
-        <a href="#" class="wishlist-btn"></a>
-        </div>
+      <div class="hidden-sm hidden-md hidden-lg">
+        <ul class="nav mobile-nav">
+          <li> 
+            <div class="col-xs-2">
+              <a href="#" class="nav-open" data-target="#mobile-nav-modal" data-toggle="modal" role="button"><span class="sr-only">Toggle navigation</span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="col-xs-8">
+            <a  href="#" class="search-modal-toggle" role="button"><i class="fa fa-search fa-lg"></i> Search your Location</a>
+            </div>
+          </li>
+          <li>
+            <div class="col-xs-2">
+              <a href="#" class="wishlist-btn"></a>
+            </div>
+          </li>
+        </ul>
       </div>
       <div class="navbar-custom-menu hidden-xs">
         <ul class="nav navbar-nav">
-          <li class=""><a href="addListing" id="list-your-house" class="slide left">&nbsp;</a></li>
+          <li><a href="addListing" id="list-your-house" class="slide left">&nbsp;</a></li>
           <li class="dropdown whishlist"><a href="#"><i class="fa fa-heart-o fa-lg"></i><span class="hidden-xs">&nbsp;Whishlist</span></a></li>
           {{#if currentUser}}
           <li class="dropdown user-menu hidden-xs"><a href="#">User Menu</a></li>

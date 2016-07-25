@@ -194,3 +194,13 @@
     width: 270px;
   }    
 }
+
+.mobile-nav > li  a{
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.mobile-nav > li a:hover{
+  cursor: pointer;
+}

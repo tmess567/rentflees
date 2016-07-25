@@ -17,6 +17,14 @@ body {
   padding-top: 5px;
 }
 
+.bg-light-grey{
+  background-color: #f7f8f9;
+}
+
+.bg-white{
+  background-color: #fff;
+}
+
  html, body, .container-table {
     height: 100%;
     width: 100%;
@@ -915,4 +923,18 @@ a,a:hover,a:visited,a:link{
 
 .panel{
   border-radius:0;
+}
+
+.auto-margin{
+  margin: 0 auto;
+  display: block;
+}
+
+.center-text{
+  text-align: center;
+}
+
+svg{
+  max-height: 100%;
+  max-width: 100%;
 }

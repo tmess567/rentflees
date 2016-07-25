@@ -47,7 +47,6 @@
   border-radius: 3px;
   margin: 0 auto 5px auto;
   padding: 0 7px;
-
 }
 
 /*progressbar connectors*/
@@ -74,97 +73,14 @@
   color: white;
 }
 
-.step-form fieldset{
-  display: none;
-}
-
-.step-form fieldset.active{
+.slick-slide fieldset{
   display: block;
+  margin: 0 auto;
+  float: none;
 }
-
-.upload-photo-div{
-  height: 200px;
-  width: 100%;
-}
-
-.upload-photo-container{
-  position: relative;
-  height: inherit;
-  width: 100%;
-  overflow: hidden;
-}
-
-.upload-photo-div .left-control,
-.upload-photo-div .right-control{
-  position: absolute;
-  top : 0;
-  width: 30px;
-  height: inherit;
-  margin: 0;
-  line-height: 15;
-  text-align: center;
-  z-index: 300;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.upload-photo-div .left-control > i,
-.upload-photo-div .right-control > i{
-  cursor: pointer;
-  color: white;
-}
-
-.upload-photo-div .left-control{
-  left :0;
-}
-
-.upload-photo-div .right-control{
-  right :0;
-}
-
-.upload-photo-carousel{
-  position: absolute;
-  height: inherit;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  top:0;
-  left:0;
-  -webkit-transition: left .3s ease-in-out;
-  -o-transition: left .3s ease-in-out;
-  transition: left .3s ease-in-out;
-}
-
-.upload-photo-carousel li{
-  text-align: center;
-  height: inherit;
-  display: block;
-  float: left;
-  position: absolute;
-}
-
-.img-container{
-  height: inherit;
-  width: 100%;
-  margin: 0 1px;
-}
-
-.upload-photo-carousel li img{
-  max-width: 100%;
-  margin: auto;
-}
-
 
 #uploaded-image-carousel{
   height: 200px;
-}
-
-
-.slick-slide:before{
-  position: absolute;
-  color: black;
-  background-color: white;
-  content: attr(index);
-  z-index: 5;
 }
 
 .slick-slider img{

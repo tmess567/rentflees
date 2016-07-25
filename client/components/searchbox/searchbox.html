@@ -1,25 +1,54 @@
 <template name="searchbox">
+
+<div class="searchbox shadow hidden-sm hidden-md- hidden-lg">
+      <div class="mobile-dropdown input-group-btn">
+      <button class="btn dropdown-toggle city-selector" data-target="#city-menu-modal" data-toggle="modal">
+        <span id="city-span">Select City</span> <span class="caret"></span>
+      </button>
+      <div id="city-menu-modal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h3 class="modal-title">Select Your City</h3>
+            </div>
+            <div class="modal-body">
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#Delhi" data-dismiss="modal">Delhi</a></li>
+                <li><a href="#Mumbai" data-dismiss="modal">Mumbai</a></li>
+                <li><a href="#Banglore" data-dismiss="modal">Banglore</a></li>
+                <li><a href="#Noida" data-dismiss="modal">Noida</a></li>
+                <li><a href="#Chennai" data-dismiss="modal">Chennai</a></li>
+                <li><a href="#Dehradun" data-dismiss="modal">Dehradun</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+</div>
+
 <div class="input-group searchbox shadow">
-    <div class="input-group-btn hidden-xs">
-        <button type="button" class="btn dropdown-toggle city-selector border-right" data-toggle="dropdown">
-          <span id="city-span">City</span> <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="#Delhi">Delhi</a></li>
-          <li><a href="#Mumbai">Mumbai</a></li>
-          <li><a href="#Banglore">Banglore</a></li>
-          <li><a href="#Noida">Noida</a></li>
-          <li><a href="#Chennai">Chennai</a></li>
-          <li><a href="#Dehradun">Dehradun</a></li>
-        </ul>
-    </div>
-    <input type="hidden" id="city">
-    <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
-      <input type="search" class="form-control location" placeholder="Search location">
-      <span class="input-group-btn">
-          <button class="btn go" type="button"><span class="glyphicon glyphicon-search"></span></button>
-      </span>
-    </div>
+  <div class="input-group-btn hidden-xs">
+      <button type="button" class="btn dropdown-toggle city-selector border-right" data-toggle="dropdown">
+        <span id="city-span">City</span> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#Delhi">Delhi</a></li>
+        <li><a href="#Mumbai">Mumbai</a></li>
+        <li><a href="#Banglore">Banglore</a></li>
+        <li><a href="#Noida">Noida</a></li>
+        <li><a href="#Chennai">Chennai</a></li>
+        <li><a href="#Dehradun">Dehradun</a></li>
+      </ul>
+  </div>
+  <input type="hidden" id="city">
+  <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-map-marker fa-lg"></i></span>
+    <input type="search" class="form-control location" placeholder="Search location">
+    <span class="input-group-btn">
+        <button class="btn go" type="button"><span class="glyphicon glyphicon-search"></span></button>
+    </span>
+  </div>
 </div>
 </template>

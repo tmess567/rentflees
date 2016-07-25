@@ -26,26 +26,36 @@ Template.loginForm.events({
 });
 
 Template.loginModal.onRendered(function(){
-    $("#email-login .back").click(function(){
-        $("#social-connect").addClass("center");
-        $("#email-login").removeClass("center");
+    $('.login-btn').click(function(){
+        $('.main-content').slickGoTo(1,false);
     });
-    $("#forget-password .back").click(function(){
-        $("#email-login").addClass("center");
-        $("#email-login").removeClass("left");
+
+    $('.signup-btn').click(function(){
+        $('.main-content').slickGoTo(3,false);
     });
-    $('#signup .back').click(function () {
-        $('#social-connect').addClass('center');
-        $('#signup').removeClass('center');
+
+    $('#forget-pass-link').click(function(){
+        $('.main-content').slickGoTo(2,false);
     });
-    $('#social-connect .login-btn').click(function(){
-        $('#social-connect').removeClass('center');
-        $('#social-connect').addClass('left');
-        $('#email-login').addClass('center');
+
+    $('#forget-password .back').click(function(){
+        $('.main-content').slickGoTo(1,false);
     });
-    $('#social-connect .signup-btn').click(function(){
-        $('#social-connect').removeClass('center');
-        $('#social-connect').addClass('left');
-        $('#signup').addClass('center');
+    $('#email-login .back').click(function(){
+        $('.main-content').slickGoTo(0,false);
+    });
+    $('#signup .back').click(function(){
+        $('.main-content').slickGoTo(0,false);
+    });
+
+    $('#login-modal').one('shown.bs.modal',function(){
+        console.log('login open');
+        $('.main-content').slick({
+            arrows: false,
+            draggable: false,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
     });
 });

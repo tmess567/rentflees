@@ -113,7 +113,7 @@
 .info-wrapper .footer .btn{
 	width: 100%;
 }
-*/
+
 
 #uploaded-image-carousel{
 	height: 200px;
@@ -156,3 +156,25 @@ img[style="opacity: 0;"]{
 .slick-prev{
 	left: 5px !important;
 }
+
+.slick-track{
+	counter-reset: index;
+}
+.slick-slide:before {
+  content: counter(index);
+  counter-increment: index;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: #d0d0d0;
+  border-radius: 50%;
+  margin: 0 auto 5px auto;
+  padding: 0 7px;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+*/

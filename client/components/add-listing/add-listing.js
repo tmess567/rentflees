@@ -1,53 +1,59 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
-/*
-function setWidth(){
-  var e = $("#photo");
-  var width = 0;
-  $("#photo .img-container").each(function (){
-    $(this).load();
-    width += $(this).width();
-  });
-  console.log(width);
-
-  $("#photo .upload-photo-carousel").css('width', width + 'px');
-  
-  $(".upload-photo-div .left-control > i").click(function(){
-    var cont = $("#photo .upload-photo-container");
-    var carousel = $("#photo .upload-photo-carousel");
-    var left = parseInt(carousel.css("left").replace(/[^-\d\.]/g, ''));
-    console.log(carousel);
-    var container_width = cont.width();
-    var newLeft = left + container_width;
-    console.log('oldLeft '+ left);
-    console.log('newLeft '+ newLeft);
-    if(newLeft <= 0){
-      carousel.css("left",newLeft + "px");
-    }
-  });
-
-  $(".upload-photo-div .right-control > i").click(function(){
-    var cont = $("#photo .upload-photo-container");
-    var carousel = $("#photo .upload-photo-carousel");
-    var left = parseInt(carousel.css("left").replace(/[^-\d\.]/g, ''));
-    console.log(carousel);
-    var container_width = cont.width();
-    var newLeft = left - container_width;
-    console.log('oldLeft '+ left);
-    console.log('newLeft '+ newLeft);
-    if(-newLeft <= width){
-      carousel.css("left", newLeft + "px");
-    }
-  });
-}
-*/
 
 Template.addListing.onRendered ( function() {
+    
+    /*
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+    function showPosition(position) {
+        console.log("Latitude: " + position.coords.latitude); 
+        console.log("Longitude: " + position.coords.longitude); 
+    }
+
+    */
+
+    $('.slider').slick({
+      arrows: false,
+      draggable: false,
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      onBeforeChange: function(event, currentSlide, nextSlide){
+        console.log(currentSlide, nextSlide);
+        if(nextSlide > currentSlide)
+          $("ul.form-progress > li:nth-child("+ (nextSlide+1) +")").addClass("active");
+        else
+          $("ul.form-progress > li:nth-child("+ (currentSlide+1) +")").removeClass("active");
+      }
+    });
+
+    $("#file").change(function(){
+        readURL(this);
+    });
+
+    $('.next-step').click(function(e){
+      e.preventDefault();
+      console.log("NEXT");
+      $('.slider').slickNext();
+    });
+
+    $('.prev-step').click(function(e){
+      e.preventDefault();
+      console.log("PREV");
+      $('.slider').slickPrev();
+    });
+
     $('#uploaded-image-carousel').slick({
       arrows: true,
       infinite: false,
       speed: 300,
       slidesToShow: 4,
       slidesToScroll: 4,
+      focusOnSelect: true,
       responsive: [
         {
           breakpoint: 1024,
@@ -76,15 +82,8 @@ Template.addListing.onRendered ( function() {
             arrows: true
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
     });
-
-  $("#file").change(function(){
-      readURL(this);
-  });
 });
 
 function readURL(input) {
@@ -94,7 +93,7 @@ function readURL(input) {
       reader.onload = function (e) {
         let img = document.createElement('img');
             $(img).attr('src', e.target.result);
-            let dom = $('<div/>', {"class": "col-lg-3 col-md-3 col-sm-6 col-xs-12 no-padding" }).append(img);
+            let dom = $('<div/>', {"class": "col-lg-3 col-md-3 col-sm-6 col-xs-12 no-padding", "tabindex": "0" }).append(img);
             $('#uploaded-image-carousel').slickAdd(dom[0]);
             $('#uploaded-image-carousel').slickGoTo(-1,false);
         };
@@ -103,51 +102,6 @@ function readURL(input) {
       }
     }
 }
-/*
-Template.addListing.onRendered(function(){
-  console.log('rendered');
-});
-
-Template.addListing.onCreated(function(){
-  console.log('created' + $(this));
-});
-*/
-Template.addListing.events({
-  "click fieldset[data-next] .next" : function(event) {
-      event.preventDefault();
-      var current_fs = $(event.target).closest('fieldset');
-      var next_fs = $('#' + current_fs.attr("data-next"));
-      if(next_fs != null){
-        var form = current_fs.parent();
-        console.log(current_fs);
-        console.log(next_fs);
-        var progress = form.find("ul.form-progress > li.active").last();
-        progress.next("li").addClass("active");
-        current_fs.removeClass("active");
-        var flag = current_fs.attr("data-next") === 'photo';
-        next_fs.addClass("active");
-        if(flag){
-          setWidth();
-        }
-      }
-    },
-  "click fieldset[data-prev] .prev" : function(event) {
-    event.preventDefault();
-    var current_fs = $(event.target).closest('fieldset');
-    var prev_fs = $('#' + current_fs.attr("data-prev"));
-    if(prev_fs != null){
-      var form = current_fs.parent();
-      console.log(current_fs);
-      console.log(prev_fs);
-      var progress = form.find("ul.form-progress > li.active").last();
-      progress.removeClass("active");
-      current_fs.removeClass("active");
-      prev_fs.addClass("active");
-    }
-  },
-
-});
-
 
 Meteor.subscribe('listings');
 var imageName = null;

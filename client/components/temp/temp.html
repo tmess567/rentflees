@@ -10,3 +10,263 @@
 	</div>
 	<input type="file" id="file" multiple>
 </template>
+
+<template name="temp2">
+<div class="container-fluid">
+<h4>Add Listings</h4>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+<form class="from-horizontal step-form" role="form">
+    
+  <ul class="form-progress">
+    <li class="active">Basic Info</li>
+    <li>Amenities</li>
+    <li>Location</li>
+    <li>Photos</li>
+  </ul>
+
+  <div class="slider">
+    <div>
+      <fieldset class="col-md-6" id="basic" data-next="amenities">
+        <div class="form-group">
+        <label>Title</label>
+        <input name="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+        <label>Type</label>
+        <select name="type" class="form-control">
+          <option>Room</option>
+          <option>Apartment</option>
+          <option>Entire House</option>
+        </select>
+        </div>
+        
+        <div class="form-group">
+        <label>Furnishing</label>
+        <select name="type" class="form-control">
+          <option>Fully Furnished</option>
+          <option>Semi Furnished</option>
+          <option>Unfurnished</option>
+        </select>
+        </div>
+
+        <div class="form-group">
+        <label>Tentant Preference (Gender)</label>
+        <div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Male
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Female
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Family
+        </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <label>Tentant Preference (Occupation)</label>
+        <div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+        <input type="checkbox"> Student
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
+        <input type="checkbox"> Employee
+        </div>
+        </div>
+        </div>
+
+        <div class="form-group">
+        <label for="rent" >Monthly Rent</label>
+        <div class="input-group">
+        <span class="input-group-addon">₹</span>
+        <input type="text" class="form-control">
+        <span class="input-group-addon">per month</span>
+        </div>
+        </div>
+        
+        <div class="form-group">
+        <label>Security Deposit</label>
+        <div class="input-group">
+        <span class="input-group-addon">₹</span>
+        <input type="text" class="form-control">
+        </div>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-6 pull-right " >
+          <button class="btn btn-primary btn-block btn-flat next-step">Next</button>
+       </div>
+      </fieldset>
+    </div>
+    <div>
+      <fieldset  class="col-md-10" id="amenities" data-prev="basic" data-next="location">
+        <label>Food Services</label>
+        <div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox" name="breakfast"> Breakfast
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox" name="lunch"> Lunch
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox" name="dinner"> Dinner
+        </div>
+        </div>
+
+        <label>House Amenities and Services</label>
+        <div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> TV
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> DTH Service
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Wi-Fi
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Fridge
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> AC
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Geyser
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Water Purifier 
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Washing Machine
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Sofa
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Table
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Cupboards
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Shoe Rack
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Gas Stove
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Modular Kitchen
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Room Service
+        </div>
+        </div>
+
+        <label>Building Amenities and Service</label>
+        <div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> CCTV
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Security
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Power Backup
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Water Supply
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Clubhouse
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Parking
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Swimming Pool
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Gym
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <input type="checkbox"> Elevator
+        </div>
+        </div>
+
+        <div class="col-md-2 col-sm-4 col-xs-6 pull-left" >
+          <button class="btn btn-primary btn-block btn-flat prev-step">Back</button>
+       </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 pull-right" >
+          <button class="btn btn-primary btn-block btn-flat next-step">Next</button>
+       </div>
+      </fieldset>
+    </div>
+    <div >
+      <fieldset id="location" data-prev="amenities" data-next="photo">
+        <div>
+        <div class="col-md-8 col-sm-12 col-xs-12"> 
+        {{> mapAdd}}
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="form-group">
+            <label>City</label>
+            <select class="form-control">
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Banglore">Banglore</option>
+              <option value="Channai">Chennai</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Locality</label>
+            <input name="text" class="form-control" id="pac-input">
+          </div>
+          <div class="form-group">
+            <label>Landmark</label>
+            <input name="text" class="form-control" id="pac-input">
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input name="text" class="form-control" id="pac-input">
+          </div>
+        </div>
+        </div>
+        <p>Now point marker in map on right side to the exact location.</p>
+        <div class="col-md-2 col-sm-4 col-xs-6 pull-left" >
+          <button class="btn btn-primary btn-block btn-flat prev-step">Back</button>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 pull-right" >
+          <button class="btn btn-primary btn-block btn-flat next-step">Next</button>
+        </div>
+      </fieldset>
+    </div>
+    <div>
+      <fieldset>
+        <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div id="uploaded-image-carousel">
+          {{#each images}}
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 no-padding"><img src="images/{{.}}" /></div>
+          {{/each}}
+          </div>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-offset-4 col-md-2">
+          <input type="file" class="form-control" id="file" multiple>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary btn-block btn-flat"><i class="fa fa-cloud-upload fa-lg"></i></button>
+        </div>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 pull-left" >
+          <button class="btn btn-primary btn-block btn-flat prev-step">Back</button>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</template>
