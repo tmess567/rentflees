@@ -18,7 +18,8 @@
 
 /*form-progress*/
 .form-progress {
-  margin-bottom: 30px;
+  margin: 15px 0;
+  padding: 0;
   overflow: hidden;
   /*CSS counters to number the steps*/
   counter-reset: step;
@@ -57,7 +58,7 @@
   background: #f1f1f1;
   position: absolute;
   left: -50%;
-  top: 9px;
+  top: 9px; 
   z-index: -1; /*put it behind the numbers*/
 }
 
@@ -81,6 +82,9 @@
 
 #uploaded-image-carousel{
   height: 200px;
+}
+.dashed-border{
+  border: 2px dashed #ccc;
 }
 
 .slick-slider img{
@@ -110,4 +114,34 @@ img[style="opacity: 0;"]{
 }
 .slick-prev{
   left: 5px !important;
+}
+
+.step-form .slider{
+  margin-bottom: 0;
+}
+
+.step-form fieldset{
+  padding:20px;
+  border: 1px solid #d2d6de;
+  background-color: #fff;
+}
+
+.step-form legend{
+  padding: 5px;
+  width: auto;
+  background-color: inherit;
+  border: 1px solid #d2d6de;
+}
+
+.uploaded-img-wrapper{
+  height: 100%;
+}
+.uploaded-img-wrapper .prompt-box{
+  margin: 2px;
+  border: 1px dashed #d2d6de; 
+}
+
+#add-photo{
+  display: block;
+  margin: 78px auto;
 }

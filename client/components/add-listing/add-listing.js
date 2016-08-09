@@ -31,10 +31,6 @@ Template.addListing.onRendered ( function() {
       }
     });
 
-    $("#file").change(function(){
-        readURL(this);
-    });
-
     $('.next-step').click(function(e){
       e.preventDefault();
       console.log("NEXT");
@@ -84,18 +80,38 @@ Template.addListing.onRendered ( function() {
         }
       ]
     });
+
+    $('#add-photo').click(function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var files = $('#file').files;
+        console.log(files);
+        $('#file').click();
+        if (files)
+          console.log(files);
+    });
+
+    $("#file").change(function(){
+        readURL(this);
+    });
 });
 
 function readURL(input) {
-    if (input.files ) {
+    let count = $('#uploaded-image-carousel .slick-slide:not(.slick-cloned)').length;
+    if (input.files) {
+      console.log(input.files);
       for (let i = 0; i < input.files.length; i++) {
         let reader = new FileReader();
       reader.onload = function (e) {
         let img = document.createElement('img');
             $(img).attr('src', e.target.result);
             let dom = $('<div/>', {"class": "col-lg-3 col-md-3 col-sm-6 col-xs-12 no-padding", "tabindex": "0" }).append(img);
+            let prompt_dom = $('#uploaded-image-carousel .slick-slide:last-child')
+            $('#uploaded-image-carousel').slickRemove(count-1);
             $('#uploaded-image-carousel').slickAdd(dom[0]);
-            $('#uploaded-image-carousel').slickGoTo(-1,false);
+            $('#uploaded-image-carousel').slickAdd(prompt_dom[0]);
+            count = $('#uploaded-image-carousel .slick-slide:not(.slick-cloned)').length;
+            $('#uploaded-image-carousel').slickGoTo(count-1,false);
         };
         file = input.files[i];
         reader.readAsDataURL(file);

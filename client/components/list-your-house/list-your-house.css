@@ -1,0 +1,97 @@
+#list-house-container{
+	height: 100%;
+	background-color: #e6eaf3;
+}
+
+#list-house-container .h1{
+	color: #050505;
+	text-align: center;
+	padding: 20px;
+}
+
+#options{
+	margin: 10px 0;
+}
+
+.option{
+	padding: 30px 0;
+}
+
+#op1:hover, 
+#op2:hover,
+#op1:focus, 
+#op2:focus{
+	color: #fff;
+	background-color: #000;
+}
+
+#op1, 
+#op2{
+	margin: 0 auto;
+	display: block;
+	width: 50%;
+}
+
+@media(max-width: 767px){
+	.separator{
+	text-align: center;
+	}
+
+	.separator:before{
+		content: " ";
+		position: absolute;
+		border-top: 1px solid;
+		width: 48%;
+		height: 1px;
+		left:0;
+		top: 50%;
+	}
+
+	.separator:after{
+		content: " ";
+		position: absolute;
+		border-top: 1px solid;
+		width: 48%;
+		right: 0;
+		top: 50%;
+	}
+}
+
+@media(min-width: 768px){
+	.separator{
+		text-align: center;
+		padding-top: 100%;
+	}
+
+	.separator:before{
+		content: " ";
+		position: absolute;
+		border-left: 1px solid;
+		height: 45%;
+		left: 50%;
+		top: 0;
+	}
+
+	.separator:after{
+		content: " ";
+		position: absolute;
+		border-left: 1px solid;
+		height: 48%;
+		left: 50%;
+		bottom: 0;
+	}
+
+	.OR:before{
+		content: "OR";
+		position: absolute;
+		top: 45%;
+		right: -10px;
+		font-size: 10px;
+	}
+
+	.OR:after{
+		content: " ";
+		border: 1px solid white;
+		position: absolute;
+	}
+}

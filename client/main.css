@@ -684,21 +684,24 @@ a,a:hover,a:visited{
   -moz-appearance: none;
   appearance: none;
 }
+
 .btn{
   border-radius: 0;
 }
+
 .form-control {
   border-radius: 0;
-  box-shadow: none;
-  border-color: #d2d6de;
+  height: 40px;
+  /*box-shadow: none;
+  border-color: #d2d6de;*/
 }
-
+/*
 .form-control:focus {
     border: 1px solid #3c8dbc;
     box-shadow: none;
     padding: 6px 12px;
 }
-
+*/
 a,a:hover,a:visited,a:link{
   text-decoration: none;
 }
@@ -937,4 +940,8 @@ a,a:hover,a:visited,a:link{
 svg{
   max-height: 100%;
   max-width: 100%;
+}
+
+input[type="checkbox"]{
+  margin: 8px 0;
 }

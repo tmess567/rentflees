@@ -29,11 +29,10 @@
 
 <template name="addListing">
 <div class="container-fluid">
-<h4>Add Listings</h4>
 
 <div class="col-md-12 col-sm-12 col-xs-12">
 <form class="from-horizontal step-form" role="form">
-    
+  
   <ul class="form-progress">
     <li class="active">Basic Info</li>
     <li>Amenities</li>
@@ -43,12 +42,16 @@
 
   <div class="slider">
     <div>
-      <fieldset class="col-md-6" id="basic" data-next="amenities">
+      <fieldset class="col-md-10" id="basic" data-next="amenities">
+        <legend>Step 1: <strong>Basic Details</strong> </legend>
+        <div class="col-md-12">
         <div class="form-group">
         <label>Title</label>
-        <input name="text" class="form-control">
+        <input name="text" class="form-control" placeholder="An eye-candy title for your house">
+        </div>
         </div>
 
+        <div class="col-md-6">
         <div class="form-group">
         <label>Type</label>
         <select name="type" class="form-control">
@@ -57,7 +60,9 @@
           <option>Entire House</option>
         </select>
         </div>
-        
+        </div>
+
+        <div class="col-md-6">
         <div class="form-group">
         <label>Furnishing</label>
         <select name="type" class="form-control">
@@ -66,22 +71,26 @@
           <option>Unfurnished</option>
         </select>
         </div>
+        </div>
 
+        <div class="col-md-6">
         <div class="form-group">
-        <label>Tentant Preference (Gender)</label>
-        <div>
-        <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Male
-        </div>
-        <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Female
-        </div>
-        <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Family
-        </div>
+          <label>Tentant Preference (Gender)</label>
+          <div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <input type="checkbox"> Male
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <input type="checkbox"> Female
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+              <input type="checkbox"> Family
+            </div>
+          </div>
         </div>
         </div>
 
+        <div class="col-md-6">
         <div class="form-group">
         <label>Tentant Preference (Occupation)</label>
         <div>
@@ -93,16 +102,20 @@
         </div>
         </div>
         </div>
+        </div>
 
+        <div class="col-md-6">
         <div class="form-group">
         <label for="rent" >Monthly Rent</label>
         <div class="input-group">
         <span class="input-group-addon">₹</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" placeholder="Mahine ka kitna loge">
         <span class="input-group-addon">per month</span>
         </div>
         </div>
-        
+        </div>
+
+        <div class="col-md-6">
         <div class="form-group">
         <label>Security Deposit</label>
         <div class="input-group">
@@ -110,6 +123,8 @@
         <input type="text" class="form-control">
         </div>
         </div>
+        </div>
+        
         <div class="col-md-3 col-sm-4 col-xs-6 pull-right " >
           <button class="btn btn-primary btn-block btn-flat next-step">Next</button>
        </div>
@@ -117,6 +132,7 @@
     </div>
     <div>
       <fieldset  class="col-md-10" id="amenities" data-prev="basic" data-next="location">
+        <legend>Step 2: <strong>Amenities and Services</strong> </legend>
         <label>Food Services</label>
         <div>
         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -218,8 +234,9 @@
        </div>
       </fieldset>
     </div>
-    <div >
+    <div>
       <fieldset id="location" data-prev="amenities" data-next="photo">
+        <legend>Step 3: <strong>Location</strong> </legend>
         <div>
         <div class="col-md-8 col-sm-12 col-xs-12"> 
         {{> mapAdd}}
@@ -259,9 +276,17 @@
     </div>
     <div>
       <fieldset>
+        <legend>Step 4: <strong>Add Photos</strong> </legend>
         <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div id="uploaded-image-carousel">
+          <div id="uploaded-image-carousel" class="dashed-border">
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 no-padding">
+                <div class="uploaded-img-wrapper">
+                  <div class="prompt-box">
+                    <button class="btn btn-primary" id="add-photo">Add photos</button>
+                  </div>
+                </div>
+              </div>
           {{#each images}}
               <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 no-padding"><img src="images/{{.}}" /></div>
           {{/each}}
@@ -270,10 +295,7 @@
         </div>
         <div class="row">
         <div class="col-md-offset-4 col-md-2">
-          <input type="file" class="form-control" id="file" multiple>
-        </div>
-        <div class="col-md-2">
-          <button class="btn btn-primary btn-block btn-flat"><i class="fa fa-cloud-upload fa-lg"></i></button>
+          <input type="file" class="form-control hidden" id="file" multiple>
         </div>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 pull-left" >
