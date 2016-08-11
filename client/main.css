@@ -3,9 +3,10 @@
   height: 100%;
 }
 
- html, body, .container-table {
+html, body, .container-table {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .container-table {

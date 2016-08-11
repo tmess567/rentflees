@@ -16,7 +16,7 @@ var userRoutes = FlowRouter.group({
 
 anonRoutes.route('/', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "listings"});
+    BlazeLayout.render("mainLayout", {content: "index"});
   }
 });
 

@@ -7,11 +7,10 @@ Template.signupForm.events({
         user.username = $('[name=realName]').val();
         user.email = $('[name=emailSel]').val();
         user.password = $('[name=password1]').val();
-        //user.password2 = $('[name=password2]').val();
-        //user.role = $('[name=userrole]').val();
         user.profile = {};
-        if($('[name=password1]').val() == $('[name=password2]').val())
+        if($('[name=password1]').val() == $('[name=password2]').val()){
             Meteor.call( "registerUser",user);
+        }
         else
         {
             print.innerHTML="Passwords don't match, Try again !"
