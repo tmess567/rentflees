@@ -1,0 +1,23 @@
+.btn-click,
+.btn-click:focus,
+.btn-click:active,
+.btn-click:hover{
+	border-radius: 3px;
+	background-color: #0FACF3;
+	color: white;
+	font-weight: 900;
+}
+
+.btn-click.disabled{
+	background-color: #decccc;
+}
+
+.ui .form-control:focus{
+	border-color: #0FACF3;
+}
+
+.ui .form-control{
+	border-radius: 3px;
+	border-color: #0FACF3;
+}
+
