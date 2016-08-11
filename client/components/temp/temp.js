@@ -1,3 +1,4 @@
+/*
 Template.temp.helpers({
 	//images:['home1.jpg' ,'home2.jpg','home3.jpg','home4.jpg','home5.jpg','home6.jpg','home7.jpg','home8.jpg','home9.jpg']
 });
@@ -17,7 +18,7 @@ Template.temp2.onRendered ( function() {
 		  	else
 		  		$("ul.form-progress > li:nth-child("+ (currentSlide+1) +")").removeClass("active");
 		}
-	  /*
+	  
 	  responsive: [
 	    {
 	      breakpoint: 1024,
@@ -45,7 +46,7 @@ Template.temp2.onRendered ( function() {
 	    // You can unslick at a given breakpoint now by adding:
 	    // settings: "unslick"
 	    // instead of a settings object
-	  ]*/
+	  ]
     });
 	$("#file").change(function(){
 	    readURL(this);
@@ -64,4 +65,5 @@ Template.temp2.onRendered ( function() {
 	});
 });
 
+*/
 

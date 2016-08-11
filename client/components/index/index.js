@@ -6,6 +6,7 @@ Template.index.onRendered(function(){
 	  $('#top-cities-div').toggleClass('bg-' + city);
 	});
 
+	/*
 	$('.photo').slick({
 		dots: false,
 		arrows: false,
@@ -20,4 +21,5 @@ Template.index.onRendered(function(){
 		//centerMode: true,
   		//variableWidth: true
 	});
+	*/
 });

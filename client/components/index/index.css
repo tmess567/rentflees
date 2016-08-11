@@ -156,11 +156,11 @@
   cursor: pointer;
 }
 
-.img-wrapper{
+.hover-img-wrapper{
   position: relative;
 }
 
-.img-wrapper:before{
+.hover-img-wrapper:before{
   content: "";
   position: absolute;
   left: 0;
@@ -172,7 +172,7 @@
   z-index: 2;
 }
 
-.img-wrapper:hover:before{
+.hover-img-wrapper:hover:before{
   background: rgba(0,0,0,0.2);
 }
 
