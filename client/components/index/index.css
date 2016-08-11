@@ -3,6 +3,8 @@
 @media (min-width: 768px){
 #main-gif{
   background: url('images/index-background.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #top-cities-div{
