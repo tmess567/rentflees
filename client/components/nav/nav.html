@@ -26,12 +26,36 @@
       </div>
       <div class="navbar-custom-menu hidden-xs">
         <ul class="nav navbar-nav">
-          <li><a href="list-your-house" id="list-your-house" class="slide left">&nbsp;</a></li>
-          <li class="dropdown whishlist"><a href="#"><i class="fa fa-heart-o fa-lg"></i><span class="hidden-xs">&nbsp;Whishlist</span></a></li>
           {{#if currentUser}}
-          <li class="dropdown user-menu hidden-xs"><a href="#">User Menu</a></li>
+          
+          <!--
+            <li><a href="list-your-house" id="list-your-house" class="slide left">&nbsp;</a></li>
+          -->
+          
+          <li><a href="/addListing" data-dismiss="modal">List Your House</a></li>
+          <li><a href="#" data-dismiss="modal">Dashboard</a></li>
+          <li><a href="#" data-dismiss="modal">Profile</a></li>
+          <li><a href="#" data-dismiss="modal">How it Works</a></li>
+          <li><a href="#" data-dismiss="modal" id="sign-out">
+            <i class="fa fa-sign-in fa-lg"></i>Sign Out
+          </a></li>
+
+          <!--
+            <li class="dropdown user-menu hidden-xs"><a href="#">User Menu</a></li>
+            <li class="dropdown whishlist">
+              <a href="#">
+                <i class="fa fa-heart-o fa-lg"></i>
+                <span class="hidden-xs">&nbsp;Whishlist</span>
+              </a>
+            </li>
+          -->
+
           {{else}}
+          
+          <li><a href="/addListing" data-dismiss="modal">List Your House</a></li>
+          <li><a href="#" data-dismiss="modal">How it Works</a></li>
           <li class="sign-in hidden-xs"><a href="#" data-target="#login-modal" data-toggle="modal"><i class="fa fa-sign-in fa-lg"></i> Sign in</a></li>
+          
           {{/if}}
         </ul>
       </div>

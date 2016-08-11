@@ -1,0 +1,212 @@
+.login-modal-dialog{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* for laptops */
+@media (min-width: 768px) {
+  .login-modal-dialog{
+    width: 90%;
+    height: auto;
+    margin: 7vh auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .login-modal-dialog{
+    width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  
+}
+/*
+.login-modal-content{
+  padding: 40px 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+@media (min-width: 768px) {
+  .login-modal-content{
+    padding: 40px 25px;
+  }
+}
+*/
+
+.internal-login,
+.external-login,
+.sign-up{
+  display: block;
+  padding: 0 20px;
+  position: relative;
+  background-color: #fff;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.internal-login.hidden,
+.sign-up.hidden{
+  z-index: 999;
+  opacity: 0;
+}
+
+.external-login{
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.external-login > *{
+  margin:30px auto;
+}
+
+#sign-in-toggle{
+  display: block;
+  text-align: center;
+  padding-top:5px;
+}
+
+#forget-pass,
+#create-acc{
+  text-align: center;
+}
+
+#sign-in-label{
+  padding: 10px 0px;
+}
+
+#sign-in-container{
+  padding-top: 5px;
+}
+
+.login-modal-dialog .side-bar{
+  height: 500px;
+  background-color: #000;
+}
+
+.login-container{
+  width: 100%;
+  height: 100%;
+  -webkit-transition: left .3s ease-in-out;
+       -o-transition: left .3s ease-in-out;
+          transition: left .3s ease-in-out;
+}
+
+.login-container.center {
+  left: 0 !important;
+  visibility: visible !important;
+  z-index: 100 !important;
+}
+
+.login-container.right{
+  left: 100%;
+}
+
+.login-container.left{
+  left: -100%;
+  z-index: -1;
+}
+
+.login-content{
+  padding: 0 10px;
+}
+
+.social-login{
+  display: block;
+  margin: 40px auto;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  width: 350px;
+}
+
+.social-login:hover{
+  color: white;
+}
+
+.social-login.facebook{
+  background-color: #3b5998;
+}
+
+.social-login.google{
+  background-color: #dd4b39;
+}
+
+.email-login{
+  margin-top: 20px !important;
+}
+
+.email-login button{
+  display: block;
+  margin: 20px auto;
+}
+
+.login-modal-dialog .side-content{
+  width: 100%
+  z-index: 200;
+}
+
+.login-modal-dialog .main-content,
+.login-modal-dialog .side-content {
+  height: 100%; 
+}
+
+.signup-btn,
+.login-btn{
+  width: 100%;
+}
+.signup-form{
+  padding-top: 20px;
+}
+.login-form{
+  padding-top: 20px;
+}
+.signup-form,
+.login-form{
+  padding-left: 50px;
+  padding-right: 50px
+}
+
+@media(min-width: 768px){
+  .login-modal-dialog .main-content,
+  .login-modal-dialog .side-content {
+    height: 449px; 
+  }
+}
+
+.main-content{
+  padding-top: 30px;
+}
+
+.main-content.slick-slider{
+  margin: 0;
+}
+
+.login-slide{
+  visibility: hidden;
+}
+
+.login-slide.slick-active{
+  visibility: visible;
+}
+
+.close-btn{
+  color: #333;
+  font-size: 30px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 50;
+  cursor: pointer;
+}
+
+.login-slide .back{
+  color: #333;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
