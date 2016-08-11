@@ -1,108 +1,61 @@
 <template name="nav">
-  <style type="text/css">
-    @media (max-width: 1080px) {
-      .navbar-brand-img{
-        height: 40px;
-        margin-top: -10px;
-      }
-    }
-    @media (min-width: 1111px) {
-    .navbar-collapse {
-      width: auto;
-      border-top: 0;
-      box-shadow: none;
-    }
-    .navbar.navbar-default{
-      height: 60px;
-      z-index: 100;
-    }
-    .navbar-brand-img{
-      height: 100%;
-    }
-    .navbar-brand{
-      height: 60px;
-    }
-    .navbar-link{
-      height: 60px;
-      line-height: 20px !important;
-      min-width: 120px;
-      text-align: center
-    }
-    .navbar-link > a{
-      height: 60px;
-      line-height: 20px !important;
-      font-family: Arial;
-      font-size: 20px;
-    }
-    .navbar-link:hover{
-      background-color: #2483B5;
-    }
-    .navbar-link > a:hover{
-      background-color: #2483B5;
-    }
-    .navbar-link > a:active{
-      background-color: #2483B5 !important;
-      color: white !important;
-    }
-    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
-      background-color: #2483B5 !important;
-      color: white !important;
-    }
-    #welcome-text{
-      height: 60px;
-      line-height: 50px !important;
-      font-family: Arial;
-      color: #777;
-      font-size: 20px;
-      margin-right: 20px;
-    }
-    .navbar-collapse{
-      background-color: #F8F8F8;
-    }
-    nav{
-      position: fixed !important;
-      width: 100%;
-      top: 0;
-      transition: all 1s ease;
-    }
-    nav.hide {
-      transform: translate3d(0,-100%,0);
-      -webkit-transform: translate3d(0,-100%,0);
-      -moz-transform: translate3d(0,-100%,0);
-      -o-transform: translate3d(0,-100%,0);
-    }
-  </style>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">
-          <img class="navbar-brand-img" alt="Rentflees" src="images/sl2.svg">
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li id="welcome-text"></li>
-          <li class="navbar-link">
-            <a href="/">Home</a>
+  <header class="main-header shadow">
+    <a class="logo" href="/login">
+      {{> rentfleesLogo}}
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="hidden-sm hidden-md hidden-lg">
+        <ul class="nav mobile-nav">
+          <li> 
+            <div class="col-xs-2">
+              <a href="#" class="nav-open" data-target="#mobile-nav-modal" data-toggle="modal" role="button"><span class="sr-only">Toggle navigation</span>
+              </a>
+            </div>
           </li>
-          <li class="navbar-link">
-            <a href="/map">Map View</a>
+          <li>
+            <div class="col-xs-8">
+            <a  href="#" class="search-modal-toggle" role="button"><i class="fa fa-search fa-lg"></i> Search your Location</a>
+            </div>
           </li>
-          <li class="navbar-link">
-            <a href="/addListing">List Your House</a>
-          </li>
-          <li id="login-dropdown-list" class="navbar-link">
-              <a id="nav-btn-accounts">{{ btnContent }}</a>
+          <li>
+            <div class="col-xs-2">
+              <a href="#" class="wishlist-btn"></a>
+            </div>
           </li>
         </ul>
       </div>
+      <div class="navbar-custom-menu hidden-xs">
+        <ul class="nav navbar-nav">
+          <li><a href="list-your-house" id="list-your-house" class="slide left">&nbsp;</a></li>
+          <li class="dropdown whishlist"><a href="#"><i class="fa fa-heart-o fa-lg"></i><span class="hidden-xs">&nbsp;Whishlist</span></a></li>
+          {{#if currentUser}}
+          <li class="dropdown user-menu hidden-xs"><a href="#">User Menu</a></li>
+          {{else}}
+          <li class="sign-in hidden-xs"><a href="#" data-target="#login-modal" data-toggle="modal"><i class="fa fa-sign-in fa-lg"></i> Sign in</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="modal fade left" id="mobile-nav-modal">
+    <div class="modal-dialog nav-modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a class="logo" href="/login">
+            {{> rentfleesLogo}}
+          </a>
+        </div>
+        <div class="modal-body">
+          <ul class="nav">
+            <li><a href="#" data-dismiss="modal">Home</a></li>
+            <li><a href="#" data-dismiss="modal">Dashboard</a></li>
+            <li><a href="#" data-dismiss="modal">Profile</a></li>
+            <li><a href="#" data-dismiss="modal">How it Works</a></li>
+            <li><a href="#" data-dismiss="modal" data-target="#login-modal" data-toggle="modal">Sign in</a></li>
+          </ul> 
+        </div>
+      </div>
     </div>
-  </nav>
-  {{> loginModal}}
+  </div> 
+  {{>loginModal}}
 </template>

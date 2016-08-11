@@ -21,6 +21,7 @@ kadira:flow-router
 kadira:blaze-layout
 aldeed:autoform
 mrt:bootstrap-3
+fortawesome:fontawesome
 aldeed:simple-schema
 aldeed:collection2
 accounts-password
@@ -32,3 +33,4 @@ useraccounts:flow-routing
 service-configuration
 useraccounts:bootstrap
 easy:search
+udondan:slick
