@@ -24,6 +24,10 @@
   -webkit-transition: 0.08s ease-in;
 }
 
+.mainNavItem {
+  padding: 10px;
+}
+
 .slide:after{
   content:"List your House";
   position:absolute;

@@ -1,4 +1,4 @@
-<template name="nav">
+<template name="dashnav">
   <header class="main-header shadow">
     <a class="logo" href="/">
       {{> rentfleesLogo}}
@@ -25,18 +25,52 @@
         </ul>
       </div>
       <div class="navbar-custom-menu hidden-xs">
-        <ul class="nav navbar-nav"> -->
+        <ul class="nav navbar-nav">
           {{#if currentUser}}
-          
-          <!--
-            <li><a href="list-your-house" id="list-your-house" class="slide left">&nbsp;</a></li>
-          -->
-          
-          {{>Template.dynamic template=navContent}}
+
           <li class="mainNavItem"><a href="/addListing" data-dismiss="modal">List Your House</a></li>
           <li class="mainNavItem"><a href="/dashboard" data-dismiss="modal">Dashboard</a></li>
           <li class="mainNavItem"><a href="#" data-dismiss="modal">Profile</a></li>
           <li class="mainNavItem"><a href="#" data-dismiss="modal">How it Works</a></li>
+
+           <!-- DASH Content -->
+          <li class="dashnavitem dropdown notifications hidden-xs">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span aria-hidden="true" class="hightop-flag"></span>
+                  <div class="sr-only">
+                    Notifications
+                  </div>
+                  <p class="counter">
+                    4
+                  </p>
+                </a>
+              </li>
+              <li class="dashnavitem dropdown hidden-xs">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span aria-hidden="true" class="hightop-envelope"></span>
+                  <div class="sr-only">
+                    Messages
+                  </div>
+                  <p class="counter">
+                    3
+                  </p>
+                </a>
+              </li>
+              <li class="dashnavitem dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img width="34" height="34" src="images/avatar-male.jpg" />John Smith<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">
+                    <i class="fa fa-user"></i>My Account</a>
+                  </li>
+                  <li><a href="#">
+                    <i class="fa fa-gear"></i>Account Settings</a>
+                  </li>
+                  <li><a href="login1.html">
+                    <i class="fa fa-sign-out"></i>Logout</a>
+                  </li>
+                </ul>
+              </li>
+            <!-- End Dash content -->
+
+
           <li class="mainNavItem"><a href="#" data-dismiss="modal" id="sign-out">
             <i class="fa fa-sign-in fa-lg"></i>Sign Out
           </a></li>

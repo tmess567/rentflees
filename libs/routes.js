@@ -16,20 +16,26 @@ var userRoutes = FlowRouter.group({
 
 anonRoutes.route('/', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "index"});
+    BlazeLayout.render("mainLayout", {content: "index", nav: "nav"});
   }
 });
 
 
 userRoutes.route('/addListing', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "add-listing"});
+    BlazeLayout.render("mainLayout", {content: "add-listing", nav: "nav"});
+  }
+});
+
+userRoutes.route('/dashboard', {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "dashboard", nav: "dashnav"});
   }
 });
 
 anonRoutes.route('/map', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "mapview"});
+    BlazeLayout.render("mainLayout", {content: "mapview", nav: "nav"});
   }
 });
 
