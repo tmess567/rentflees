@@ -28,10 +28,10 @@
         <ul class="nav navbar-nav">
           {{#if currentUser}}
 
-          <li class="mainNavItem"><a href="/addListing" data-dismiss="modal">List Your House</a></li>
-          <li class="mainNavItem"><a href="/dashboard" data-dismiss="modal">Dashboard</a></li>
-          <li class="mainNavItem"><a href="#" data-dismiss="modal">Profile</a></li>
-          <li class="mainNavItem"><a href="#" data-dismiss="modal">How it Works</a></li>
+          <li class="mainDashNavItem"><a href="/addListing" data-dismiss="modal">List Your House</a></li>
+          <li class="mainDashNavItem"><a href="/dashboard" data-dismiss="modal">Dashboard</a></li>
+          <li class="mainDashNavItem"><a href="#" data-dismiss="modal">Profile</a></li>
+          <li class="mainDashNavItem"><a href="#" data-dismiss="modal">How it Works</a></li>
 
            <!-- DASH Content -->
           <li class="dashnavitem dropdown notifications hidden-xs">
@@ -54,7 +54,7 @@
                   </p>
                 </a>
               </li>
-              <li class="dashnavitem dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <li class="dashnavitem profile-icon dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <img width="34" height="34" src="images/avatar-male.jpg" />John Smith<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="#">
@@ -63,17 +63,12 @@
                   <li><a href="#">
                     <i class="fa fa-gear"></i>Account Settings</a>
                   </li>
-                  <li><a href="login1.html">
+                  <li><a href="login1.html" onclick="Meteor.logout();">
                     <i class="fa fa-sign-out"></i>Logout</a>
                   </li>
                 </ul>
               </li>
             <!-- End Dash content -->
-
-
-          <li class="mainNavItem"><a href="#" data-dismiss="modal" id="sign-out">
-            <i class="fa fa-sign-in fa-lg"></i>Sign Out
-          </a></li>
 
           <!--
             <li class="dropdown user-menu hidden-xs"><a href="#">User Menu</a></li>

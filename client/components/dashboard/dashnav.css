@@ -3,6 +3,18 @@
 	min-width: 45px;
 	text-align: center;
 }
-.mainNavItem {
-  padding: 10px;
+.mainDashNavItem {
+}
+.mainDashNavItem > a {
+    height: 50px;
+    min-width: 50px;
+    line-height: 50px;
+    padding: 15px !important;
+}
+.dashnavitem > a {
+	height: 50px;
+	padding-top: 7px !important;
+}
+.profile-icon {
+	width: 150px;
 }
