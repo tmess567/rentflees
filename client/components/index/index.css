@@ -141,56 +141,80 @@
     font-family: CURSIVE;
 }
 
-.city-carousel .slick-slide{
-  height: 500px;
-}
-
-.city-gallery{
-  padding: 20px 0;
-}
-
-.photo{
-  height: 200px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  cursor: pointer;
-}
-
-.hover-img-wrapper{
+.city-card{
+  height: 280px;
+  display: block;
   position: relative;
-  height: inherit;
+  background-size: cover;
+  margin: 15px 0;
 }
 
-.hover-img-wrapper:before{
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0);
-  transition: all 0.2s ease;
-  z-index: 2;
+.city-card.hover a{
+  background: none;
 }
-
-.hover-img-wrapper:hover:before{
-  background: rgba(0,0,0,0.2);
-}
-
-.photo:after{
-  content: attr(data-city);
-  text-align: center;
-  font-size: 24px;
+.city-card a{
+  display: block;
+  height: 100%;
+  padding: 25px;
+  position: relative;
+  opacity: 0.9;
+  background-color: #0FACF3;
   color: white;
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 40%;
-  background: transparent;
-  z-index: 1;
 }
 
-.photo .slick-slide img{
-  padding: 0;
+.city-card.hover .inner{
+  border: none;
+}
+
+.city-card .inner{
+  height: 100%;
+  border: 5px solid #fff;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.city-card.hover .city-name{
+  margin: 80px 0;
+  font-size: 28px;
+}
+
+.city-name{
+  text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+
+.city-card.hover .city-content{
+  visibility: hidden;
+}
+
+.city-content{
+  text-align: center;
+  margin-top: 5px;
+}
+
+.dehradun{
+  background-image: url("images/city_gallery/dehradoon1.jpg");
+}
+
+.delhi{
+  background-image: url("images/city_gallery/delhi0.jpg");
+}
+
+.chandigarh{
+  background-image: url("images/city_gallery/chandigarh1.jpg");
+}
+
+.mumbai{
+  background-image: url("images/city_gallery/mumbai4.jpg");
+}
+
+.banglore{
+  background-image: url("images/city_gallery/banglore1.jpg");
+}
+
+.chennai{
+  background-image: url("images/city_gallery/chennai.jpg");
 }

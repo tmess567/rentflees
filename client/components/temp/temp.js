@@ -67,3 +67,8 @@ Template.temp2.onRendered ( function() {
 
 */
 
+Template.temp.onRendered(function(){
+	$('.city-card').hover(function(e){
+		$(this).toggleClass('hover');
+	});
+});

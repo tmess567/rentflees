@@ -6,6 +6,10 @@ Template.index.onRendered(function(){
 	  $('#top-cities-div').toggleClass('bg-' + city);
 	});
 
+	$('.city-card').hover(function(e){
+		$(this).toggleClass('hover');
+	});
+
 	/*
 	$('.photo').slick({
 		dots: false,
