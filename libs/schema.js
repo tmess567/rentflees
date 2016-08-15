@@ -115,7 +115,13 @@ Listings.attachSchema(new SimpleSchema({
 
 	owner: {
 		type: String,
-		label: "Owner's Name",
+		label: "Owner's Name"
+	},
+	
+	score: {
+		type: Number,
+		label: "Listing Score",
+	//	autoValue: 0
 	},
 
 	ownerEmail: {
