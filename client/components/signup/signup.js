@@ -13,7 +13,17 @@ Template.signupForm.events({
         //role = $('[name=userrole]').value;
         role = $("input[type='radio'][name='userrole']:checked").val();
         if($('[name=password1]').val() == $('[name=password2]').val()){
-            Meteor.call( "registerUser",user,role);
+            Meteor.call( "registerUser",user,role,function(err){
+                if(err)
+                {
+                    alert(err);
+                }
+                else
+                {
+                    $('#login-modal').modal('hide');
+                    alert("Signed up successfully");
+                }
+            });
         }
         else
         {

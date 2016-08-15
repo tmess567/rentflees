@@ -42,7 +42,6 @@ Meteor.startup(() => {
   if(!FlowRouter._askedToWait) {
     FlowRouter.initialize();
   }
-
 });
 
 Accounts.onCreateUser(function(options, user) {
@@ -60,5 +59,22 @@ Meteor.methods({
     //console.log("role = " + role);
     user.profile.role = role;
     Accounts.createUser(user);
+    /*
+     Accounts.createUser(user, function(err){
+          if (err) {
+            console.log(err);
+          } else {
+            alert("Successfully Registered");
+          }
+
+        });
+        */
   }
 });
+
+
+/*
+Meteor.publish("tenantDir", function () {
+  return Meteor.users.find({}, {fields: {emails: 1, profile.role: "tenant"}});
+});
+*/

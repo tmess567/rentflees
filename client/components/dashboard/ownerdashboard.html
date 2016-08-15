@@ -208,9 +208,14 @@
               </th>
             </thead>
             <tbody>
+            <!--
+            {{#each listingsCollection}}
+            -->
               <tr>
-                <td>
-                  1
+                <td value = "0" id="serial">
+                  <script type="text/javascript">
+                    document.getElementById('serial').value += 1;
+                  </script>
                 </td>
                 <td>
                  Robert Kelso
