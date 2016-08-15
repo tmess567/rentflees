@@ -1,6 +1,28 @@
 <template name="add-listing">
-{{#if currentUser}}
-	{{> quickForm collection="Listings" id="addListingForm" type="insert"}}
-{{/if}}
-	{{> loginButtons}}
+  <h1 id="listHead">List Your House</h1>
+  <div class="form-container">
+    {{#if currentUser}}
+       <div class="col-md-6">
+         <div style="margin:10px;">
+           <img id="uploadedImg" src="" style="display: none; width: 500px; height: 500px; " />
+           {{> upload_bootstrap }}
+         </div>
+         <div class="map-container">
+           {{> mapAdd }}
+         </div>
+       </div>
+      <div class="col-md-6 autoform-container">
+        {{> quickForm collection="Listings" id="addListingForm" type="normal"}}
+      </div>
+      <hr>
+    {{/if}}
+  </div>
+</template>
+
+
+<template name="mapAdd">
+  <div class="map-container">
+    <input id="pac-input" class="controls form-control input-lg" type="text" placeholder="Search Box">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
 </template>
