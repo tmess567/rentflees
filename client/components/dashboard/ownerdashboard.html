@@ -214,10 +214,7 @@
               </th>
             </thead>
             <tbody>
-            <!--
-            {{#each listingsCollection}}
-            -->
-            {{#each user}}
+            {{#each tenant}}
               <tr>
                 <td>
                  {{ username }}
@@ -269,9 +266,6 @@
       <div class="table-responsive">
         <table class="table">
           <thead>
-            <th>
-              S.No
-            </th>
             <th class="theading1">
               Tenant Name
             </th>
@@ -286,23 +280,23 @@
             </th>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                1
+            {{#each owner}}
+              <tr>
+                <td>
+                 {{ username }}
+               </td>
+               <td>
+                Not Available in Collection
               </td>
               <td>
-               Robert Kelso
-             </td>
-             <td>
-              B-58,Gandhi Nagar,kali no.4,Moradabad
-            </td>
-            <td>
-              robert@gmail.com
-            </td>
-            <td>
-              9719712220
-            </td>
-          </tr>
+                {{emails.[0].address}}
+              </td>
+              <td>
+                Not Available in Collection
+              </td>
+            </tr>
+      {{/each}}
+      <!--
           <tr>
             <td>
               2
@@ -320,6 +314,7 @@
               8675744379
             </td>
           </tr>
+          -->
         </tbody>
       </table>
     </div>
