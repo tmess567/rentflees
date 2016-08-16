@@ -39,6 +39,12 @@ anonRoutes.route('/map', {
   }
 });
 
+anonRoutes.route('/listings', {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "listings", nav: "nav"});
+  }
+});
+
 //Routes
 AccountsTemplates.configureRoute('changePwd');
 AccountsTemplates.configureRoute('forgotPwd');
