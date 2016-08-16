@@ -188,12 +188,18 @@
         </center>
       </div>
       <div class="widget-content padded clearfix">
+      <!--
+      <ol>
+      {{#each user}}
+      <li>{{_id}}</li>
+      <li>{{emails.[0].address}}</li>
+      <li>{{ username }}</li>
+      {{/each}}
+      </ol>
+      -->
         <div class="table-responsive">
           <table class="table">
             <thead>
-              <th>
-                S.No
-              </th>
               <th class="theading1">
                 Tenant Name
               </th>
@@ -211,25 +217,23 @@
             <!--
             {{#each listingsCollection}}
             -->
+            {{#each user}}
               <tr>
-                <td value = "0" id="serial">
-                  <script type="text/javascript">
-                    document.getElementById('serial').value += 1;
-                  </script>
-                </td>
                 <td>
-                 Robert Kelso
+                 {{ username }}
                </td>
                <td>
-                Moradabad
+                Not Available in Collection
               </td>
               <td>
-                robert@gmail.com
+                {{emails.[0].address}}
               </td>
               <td>
-                9719712220
+                Not Available in Collection
               </td>
             </tr>
+      {{/each}}
+      <!--
             <tr>
               <td>
                 2
@@ -247,6 +251,7 @@
                 8675744379
               </td>
             </tr>
+            -->
           </tbody>
         </table>
       </div>
