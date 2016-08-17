@@ -121,7 +121,7 @@ Listings.attachSchema(new SimpleSchema({
 	score: {
 		type: Number,
 		label: "Listing Score",
-	//	autoValue: 0
+		defaultValue: 0
 	},
 
 	ownerEmail: {
