@@ -123,6 +123,11 @@ Listings.attachSchema(new SimpleSchema({
 		label: "Listing Score",
 		defaultValue: 0
 	},
+	
+	verified: {
+		type: Boolean,
+		label: "Verified?"
+	},
 
 	ownerEmail: {
 		type: String,
