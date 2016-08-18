@@ -15,7 +15,8 @@ Template.loginForm.events({
         {
         	if(error){
 				//print.innerHTML = error.reason;
-                alert(error.reason);
+                //alert(error.reason);
+                alert("Invalid Credentials, Please Retry");
 			}
             else
 			{
