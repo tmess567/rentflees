@@ -1,33 +1,33 @@
 import {FlowRouter} from 'meteor/kadira:flow-router';
 Meteor.subscribe('listings');
 var imageName = null;
-var latitude = -37.8136;
-var longitude = 144.9631;
+var latitude = 28.8431535;
+var longitude = 78.7675522;
 Uploader.finished = function(index, fileInfo, templateContext) {
-	//console.log(fileInfo.uploadedName);
-	//console.log(Meteor.user().services.facebook.id);
-	document.getElementById("uploadedImg").style.display = "block";
-	document.getElementById("uploadedImg").src = '/upload/' + fileInfo.uploadedName;
-	imageName = fileInfo.uploadedName;
+  //console.log(fileInfo.uploadedName);
+  //console.log(Meteor.user().services.facebook.id);
+  document.getElementById("uploadedImg").style.display = "block";
+  document.getElementById("uploadedImg").src = '/upload/' + fileInfo.uploadedName;
+  imageName = fileInfo.uploadedName;
 }
 AutoForm.hooks({
   addListingForm: {
-  	onSubmit: function (insertDoc, updateDoc, currentDoc) {
-  		this.event.preventDefault()
+    onSubmit: function (insertDoc, updateDoc, currentDoc) {
+      this.event.preventDefault()
       // Inserting the coordinates
       insertDoc.XCoordinate = latitude;
       insertDoc.YCoordinate = longitude;
-  		if(imageName != null){
-  			insertDoc.image = imageName;
-  			Listings.insert(insertDoc);
-  			console.log("Done");
+      if(imageName != null){
+        insertDoc.image = imageName;
+        Listings.insert(insertDoc);
+        console.log("Done");
         //Router.go('/');
-  		} else {
-  			this.done(new Error("Submission failed"));
-  		}
+      } else {
+        this.done(new Error("Submission failed"));
+      }
       //Listings.insert(insertDoc);
-  		return true;
-  	},
+      return true;
+    },
 
 
   },
