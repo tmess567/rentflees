@@ -1,0 +1,171 @@
+<template name="index">
+    <div class="container-table" id="main-gif">
+     <div class="row vertical-center-row">
+      <div class="col-md-12">
+       <div class="section-header" id="section2-header">
+        Rentflees. Launching Soon.
+       </div>
+      </div>
+      <div class="col-md-offset-2 col-md-8 col-xs-12">
+        {{> searchbox}}
+      </div>
+     </div>
+    </div>
+    <div class="container-fluid no-padding bg-light-grey" >
+      <div class="row guide-div">
+        <p class="center-text"> New to Renting? Our <a href="#"><b>Renting Expert</b></a> is here to help you. </p>
+      </div>
+      <div class="row salient-feature-div">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="salient-feature">
+            <img class="auto-margin" src="" alt="24x7 support">
+            <h4 class="center-text">24x7 Customer Support</h4>
+            <p class="center-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus tortor eu quam congue, ac pulvinar neque placerat.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="salient-feature">
+            <img class="auto-margin" src="" alt="Verified Listings">
+            <h4 class="center-text">Verified Listings</h4>
+            <p class="center-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus tortor eu quam congue, ac pulvinar neque placerat. </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="salient-feature">
+            <img class="auto-margin" src="" alt="Safe and Easy payments">
+            <h4 class="center-text">Safe and Easy Payments</h4>
+            <p class="center-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum faucibus tortor eu quam congue, ac pulvinar neque placerat.</p>
+          </div>
+        </div>
+      </div>
+      <!--
+      <div class="row bg-india" id="top-cities-div">
+       <div class="col-md-12" style="padding:60px;">
+        <div class="banners-heading">Top Searched Cities</div>
+       </div>
+       <div class="col-md-3 col-sm-4 col-xs-12"> 
+        <div class="banner" data-city="chandigarh">
+         <img alt="Chennai" src="images/indiagate.jpg"/>
+         <div class="city-name">
+           Chandigarh
+         </div>
+         <div class="overlay"></div>
+        </div>
+       </div>
+       <div class="col-md-3 col-sm-4 col-xs-12"> 
+        <div class="banner" data-city="dehradun">
+         <img alt="Dehradun" src="images/indiagate.jpg"/>
+         <div class="city-name">
+           Dehradun
+         </div>
+         <div class="overlay"></div>
+        </div>
+       </div>
+       <div class="col-md-3 col-sm-4 col-xs-12"> 
+        <div class="banner" data-city="delhi">
+         <img alt="Delhi" src="images/indiagate.jpg"/>
+         <div class="city-name">
+           Delhi
+         </div>
+         <div class="overlay"></div>
+        </div>
+       </div>
+       <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="banner" data-city="mumbai">
+         <img alt="Mumbai" src="images/mumbai.jpg"/>
+         <div class="city-name">
+           Mumbai
+         </div>
+         <div class="overlay"></div>
+        </div>
+        </div>
+       <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="banner" data-city="banglore">
+         <img alt="Delhi" src="images/banglore.jpg"/>
+         <div class="city-name">
+           Banglore
+         </div>
+         <div class="overlay"></div>
+        </div>
+        </div>
+       <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="banner" data-city="gurgaon">
+         <img alt="Delhi" src="images/gurgoan.jpg"/>
+         <div class="city-name">
+           Gurgaon
+         </div>
+          <div class="overlay"></div>
+        </div>
+        </div>
+       <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="banner" data-city="noida">
+         <img alt="Delhi" src="images/noida.jpg"/>
+         <div class="city-name">
+           Noida
+         </div>
+         <div class="overlay"></div>
+        </div>
+        </div>
+       <div class="col-md-3 col-sm-4 col-xs-12">
+        <div class="banner" data-city="chennai">
+         <img alt="Delhi" src="images/chennai.jpg"/>
+         <div class="city-name">
+           Chennai
+         </div>
+         <div class="overlay"></div>
+        </div>
+        </div>
+       </div>
+       -->
+       <div class="row city-gallery bg-white">
+        <h1 class="center-text">Trending Cities</h1>
+        <div class="col-md-offset-1 col-md-3">
+          <div class="photo" data-city="Delhi">
+            <div class="hover-img-wrapper"> <img class="img-responsive" src="images/city_gallery/delhi0.jpg"></div>
+            <!--
+            <div class="hover-img-wrapper"> <img src="images/city_gallery/delhi1.jpg"></div>
+            <div class="hover-img-wrapper"> <img src="images/city_gallery/delhi2.jpg"></div>
+            <div class="hover-img-wrapper"> <img src="images/city_gallery/delhi3.jpg"></div>
+            <div class="hover-img-wrapper"> <img src="images/city_gallery/delhi4.jpg"></div>
+            -->
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="photo" data-city="Dehradun">
+            <div class="hover-img-wrapper"><img class="img-responsive" src="images/city_gallery/dehradoon1.jpg"></div>
+            <!--
+            <div class="hover-img-wrapper"><img src="images/city_gallery/dehradoon2.jpg"></div>
+            -->
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="photo" data-city="Mumbai">
+            <div class="hover-img-wrapper"><img class="img-responsive" src="images/city_gallery/mumbai1.jpg"></div>
+            <!--
+            <div class="hover-img-wrapper"><img src="images/city_gallery/mumbai2.jpg"></div>
+            <div class="hover-img-wrapper"><img src="images/city_gallery/mumbai4.jpg"></div>
+            -->
+          </div>
+        </div>
+        <div class="col-md-offset-1 col-md-4">
+          <div class="photo" data-city="Banglore">
+            <div class="hover-img-wrapper"><img class="img-responsive" src="images/city_gallery/banglore1.jpg"></div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="photo" data-city="Chandigarh">
+            <div class="hover-img-wrapper"><img class="img-responsive" src="images/city_gallery/chandigarh1.jpg"></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="photo" data-city="Noida">
+            <div class="hover-img-wrapper"><img class="img-responsive" src="images/city_gallery/delhi1.jpg"></div>
+            <!--
+            <div class="hover-img-wrapper"><img src="images/city_gallery/delhi2.jpg"></div>
+            -->
+          </div>
+        </div>
+       </div> 
+      </div>
+      {{> footer}}
+</template>

@@ -1,0 +1,40 @@
+<template name="signupForm">
+<form class="signup-form" method="post">
+<span id="signup-msg"></span>
+<div class="form-group has-feedback">
+ <input class="form-control" placeholder="Name" type="text" name="realName"/>
+</div>
+<div class="form-group has-feedback">
+ <input class="form-control" placeholder="Email" type="email" name="emailSel"/>
+ <span class="glyphicon glyphicon-envelope form-control-feedback">
+ </span>
+</div>
+<div class="form-group has-feedback">
+ <input class="form-control" placeholder="Password" type="password" name="password1"/>
+ <span class="glyphicon glyphicon-lock form-control-feedback">
+ </span>
+</div>
+<div class="form-group has-feedback">
+ <input class="form-control" placeholder="Comfirm Password" type="password" name="password2"/>
+ <span class="glyphicon glyphicon-lock form-control-feedback">
+ </span>
+</div>
+<div class="row">
+ You are a &nbsp; 
+  <label>
+   <input class="minimal" type="radio" name="userrole" value="tenant"/>
+   Tenant 
+  </label>
+   &nbsp; or an &nbsp; 
+  <label>
+   <input class="minimal" type="radio" name="userrole" value="owner" />
+   Owner
+  </label>
+</div>
+<div id="sign-in-container">
+ <button class="btn btn-primary btn-block btn-flat" type="submit">
+  Sign Up
+ </button>
+</div>
+</form>
+</template>
