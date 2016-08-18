@@ -17,6 +17,7 @@ AutoForm.hooks({
       // Inserting the coordinates
       insertDoc.XCoordinate = latitude;
       insertDoc.YCoordinate = longitude;
+      //console.log(Meteor.userId());
       if(imageName != null){
         insertDoc.image = imageName;
         Listings.insert(insertDoc);
