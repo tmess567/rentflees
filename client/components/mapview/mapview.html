@@ -1,56 +1,4 @@
 <template name="mapview">
-  <title>
-   Map View
-  </title>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <link rel="stylesheet" href="ionslider/ion.rangeSlider.skinFlat.css">
-  <link rel="stylesheet" href="apps/iCheck/all.css">
-    <div id="header-container">
-    <div id="searchbox-container">
-     <div class="searchbox">
-      <button class="input-item select" id="city-selector">
-       Banglore
-       <span class="caret">
-       </span>
-      </button>
-      <ul class="select-menu">
-       <li>
-        Delhi
-       </li>
-       <li>
-        Mumbai
-       </li>
-       <li>
-        Banglore
-       </li>
-       <li>
-        Chennai
-       </li>
-      </ul>
-      <input autocomplete="off" class="input-item" id="search-input" placeholder="Enter a query"/>
-      <button class="input-item select" id="type-selector">
-       Family
-       <span class="caret">
-       </span>
-      </button>
-      <ul class="select-menu">
-       <li>
-        Family
-       </li>
-       <li>
-        Single Girl
-       </li>
-       <li>
-        Single Boy
-       </li>
-      </ul>
-      <button class="input-item" id="go-button">
-       Go!
-      </button>
-     </div>
-    </div>
-    </div>
     {{> searchBox}}
 </template>
 
@@ -62,25 +10,29 @@
       margin: 0 auto;
     }
   </style>
-  <div class="input-group easy-search-input-container col-md-6 col-md-offset-3">
-      {{> EasySearch.Input index=listingsIndex}}
-  </div>
 
-    {{#EasySearch.IfSearching index=listingsIndex }}
-      <div>Searching...</div>
-    {{/EasySearch.IfSearching }}  
+  <div class="input-group">
+    <div class="city-filter">
+      <button type="button" class="btn btn-default dropdown-toggle city-btn"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        All Cities
+        <span class="caret"></span>
+      </button>
+      <ul class="city-dropdown dropdown-menu">
+        <li><a href="#">All Cities</a></li>
+        <li><a href="#">Dehardun</a></li>
+        <li><a href="#">Moradabad</a></li>
+        <li><a href="#">Patna</a></li>
+      </ul>
+    </div>
+  </div>
     
     <ol class="leaderboard">
-      {{#EasySearch.Each index=listingsIndex }}
+      {{#each listingsArr }}
         {{> listingCard}}
-      {{/EasySearch.Each}}
+      {{/each}}
     </ol>
 
-    {{#EasySearch.IfNoResults index=listingsIndex }}
-      <div class="padded no-results">No results found</div>
-    {{/EasySearch.IfNoResults }}
-
-    {{> EasySearch.Pagination index=listingsIndex maxPages=10 }}
 </template>
 
 <template name="listingCard">
@@ -93,7 +45,7 @@
     .card-listing{
       border-radius: 3px;
       box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
-      min-height: 330px;
+      height: 430px;
       max-width: 390px;
       margin: 20px;
     }
@@ -182,5 +134,5 @@
       <button id= "{{_id}}" class="traceMap btn btn-primary">
       View on Map</button>
     </div>
-  </div> -->
+  </div> 
 </template>

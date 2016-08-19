@@ -32,3 +32,5 @@ udondan:slick
 meteor-base
 useraccounts:bootstrap
 easy:search
+deps
+tracker
