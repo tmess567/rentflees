@@ -3,6 +3,8 @@
 @media (min-width: 768px){
 #main-gif{
   background: url('images/index-background.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #top-cities-div{
@@ -218,3 +220,52 @@
 .chennai{
   background-image: url("images/city_gallery/chennai.jpg");
 }
+/*.city-carousel .slick-slide{
+  height: 500px;
+}
+
+.city-gallery{
+  padding: 20px 0;
+}
+
+.photo{
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.hover-img-wrapper{
+  position: relative;
+  height: inherit;
+}
+
+.hover-img-wrapper:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0);
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.hover-img-wrapper:hover:before{
+  background: rgba(0,0,0,0.2);
+}
+
+.photo:after{
+  content: attr(data-city);
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  background: transparent;
+  z-index: 1;
+}*/

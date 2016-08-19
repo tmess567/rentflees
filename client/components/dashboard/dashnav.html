@@ -1,0 +1,115 @@
+<template name="dashnav">
+  <header class="main-header shadow">
+    <a class="logo" href="/">
+      {{> rentfleesLogo}}
+    </a>
+    <nav class="navbar navbar-static-top" role="navigation">
+      <div class="hidden-sm hidden-md hidden-lg">
+        <ul class="nav mobile-nav">
+          <li> 
+            <div class="col-xs-2">
+              <a href="#" class="nav-open" data-target="#mobile-nav-modal" data-toggle="modal" role="button"><span class="sr-only">Toggle navigation</span>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="col-xs-8">
+            <a  href="#" class="search-modal-toggle" role="button"><i class="fa fa-search fa-lg"></i> Search your Location</a>
+            </div>
+          </li>
+          <li>
+            <div class="col-xs-2">
+              <a href="#" class="wishlist-btn"></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-custom-menu hidden-xs">
+        <ul class="nav navbar-nav">
+          {{#if currentUser}}
+
+          <li class="mainDashNavItem"><a href="/addListing" data-dismiss="modal">List Your House</a></li>
+          <li class="mainDashNavItem"><a href="/dashboard" data-dismiss="modal">Dashboard</a></li>
+          <li class="mainDashNavItem"><a href="#" data-dismiss="modal">Profile</a></li>
+          <li class="mainDashNavItem"><a href="#" data-dismiss="modal">How it Works</a></li>
+
+           <!-- DASH Content -->
+          <li class="dashnavitem dropdown notifications hidden-xs">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span aria-hidden="true" class="hightop-flag"></span>
+                  <div class="sr-only">
+                    Notifications
+                  </div>
+                  <p class="counter">
+                    4
+                  </p>
+                </a>
+              </li>
+              <li class="dashnavitem dropdown hidden-xs">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span aria-hidden="true" class="hightop-envelope"></span>
+                  <div class="sr-only">
+                    Messages
+                  </div>
+                  <p class="counter">
+                    3
+                  </p>
+                </a>
+              </li>
+              <li class="dashnavitem profile-icon dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img width="34" height="34" src="images/avatar-male.jpg" />John Smith<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">
+                    <i class="fa fa-user"></i>My Account</a>
+                  </li>
+                  <li><a href="#">
+                    <i class="fa fa-gear"></i>Account Settings</a>
+                  </li>
+                  <li><a href="login1.html" onclick="Meteor.logout();">
+                    <i class="fa fa-sign-out"></i>Logout</a>
+                  </li>
+                </ul>
+              </li>
+            <!-- End Dash content -->
+
+          <!--
+            <li class="dropdown user-menu hidden-xs"><a href="#">User Menu</a></li>
+            <li class="dropdown whishlist">
+              <a href="#">
+                <i class="fa fa-heart-o fa-lg"></i>
+                <span class="hidden-xs">&nbsp;Whishlist</span>
+              </a>
+            </li>
+          -->
+
+          {{else}}
+          
+          <li><a href="/addListing" data-dismiss="modal">List Your House</a></li>
+          <li><a href="#" data-dismiss="modal">How it Works</a></li>
+          <li class="sign-in hidden-xs"><a href="#" data-target="#login-modal" data-toggle="modal"><i class="fa fa-sign-in fa-lg"></i> Sign in</a></li>
+          
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="modal fade left" id="mobile-nav-modal">
+    <div class="modal-dialog nav-modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a class="logo" href="/login">
+            {{> rentfleesLogo}}
+          </a>
+        </div>
+        <div class="modal-body">
+          <ul class="nav">
+            <li><a href="#" data-dismiss="modal">Home</a></li>
+            <li><a href="#" data-dismiss="modal">Dashboard</a></li>
+            <li><a href="#" data-dismiss="modal">Profile</a></li>
+            <li><a href="#" data-dismiss="modal">How it Works</a></li>
+            <li><a href="#" data-dismiss="modal" data-target="#login-modal" data-toggle="modal">Sign in</a></li>
+          </ul> 
+        </div>
+      </div>
+    </div>
+  </div> 
+  {{>loginModal}}
+</template>

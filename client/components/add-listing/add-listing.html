@@ -1,7 +1,7 @@
-<template name="addListing.old">
+<template name="add-listing">
   <h1 id="listHead">List Your House</h1>
   <div class="form-container">
-    {{#if true}}
+    {{#if currentUser}}
        <div class="col-md-6">
          <div style="margin:10px;">
            <img id="uploadedImg" src="" style="display: none; width: 500px; height: 500px; " />
@@ -19,7 +19,6 @@
   </div>
   {{> usernameModal}}
 </template>
-
 <template name="mapAdd">
   <div class="map-container">
     <!--<input id="pac-input" class="controls form-control input-lg" type="text" placeholder="Search Box">-->

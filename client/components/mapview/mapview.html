@@ -411,4 +411,136 @@
       }
 
       </script>
+  <!-- {{> searchBox}}
+</template>
+
+<template name="searchBox">
+  <style type="text/css">
+    .search-input{
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  </style>
+  <div class="input-group easy-search-input-container col-md-6 col-md-offset-3">
+      {{> EasySearch.Input index=listingsIndex}}
+  </div>
+
+    {{#EasySearch.IfSearching index=listingsIndex }}
+      <div>Searching...</div>
+    {{/EasySearch.IfSearching }}  
+    
+    <ol class="leaderboard">
+      {{#EasySearch.Each index=listingsIndex }}
+        {{> listingCard}}
+      {{/EasySearch.Each}}
+    </ol>
+
+    {{#EasySearch.IfNoResults index=listingsIndex }}
+      <div class="padded no-results">No results found</div>
+    {{/EasySearch.IfNoResults }}
+
+    {{> EasySearch.Pagination index=listingsIndex maxPages=10 }}
+</template>
+
+<template name="listingCard">
+  <style type="text/css">
+    .traceMap{
+      margin: 10px;
+      padding: 10px;
+      width: 150px;
+    }
+    .card-listing{
+      border-radius: 3px;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+      min-height: 330px;
+      max-width: 390px;
+      margin: 20px;
+    }
+    .card-listing > .listing-img{
+      width:100%;
+    }
+    .listing-table{
+      text-align: left;
+    }
+    .listing-table > tr > td{
+      padding-left: 10px;
+    }
+    .listing-container{
+      text-align: center;
+    }
+
+  </style>
+  <div class="card-listing col-md-4">
+    <img class="listing-img col-md-4" src="http://rentflees.com/upload/{{image}}"/> 
+    <div class="listing-container">
+      <h2>{{title}}</h2>
+      <div>
+        <table class="listing-table">
+          <tr>
+            <td><strong>Address:</strong> </td>
+            <td>{{address}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Rent:</strong> </td>
+            <td>{{rent}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Security:</strong></td>
+            <td>{{security}}</td><br/>
+          </tr>
+
+          <tr>
+            <td><strong>Type:</strong> </td>
+            <td>{{type}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Category:</strong> </td>
+            <td>{{category}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Description:</strong> </td>
+            <td>{{description}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>FoodServices:</strong> </td>
+            <td>{{foodServices}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Rules:</strong> </td>
+            <td>{{rules}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Amenities:</strong> </td>
+            <td>{{amenities}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Owner's User name:</strong> </td>
+            <td>{{ownerUname}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Owner's Name:</strong> </td>
+            <td>{{owner}}</td> <br/>
+          </tr>
+
+          <tr>
+            <td><strong>Owner's Email:</strong> </td>
+            <td>{{ownerEmail}}</td> <br/>
+          </tr>
+
+        </table>
+      </div>
+      <button id= "{{_id}}" class="traceMap btn btn-primary">
+      View on Map</button>
+    </div>
+  </div> -->
 </template>

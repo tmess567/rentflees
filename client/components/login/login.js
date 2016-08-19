@@ -14,7 +14,8 @@ Template.loginForm.events({
         Meteor.loginWithPassword(email, password, function(error)
         {
         	if(error){
-				print.innerHTML = error.reason;
+				//print.innerHTML = error.reason;
+                alert(error.reason);
 			}
             else
 			{

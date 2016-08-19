@@ -150,7 +150,7 @@ AutoForm.hooks({
       //Listings.insert(insertDoc);
   		return true;
   	},
-  },
+  }
  });
 
 
@@ -183,12 +183,10 @@ Template.mapAdd.onRendered(function() {
 Template.mapAdd.onCreated(function() {
   var marker;
   GoogleMaps.ready('map', function(map) {
-    console.log("Map Ready");
     marker = new google.maps.Marker({
       position: {lat: latitude, lng: longitude}, 
       map: map.instance, draggable: true, 
     });
-    
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
 

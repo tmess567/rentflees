@@ -1,48 +1,51 @@
+//for non registered users
+var anonRoutes = FlowRouter.group({
+  name: 'anon'
+});
 
-FlowRouter.route('/', {
+var userRoutes = FlowRouter.group({
+  name: 'user',
+  triggersEnter: [function(context, redirect) {
+    if(Meteor.user() === null){
+      console.log("/addListing called without logging in");
+      redirect('/');
+    }
+  }],
+});
+
+
+anonRoutes.route('/', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "listings"});
+    BlazeLayout.render("mainLayout", {content: "index", nav: "nav"});
   }
 });
 
 
-FlowRouter.route('/addListing', {
+userRoutes.route('/addListing', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "addListing"});
+    BlazeLayout.render("mainLayout", {content: "add-listing", nav: "nav"});
   }
 });
 
-FlowRouter.route('/login', {
+userRoutes.route('/dashboard', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "index"});
+    BlazeLayout.render("mainLayout", {content: "dashboard", nav: "dashnav"});
   }
 });
 
-FlowRouter.route('/map', {
+anonRoutes.route('/map', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "mapview"});
+    BlazeLayout.render("mainLayout", {content: "mapview", nav: "nav"});
+>>>>>>> master
   }
 });
 
-FlowRouter.route('/:templateName', {
-  action(params, queryParams) {
-    console.log(params.templateName);
-    BlazeLayout.render("mainLayout", {content: params.templateName});
+anonRoutes.route('/listings', {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "listings", nav: "nav"});
   }
 });
 
-//Useraccounts
-/*
-FlowRouter.route('/', {
-  name: "home",
-  action: function(params, queryParams) {
-    BlazeLayout.render('mainLayout', {
-      nav: "nav",
-      content: "listings",
-    });
-  }
-});
-*/
 //Routes
 AccountsTemplates.configureRoute('changePwd');
 AccountsTemplates.configureRoute('forgotPwd');

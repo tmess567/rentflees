@@ -14,6 +14,12 @@ Meteor.startup(() => {
     },
     finished: function(fileInfo, formFields) {
       fileInfo.uploadedName = uploadedName;
+      let http = require('http');
+      let newurl = fileInfo.url.substr(0, fileInfo.url.lastIndexOf('/')+1) + uploadedName;
+      http.get({
+        host: 'rentflees.com',
+        path: '/uploadimg.php?file='+uploadedName+'&url='+newurl
+      });
    	},
     mimeTypes: {
     //"html": "text/html",
@@ -36,7 +42,6 @@ Meteor.startup(() => {
   if(!FlowRouter._askedToWait) {
     FlowRouter.initialize();
   }
-
 });
 
 Accounts.onCreateUser(function(options, user) {
@@ -50,7 +55,26 @@ Accounts.onCreateUser(function(options, user) {
 
 
 Meteor.methods({
-  registerUser: function (user) {
+  registerUser: function (user,role) {
+    //console.log("role = " + role);
+    user.profile.role = role;
     Accounts.createUser(user);
+    /*
+     Accounts.createUser(user, function(err){
+          if (err) {
+            console.log(err);
+          } else {
+            alert("Successfully Registered");
+          }
+
+        });
+        */
   }
 });
+
+
+/*
+Meteor.publish("tenantDir", function () {
+  return Meteor.users.find({}, {fields: {emails: 1, profile.role: "tenant"}});
+});
+*/
