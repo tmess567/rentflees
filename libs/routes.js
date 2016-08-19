@@ -23,6 +23,12 @@ anonRoutes.route('/', {
 
 userRoutes.route('/addListing', {
   action: function() {
+    BlazeLayout.render("mainLayout", {content: "list-your-house", nav: "nav"});
+  }
+});
+
+userRoutes.route('/addListingForm', {
+  action: function() {
     BlazeLayout.render("mainLayout", {content: "add-listing", nav: "nav"});
   }
 });
@@ -36,7 +42,6 @@ userRoutes.route('/dashboard', {
 anonRoutes.route('/map', {
   action: function() {
     BlazeLayout.render("mainLayout", {content: "mapview", nav: "nav"});
->>>>>>> master
   }
 });
 
