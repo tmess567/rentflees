@@ -16,6 +16,10 @@
   }
 }
 
+.admin-console {
+  padding: 20px;
+}
+
 /*form-progress*/
 .form-progress {
   margin: 15px 0;

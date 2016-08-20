@@ -1,3 +1,9 @@
-.city-btn {
-	width: 100px;
+.filter-btn {
+	width: 150px;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.amenities-dropdown > li > a.selected {
+	background-color: #2684B6;
+	color: #fff;
 }

@@ -209,5 +209,76 @@ Template.mapAdd.onCreated(function() {
   });
 });
 
+Template.addListing.helpers({
+  isAdmin : function() { 
+    console.log("checking admin");
+    return Meteor.userId() === "sfuFY3gABqBmE3psp";
+  }
+});
 
-  //document.getElementById("addListingForm").elements.namedItem("YCoordinate").value = "x";
+Template.addListing.events({
+  "click #submit-listing" : function(evt) {
+    let title = $("#listingTitle").val();
+    let type = $("#listingType")[0].options[$("#listingType")[0].selectedIndex].innerText;
+    let furnishing = $("#furnishing")[0].options[$("#furnishing")[0].selectedIndex].innerText;
+    let tenantPref = $('input[name=tenantPref]:checked').val();
+    let occupation = $('input[name=occupation]:checked').val();
+    let rent = $("#rent").val();
+    let security = $("security").val();
+    
+    let foodarr = [];
+    $('input[name=food]:checked').each(function(){foodarr.push(this.value)});
+
+    let amenities = [];
+    $('input[name=amenities]:checked').each(function(){amenities.push(this.value)});
+    $('input[name=building-amenities]:checked').each(function(){amenities.push(this.value)});
+    
+    let city = $("#cityListing")[0].options[$("#cityListing")[0].selectedIndex].innerText;
+
+    let locality = $(".locality").val();
+    let landmark = $(".landmark").val();
+    let address = $(".address").val();
+
+    let imageNameAddListing =  null;
+    if(imageName != null){
+        imageNameAddListing = imageName;
+    } else {
+      //show error
+    }
+
+    let score = 0;
+    let verified = false;
+
+    if (Meteor.userId() === "sfuFY3gABqBmE3psp") {
+      score = parseInt($('input[name=furnishingScore]').val())
+        + parseInt($('input[name=locationScore]').val())
+        + parseInt($('input[name=spaceScore]').val());
+      verified = $('input[name=verified]').val() === "on";
+    }
+
+    Listings.insert({
+      title: title,
+      address: address,
+      rent: rent,
+      security: security,
+      type: type,
+      foodServices: foodarr,
+      amenities: amenities,
+
+      furnishing: furnishing,
+      tenantPref: tenantPref,
+      occupation: occupation,
+      city: city,
+      locality: locality,
+      landmark: landmark,
+
+      score: score,
+      verified: verified,
+      image: imageNameAddListing,
+
+      author: Meteor.userId(),
+      owner: Meteor.userId()
+
+    });
+  }
+});

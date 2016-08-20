@@ -46,14 +46,14 @@
         <div class="col-md-12">
         <div class="form-group">
         <label>Title</label>
-        <input name="text" class="form-control" placeholder="An eye-candy title for your house">
+        <input name="text" class="form-control" id="listingTitle" placeholder="An eye-candy title for your house">
         </div>
         </div>
 
         <div class="col-md-6">
         <div class="form-group">
         <label>Type</label>
-        <select name="type" class="form-control">
+        <select name="type" class="form-control" id="listingType">
           <option>Room</option>
           <option>Apartment</option>
           <option>Entire House</option>
@@ -64,7 +64,7 @@
         <div class="col-md-6">
         <div class="form-group">
         <label>Furnishing</label>
-        <select name="type" class="form-control">
+        <select name="type" class="form-control" id="furnishing">
           <option>Fully Furnished</option>
           <option>Semi Furnished</option>
           <option>Unfurnished</option>
@@ -77,13 +77,13 @@
           <label>Tentant Preference (Gender)</label>
           <div>
             <div class="col-md-4 col-sm-12 col-xs-12">
-              <input type="checkbox"> Male
+              <input type="radio" name="tenantPref" value="Male"> Male
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12">
-              <input type="checkbox"> Female
+              <input type="radio" name="tenantPref" value="Female"> Female
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12">
-              <input type="checkbox"> Family
+              <input type="radio" name="tenantPref" value="Family"> Family
             </div>
           </div>
         </div>
@@ -94,10 +94,10 @@
         <label>Tentant Preference (Occupation)</label>
         <div>
         <div class="col-md-6 col-sm-12 col-xs-12">
-        <input type="checkbox"> Student
+        <input type="radio" name="occupation" value="Student"> Student
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12 pull-right">
-        <input type="checkbox"> Employee
+        <input type="radio" name="occupation" value="Employee"> Employee
         </div>
         </div>
         </div>
@@ -108,7 +108,7 @@
         <label for="rent" >Monthly Rent</label>
         <div class="input-group">
         <span class="input-group-addon">₹</span>
-        <input type="text" class="form-control" placeholder="Mahine ka kitna loge">
+        <input type="text" class="form-control" id="rent" placeholder="Mahine ka kitna loge">
         <span class="input-group-addon">per month</span>
         </div>
         </div>
@@ -119,7 +119,7 @@
         <label>Security Deposit</label>
         <div class="input-group">
         <span class="input-group-addon">₹</span>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" id="security">
         </div>
         </div>
         </div>
@@ -135,93 +135,93 @@
         <label>Food Services</label>
         <div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox" name="breakfast"> Breakfast
+        <input type="checkbox" name="food" value="Breakfast"> Breakfast
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox" name="lunch"> Lunch
+        <input type="checkbox" name="food" value="Lunch"> Lunch
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox" name="dinner"> Dinner
+        <input type="checkbox" name="food" value="Dinner"> Dinner
         </div>
         </div>
 
         <label>House Amenities and Services</label>
         <div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> TV
+        <input type="checkbox" name="amenities" value="TV"> TV
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> DTH Service
+        <input type="checkbox" name="amenities" value="DTH Service"> DTH Service
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Wi-Fi
+        <input type="checkbox" name="amenities" value="Wi-Fi"> Wi-Fi
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Fridge
+        <input type="checkbox" name="amenities" value="Fridge"> Fridge
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> AC
+        <input type="checkbox" name="amenities" value="AC"> AC
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Geyser
+        <input type="checkbox" name="amenities" value="Geyser"> Geyser
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Water Purifier 
+        <input type="checkbox" name="amenities" value="Water Purifier"> Water Purifier 
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Washing Machine
+        <input type="checkbox" name="amenities" value="Washing Machine"> Washing Machine
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Sofa
+        <input type="checkbox" name="amenities" value="Sofa"> Sofa
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Table
+        <input type="checkbox" name="amenities" value="Table"> Table
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Cupboards
+        <input type="checkbox" name="amenities" value="Cupboards"> Cupboards
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Shoe Rack
+        <input type="checkbox" name="amenities" value="Shoe Rack"> Shoe Rack
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Gas Stove
+        <input type="checkbox" name="amenities" value="Gas Stove"> Gas Stove
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Modular Kitchen
+        <input type="checkbox" name="amenities" value="Modular Kitchen"> Modular Kitchen
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Room Service
+        <input type="checkbox" name="amenities" value="Room Service"> Room Service
         </div>
         </div>
 
         <label>Building Amenities and Service</label>
         <div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> CCTV
+        <input type="checkbox" name="building-amenities" value="CCTV"> CCTV
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Security
+        <input type="checkbox" name="building-amenities" value="Security"> Security
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Power Backup
+        <input type="checkbox" name="building-amenities" value="Power Backup"> Power Backup
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Water Supply
+        <input type="checkbox" name="building-amenities" value="Water Supply"> Water Supply
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Clubhouse
+        <input type="checkbox" name="building-amenities" value="Clubhouse"> Clubhouse
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Parking
+        <input type="checkbox" name="building-amenities" value="Parking"> Parking
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Swimming Pool
+        <input type="checkbox" name="building-amenities" value="Swimming Pool"> Swimming Pool
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Gym
+        <input type="checkbox" name="building-amenities" value="Gym"> Gym
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
-        <input type="checkbox"> Elevator
+        <input type="checkbox" name="building-amenities" value="Elevator"> Elevator
         </div>
         </div>
 
@@ -243,24 +243,24 @@
         <div class="col-md-4 col-sm-12 col-xs-12">
           <div class="form-group">
             <label>City</label>
-            <select class="form-control">
-              <option value="Delhi">Delhi</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Banglore">Banglore</option>
-              <option value="Channai">Chennai</option>
+            <select class="form-control" id="cityListing">
+              <option name="cityListing" value="Delhi">Delhi</option>
+              <option name="cityListing" value="Mumbai">Mumbai</option>
+              <option name="cityListing" value="Banglore">Banglore</option>
+              <option name="cityListing" value="Channai">Chennai</option>
             </select>
           </div>
           <div class="form-group">
             <label>Locality</label>
-            <input name="text" class="form-control" id="pac-input">
+            <input name="text" class="form-control locality" id="pac-input">
           </div>
           <div class="form-group">
             <label>Landmark</label>
-            <input name="text" class="form-control" id="pac-input">
+            <input name="text" class="form-control landmark" id="pac-input">
           </div>
           <div class="form-group">
             <label>Address</label>
-            <input name="text" class="form-control" id="pac-input">
+            <input name="text" class="form-control address" id="pac-input">
           </div>
         </div>
         </div>
@@ -276,7 +276,7 @@
     <div>
       <fieldset>
         <legend>Step 4: <strong>Add Photos</strong> </legend>
-        <div class="row">
+        <!-- <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div id="uploaded-image-carousel" class="dashed-border">
               <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 no-padding">
@@ -295,10 +295,36 @@
         <div class="row">
         <div class="col-md-offset-4 col-md-2">
           <input type="file" class="form-control hidden" id="file" multiple>
-        </div>
+        </div> -->
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div style="margin:10px;">
+               <img id="uploadedImg" src="" style="display: none; width: 500px; height: 500px; " />
+               {{> upload_bootstrap }}
+            </div>
+            {{#if isAdmin}}
+            <div style="margin:10px;">
+              <div class="adminConsole">
+                <input type="checkbox" name="verified">Verified<br />
+              </div>
+              <div class="adminConsole">
+                <span>Furnishing</span><input type="number" name="furnishingScore"><br />
+              </div>
+              <div class="adminConsole">
+                <span>Location</span><input type="number" name="locationScore"><br />
+              </div>
+              <div class="adminConsole">
+                <span>Space</span><input type="number" name="spaceScore"><br />
+              </div>
+            </div>
+            {{/if}}
+          </div>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 pull-left" >
           <button class="btn btn-primary btn-block btn-flat prev-step">Back</button>
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-6 pull-right" >
+          <button class="btn btn-primary btn-block btn-flat next-step" id="submit-listing">Submit</button>
         </div>
       </fieldset>
     </div>

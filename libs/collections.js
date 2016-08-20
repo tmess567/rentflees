@@ -15,7 +15,9 @@ ListingsIndex = new EasySearch.Index({
   	'category', 
   	'owner', 
   	'amenities',
-  	'description'
+  	'description',
+    'city'
   ],
-  engine: new EasySearch.Minimongo()
+  engine: new EasySearch.Minimongo(),
+  aggregation: '$and'
 });

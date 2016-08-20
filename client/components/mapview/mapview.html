@@ -11,20 +11,34 @@
     }
   </style>
 
-  <div class="input-group">
-    <div class="city-filter">
-      <button type="button" class="btn btn-default dropdown-toggle city-btn"
+  <div class="input-group container">
+    <div class="city-filter col-md-2">
+      <button type="button" class="btn btn-default dropdown-toggle filter-btn city-btn"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         All Cities
         <span class="caret"></span>
       </button>
       <ul class="city-dropdown dropdown-menu">
         <li><a href="#">All Cities</a></li>
-        <li><a href="#">Dehardun</a></li>
+        <li><a href="#">Dehradun</a></li>
         <li><a href="#">Moradabad</a></li>
         <li><a href="#">Patna</a></li>
       </ul>
     </div>
+
+    <div class="amenities-filter col-md-2">
+      <button type="button" class="btn btn-default dropdown-toggle filter-btn amenities-btn"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select Amenities
+        <span class="caret"></span>
+      </button>
+      <ul class="amenities-dropdown dropdown-menu">
+        <li><a href="#">Wifi</a></li>
+        <li><a href="#">AC</a></li>
+        <li><a href="#">Geyser</a></li>
+      </ul>
+    </div>
+
   </div>
     
     <ol class="leaderboard">

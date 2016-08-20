@@ -68,7 +68,8 @@ Listings.attachSchema(new SimpleSchema({
 	},
 	category: {
 		type: String,
-		label: "Category"
+		label: "Category",
+		optional: true
 	},
 	description: {
 		type: String,
@@ -165,7 +166,48 @@ Listings.attachSchema(new SimpleSchema({
 		autoform: {
 			type: "hidden"
 		}
-  }
+  },
+
+  furnishing: {
+  	type: String,
+  	label: "furnishing",
+  	optional: true
+  }, 
+  tenantPref: {
+  	type: String,
+  	label: "tenantPref",
+  	optional: true
+  }, 
+  occupation: {
+  	type: String,
+  	label: "occupation",
+  	optional: true
+  }, 
+  city: {
+  	type: String,
+  	label: "city",
+  	optional: true
+  }, 
+  locality: {
+  	type: String,
+  	label: "locality",
+  	optional: true
+  }, 
+  landmark: {
+  	type: String,
+  	label: "landmark",
+  	optional: true
+  }, 
+  score: {
+  	type: String,
+  	label: "score",
+  	optional: true
+  }, 
+  verified: {
+  	type: String,
+  	label: "verified",
+  	optional: true
+  }, 
 
 
 }));

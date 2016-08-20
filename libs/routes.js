@@ -29,7 +29,7 @@ userRoutes.route('/addListing', {
 
 userRoutes.route('/addListingForm', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "add-listing", nav: "nav"});
+    BlazeLayout.render("mainLayout", {content: "addListing", nav: "nav"});
   }
 });
 
