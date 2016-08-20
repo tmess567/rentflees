@@ -212,7 +212,7 @@ Template.mapAdd.onCreated(function() {
 Template.addListing.helpers({
   isAdmin : function() { 
     console.log("checking admin");
-    return Meteor.userId() === "sfuFY3gABqBmE3psp";
+    return Meteor.user().username === "Tushar Mishra";
   }
 });
 
@@ -249,7 +249,7 @@ Template.addListing.events({
     let score = 0;
     let verified = false;
 
-    if (Meteor.userId() === "sfuFY3gABqBmE3psp") {
+    if (Meteor.user().username === "Tushar Mishra") {
       score = parseInt($('input[name=furnishingScore]').val())
         + parseInt($('input[name=locationScore]').val())
         + parseInt($('input[name=spaceScore]').val());
