@@ -26,10 +26,28 @@ Template.loginForm.events({
     }
 });
 
+Template.loginModal.onCreated(function(){
+    console.log("reached");
+    $('#login-modal').one('shown.bs.modal',function(){
+        console.log('login open');
+        $('.main-content').slick({
+            arrows: false,
+            draggable: false,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+    });
+});
+
 Template.loginModal.onRendered(function(){
     $('.login-btn').click(function(){
         $('.main-content').slickGoTo(1,false);
     });
+
+    $('#num').click(function(){
+        $('.main-content').slickGoTo(1,false);
+    })
 
     $('.signup-btn').click(function(){
         $('.main-content').slickGoTo(3,false);
@@ -47,16 +65,5 @@ Template.loginModal.onRendered(function(){
     });
     $('#signup .back').click(function(){
         $('.main-content').slickGoTo(0,false);
-    });
-
-    $('#login-modal').one('shown.bs.modal',function(){
-        console.log('login open');
-        $('.main-content').slick({
-            arrows: false,
-            draggable: false,
-            infinite: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-        });
     });
 });
