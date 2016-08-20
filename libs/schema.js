@@ -208,6 +208,16 @@ Listings.attachSchema(new SimpleSchema({
   	label: "verified",
   	optional: true
   }, 
+  foodstr: {
+  	type: String,
+  	label: "foodstr",
+  	optional: true
+  }, 
+  amenitiesstr: {
+  	type: String,
+  	label: "amenitiesstr",
+  	optional: true
+  }, 
 
 
 }));

@@ -14,7 +14,8 @@ ListingsIndex = new EasySearch.Index({
   	'type', 
   	'category', 
   	'owner', 
-  	'amenities',
+    'foodstr',
+  	'amenitiesstr',
   	'description',
     'city'
   ],

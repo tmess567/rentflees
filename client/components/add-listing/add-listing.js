@@ -227,11 +227,22 @@ Template.addListing.events({
     let security = $("security").val();
     
     let foodarr = [];
-    $('input[name=food]:checked').each(function(){foodarr.push(this.value)});
+    let foodstr = "";
+    $('input[name=food]:checked').each(function(){
+      foodarr.push(this.value);
+      foodstr += this.value + " ";
+    });
 
+    let amenitiesstr = "";
     let amenities = [];
-    $('input[name=amenities]:checked').each(function(){amenities.push(this.value)});
-    $('input[name=building-amenities]:checked').each(function(){amenities.push(this.value)});
+    $('input[name=amenities]:checked').each(function(){
+      amenities.push(this.value);
+      amenitiesstr += this.value + " ";
+    });
+    $('input[name=building-amenities]:checked').each(function(){
+      amenities.push(this.value);
+      amenitiesstr += this.value + " ";
+    });
     
     let city = $("#cityListing")[0].options[$("#cityListing")[0].selectedIndex].innerText;
 
@@ -277,8 +288,11 @@ Template.addListing.events({
       image: imageNameAddListing,
 
       author: Meteor.userId(),
-      owner: Meteor.userId()
+      owner: Meteor.userId(),
 
+      //To allow Easy search indexing
+      foodstr: foodstr,
+      amenitiesstr: amenitiesstr
     });
   }
 });

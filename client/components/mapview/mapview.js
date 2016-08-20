@@ -11,8 +11,10 @@ function updateSearchString() {
 
 function updateIndex() {
 	updateSearchString();
-	listingsIndexVar = ListingsIndex.search(searchString).fetch();
-	listingsIndexDep.changed();
+	/*listingsIndexVar = ListingsIndex.search(searchString).fetch();
+	listingsIndexDep.changed();*/
+	$("#searchBoxContainer>input").val(searchString);
+	ListingsIndex.getComponentMethods().search(searchString)
 }
 
 Template.searchBox.helpers({
@@ -44,13 +46,13 @@ Template.searchBox.events({
 			updateIndex();
 		}
 		else {
-			currCity = evt.target.innerHTML;
+			currCity = evt.target.innerHTML + " " ;
 			updateIndex();
 		}
 	}, 
 	"click .amenities-dropdown > li" : function(evt) {
 		if ($(evt.target).hasClass("selected")) {
-			currAmenities.replace(evt.target.innerHTML + " ", "");
+			currAmenities = currAmenities.replace(evt.target.innerHTML + " ", "");
 			updateIndex();
 		} else {
 			currAmenities += evt.target.innerHTML + " ";
