@@ -78,3 +78,7 @@ Meteor.publish("tenantDir", function () {
   return Meteor.users.find({}, {fields: {emails: 1, profile.role: "tenant"}});
 });
 */
+// Deny all client-side updates to user documents
+Meteor.users.deny({
+  update() { return true; }
+});
