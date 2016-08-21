@@ -1,5 +1,5 @@
 //Meteor.subscribe("tenantDir");
-Meteor.subscribe("currentUserData");
+//Meteor.subscribe("currentUserData");
 Meteor.subscribe("userList");
 Template.dashboard.helpers({
     /*

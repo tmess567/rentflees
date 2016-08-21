@@ -48,7 +48,7 @@ Accounts.onCreateUser(function(options, user) {
   //user.role = "owner";
   if (options.profile)
    user.profile = options.profile;
-  console.log(user);
+  //console.log(user);
   //console.log(user.profile.fruit);
   return user;
 });

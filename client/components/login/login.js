@@ -16,7 +16,13 @@ Template.loginForm.events({
         	if(error){
 				//print.innerHTML = error.reason;
                 //alert(error.reason);
-                alert("Invalid Credentials, Please Retry");
+                //alert("Invalid Credentials, Please Retry");
+                var message = 'Invalid Credentials, Please Retry\n';
+                $('#alertModal').find('.modal-body p').text(message);
+                $('#alertModal').modal('show');
+                document.onkeypress = function (e) {
+                $('#alertModal').modal('hide');
+            };
 			}
             else
 			{
