@@ -50,7 +50,9 @@
     
     <ol class="leaderboard">
       {{#EasySearch.Each index=listingsIndex }}
-        {{> listingCard}}
+        {{#if verified}}
+          {{> listingCard}}
+        {{/if}}
       {{/EasySearch.Each}}
     </ol>
 
