@@ -920,6 +920,10 @@ a,a:hover,a:visited,a:link{
   margin:0;
 }
 
+.footer-content{
+  background-color: #4D394B;
+}
+
 .panel{
   border-radius:0;
 }
