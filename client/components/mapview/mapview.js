@@ -3,6 +3,7 @@ var currCity = "";
 var currAmenities = "";
 var searchString = "";
 var listingsIndexDep = new Tracker.Dependency();
+var target = null;
 
 function updateSearchString() {
 	searchString = currCity + currAmenities;
@@ -49,7 +50,7 @@ Template.searchBox.events({
 			currCity = evt.target.innerHTML + " " ;
 			updateIndex();
 		}
-	}, 
+	},
 	"click .amenities-dropdown > li" : function(evt) {
 		if ($(evt.target).hasClass("selected")) {
 			currAmenities = currAmenities.replace(evt.target.innerHTML + " ", "");
@@ -59,5 +60,10 @@ Template.searchBox.events({
 			updateIndex();
 		}
 		$(evt.target).toggleClass("selected");
+	}
+});
+Template.listingCard.events({
+	"click .card-listing" : function(evt){
+		window.location.href="/aboutHome?id="+this._id;
 	}
 });

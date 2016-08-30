@@ -7,3 +7,6 @@
 	background-color: #2684B6;
 	color: #fff;
 }
+.card-listing {
+	cursor: pointer;
+}

@@ -20,6 +20,12 @@ anonRoutes.route('/', {
   }
 });
 
+anonRoutes.route('/aboutHome', {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "listing_info", nav: "nav"});
+  }
+});
+
 
 userRoutes.route('/addListing', {
   action: function() {

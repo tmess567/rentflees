@@ -2,7 +2,12 @@
   // This code only runs on the server
   
   Meteor.publish('listings', function listingsPublication() {
-    return Listings.find();
+    Listings.allow({
+	  insert: function () { return true; },
+	  update: function () { return true; },
+	  remove: function () { return true; }
+	});
+	return Listings.find();
   });
 
 //}

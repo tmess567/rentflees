@@ -45,30 +45,18 @@ Meteor.startup(() => {
 });
 
 Accounts.onCreateUser(function(options, user) {
-  //user.role = "owner";
+  //Set user as owner or tenant
   if (options.profile)
    user.profile = options.profile;
   console.log(user);
-  //console.log(user.profile.fruit);
   return user;
 });
 
 
 Meteor.methods({
   registerUser: function (user,role) {
-    //console.log("role = " + role);
     user.profile.role = role;
     Accounts.createUser(user);
-    /*
-     Accounts.createUser(user, function(err){
-          if (err) {
-            console.log(err);
-          } else {
-            alert("Successfully Registered");
-          }
-
-        });
-        */
   }
 });
 

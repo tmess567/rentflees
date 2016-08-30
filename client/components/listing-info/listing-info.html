@@ -1,0 +1,200 @@
+<template name="listing_info">
+	{{#if routeHasID}}
+		<div class="container-fluid no-padding bg-grey row cantFind">
+			<h1>Cannot find home...</h1>
+		</div>
+	{{else}}
+		<div class="container-fluid no-padding bg-grey">
+			<div class="main-image">
+				<div class="listing-photo-carousel">
+						<div><img src="images/home1.jpg"></div>
+					</div>
+			</div>
+			<div class="row">
+				<div class="listing-title row">
+					<div class="col-md-2">
+						<div class="owner">
+							<div class="owner-img"><img alt="owner"></div>
+							<div class="owner-name">MR. XYZ</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="title">{{listing.title}}</div>
+						<div class="location"> {{listing.address}}</div>
+							{{listing.furnishing}}
+							{{listing.type}}<br />
+						<span><b>Rent: </b>{{listing.rent}}</span>
+					</div>
+					<div class="col-md-3">
+						<div class="title"> </div>
+						<h3><b>SCORE: </b>{{listing.score}}</h3>
+						{{#if isVerified}}
+							<h3><b>VERIFIED</b></h3>
+							{{#if isAdmin}}
+								<button class="btn btn-primary"
+										onclick="Listings.update(
+											{'_id': '{{listing._id}}'},
+											{$set: {'verified': 'false'}});">
+									UnVerify</button>
+							{{/if}}
+						{{else}}
+							<h3><b>NOT VERIFIED</b></h3>
+							{{#if isAdmin}}
+								<button class="btn btn-primary"
+										onclick="Listings.update(
+											{'_id': '{{listing._id}}'},
+											{$set: {'verified': 'true'}});">
+									Verify</button>
+							{{/if}}
+						{{/if}}
+					</div>
+				</div>
+				<div class="col-md-offset-1 col-md-7">
+					<div class="panel panel-info">
+						<div class="panel-heading">House Amenities</div>
+						<div class="panel-body">
+							<ul class="amenities">
+								{{#each listing.amenities}}
+									<li>{{this}}</li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-info">
+						<div class="panel-heading">Food Services</div>
+						<div class="panel-body">
+							<ul class="amenities">
+								{{#each listing.foodServices}}
+									<li>{{this}}</li>
+								{{/each}}
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-info">
+						<div class="panel-heading">Rules</div>
+						<div class="panel-body">
+							<ul class="rules">
+								<li>6 months min. stay duration, notice period of 1 month thereafter</li>
+								<li>House maintenance through Grabhouse's trusted partners with no visiting charges</li>
+								<li>Internet installation is based on ISP's feasibility</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading border-bottom">
+							<h5>4 Reviews</h5>
+							<div class="rating">
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="reviews">
+								<div class="row review border-bottom">
+									<div class="col-md-2">
+										<div class="review-person">
+											<div class="review-person-img"><img alt="review-person"></div>
+											<div class="review-person-name">MR. XYZ</div>
+										</div>
+									</div>
+									<div class="col-md-10">
+										<p>Vivamus est nibh, tincidunt molestie tincidunt ut, molestie non eros. Duis non elit eros.</p>
+										<div class="row review-footer">
+											<p class="review-date">August 5, 2015</p>
+											<button class="btn btn-default pull-right">Helpful ?</button>
+										</div>
+									</div>
+								</div>
+								<div class="row review border-bottom">
+									<div class="col-md-2">
+										<div class="review-person">
+											<div class="review-person-img"><img alt="review-person"></div>
+											<div class="review-person-name">MR. XYZ</div>
+										</div>
+									</div>
+									<div class="col-md-10">
+										<p>Vivamus est nibh, tincidunt molestie tincidunt ut, molestie non eros. Duis non elit eros.</p>
+										<div class="row review-footer">
+											<p class="review-date">August 5, 2015</p>
+											<button class="btn btn-default pull-right">Helpful ?</button>
+										</div>
+									</div>
+								</div>
+								<div class="row review border-bottom">
+									<div class="col-md-2">
+										<div class="review-person">
+											<div class="review-person-img"><img alt="review-person"></div>
+											<div class="review-person-name">MR. XYZ</div>
+										</div>
+									</div>
+									<div class="col-md-10">
+										<p>Vivamus est nibh, tincidunt molestie tincidunt ut, molestie non eros. Duis non elit eros.</p>
+										<div class="row review-footer">
+											<p class="review-date">August 5, 2015</p>
+											<button class="btn btn-default pull-right">Helpful ?</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel">
+						<div class="panel-heading">
+							<h5 id="nearby-places">Nearby Places</h5>
+							<div class="dropdown pull-right">
+								<span>Showing </span>
+						      <button type="button" class="dropdown-toggle nearby-places-select" data-toggle="dropdown">
+						        <span id="selected-nearby-place">All</span> <span class="caret"></span>
+						      </button>
+						      <ul class="dropdown-menu" role="menu">
+						        <li><a href="#">All</a></li>
+						        <li><a href="#">Restaurants</a></li>
+						        <li><a href="#">Shopping Malls</a></li>
+						        <li><a href="#">Movie Halls</a></li>
+						        <li><a href="#">Schools</a></li>
+						        <li><a href="#">ATMs</a></li>
+						        <li><a href="#">Hospitals</a></li>
+						      </ul>
+						  </div>
+						</div>
+						<div class="panel-body no-padding">
+							{{> mapAdd}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="similar-listings">
+			<h4>Similar Listings</h4>
+			<div class="row similar-listing-carousel">
+				{{#each images}}
+				<div class="similar-listing">
+					<div class="img">
+						<img class="img-responsive" src="{{.}}">
+					</div>
+					<div class="details">
+						<div class="title">
+							Lorem Ipsum Lorem Ipsum
+						</div>
+						<div class="inline-block">
+							<div class="location"> Karol Bagh, Delhi</div>
+							<div class="rating">
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+							</div>
+						</div>
+						<div class="rent pull-right">5,000</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			</div>
+		</div>
+	{{/if}}
+	{{> footer}}
+</template>

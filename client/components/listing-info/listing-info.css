@@ -1,0 +1,219 @@
+.main-image > img {
+	max-height: 80vh;
+	margin: auto;
+}
+
+.hidden {
+	display: none;
+}
+
+.cantFind {
+	height: 38vh;
+	text-align: center;
+}
+
+.listing-title{
+	padding: 15px;
+	background: #fff;
+	margin-bottom: 20px !important;
+}
+
+.owner-img{
+	margin: 5px;
+}
+
+.owner-img img{
+	height: 80px;
+	width: 80px;
+	display: block;
+	margin: 0 auto;
+}
+
+.owner-name{
+	text-align: center;
+}
+
+.title{
+	font-size: 18px;
+	font-weight: bold;
+	color: #484848;
+}
+
+@media(min-width: 768px){
+	.title{
+		font-size: 24px;
+	}	
+}
+
+.key-info{
+	padding: 0;
+	margin: 5px 0;
+}
+
+.key-info li{
+	margin-left: 5px;
+}
+
+.listing-about{
+	font-size: 15px;
+}
+
+.amenities li{
+	width: 48%;
+	display: inline-block;
+	margin: 5px 0;
+}
+
+@media(min-width: 768px){
+	.amenities li{
+		width: 32%;
+	}
+}
+
+.rules li{
+	margin: 5px 0;
+	font-size: 15px;
+}
+
+.listing-photo-carousel{
+	height: 360px;
+}
+
+@media(min-width: 768px){
+	.listing-photo-carousel{
+		height: 500px;
+	}
+}
+
+.rating{
+	color: #FFD700;
+}
+
+.review{
+	padding: 15px 0;
+	margin: 10px 15px !important;
+}
+
+.review-person{
+	margin-bottom: 10px;
+}
+
+.review-person-img{
+	margin-bottom: 5px;
+}
+
+.review-person img{
+	height: 80px;
+	display: block;
+	margin: 0 auto;
+	max-width: 80px;
+}
+
+.review-person-name{
+	text-align: center;
+}
+
+.review-footer{
+	margin: 10px 0;
+}
+
+.review-date{
+	display: inline-block;
+	margin: 0;
+	padding: 7px;
+	color: #050505;
+}
+
+#nearby-places{
+	display: inline-block;
+}
+
+#selected-nearby-place{
+	font-weight: 900;
+}
+
+.nearby-places-select{
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	margin: 10px;
+	min-width: 160px;
+	padding: 0;
+	text-align: left;
+}
+
+.similar-listings{
+	margin: 0 25px;
+	margin-bottom: 20px;
+}
+
+.similar-listings .slick-prev{
+	left: -15px !important;
+}
+
+.similar-listings .slick-next{
+	right: -15px !important;
+}
+
+@media(min-width: 768px){
+	.similar-listings{
+		margin: 0 100px;
+		margin-bottom: 20px;
+	}
+}
+
+.similar-listing{
+	height: 280px;
+	position: relative;
+	margin: 2px 15px;
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	   -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+		    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.similar-listing .img{
+	overflow: hidden;
+}
+
+.img img{
+	padding: 0;
+}
+
+.similar-listing .details{
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	background-color: #fff;
+	padding: 10px;
+}
+
+.similar-listing .title{
+	font-size: 16px;
+	margin: 5px 0;
+	display: block;
+}
+
+.similar-listing .rating,
+.similar-listing .location{
+	margin: 5px 0;
+}
+
+.similar-listing .rent{
+	margin: 10px 0;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.location:before{
+	font-size: inherit;
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f041 ";
+	color: #888;
+}
+
+.location{
+	color: #888;
+}

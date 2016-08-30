@@ -121,8 +121,8 @@ function readURL(input) {
 
 Meteor.subscribe('listings');
 var imageName = null;
-var latitude = -37.8136;
-var longitude = 144.9631;
+var latitude = 30.325558;
+var longitude = 77.9470939;
 
 Uploader.finished = function(index, fileInfo, templateContext) {
 	//console.log(fileInfo.uploadedName);
@@ -170,11 +170,7 @@ Template.mapAdd.helpers({
 Template.mapAdd.onRendered(function() {
   GoogleMaps.load({
     v: '3',
-    //previous key : AIzaSyBYV0r7tOHoNY0kKA14nyKxvAxhzZ3v8M8
     key: 'AIzaSyBiTVrSTOhuNSaxTT29FqS1bsa3OXHhulc',
-    //'AIzaSyBGuxb2ewAPUA2TZScpgdXqKAiLYYEJ3fw', //places key for local testing
-    //'AIzaSyBiTVrSTOhuNSaxTT29FqS1bsa3OXHhulc' //JS key
-
     libraries: 'geometry,places'
   });
   console.log("Map Rendered");
@@ -184,7 +180,7 @@ Template.mapAdd.onCreated(function() {
   var marker;
   GoogleMaps.ready('map', function(map) {
     marker = new google.maps.Marker({
-      position: {lat: latitude, lng: longitude}, 
+      position: {lat: latitude, lng: longitude}, zoom: 17,
       map: map.instance, draggable: true, 
     });
     var input = document.getElementById('pac-input');
