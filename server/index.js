@@ -17,7 +17,7 @@ Meteor.startup(() => {
       let http = require('http');
       let newurl = fileInfo.url.substr(0, fileInfo.url.lastIndexOf('/')+1) + uploadedName;
       http.get({
-        host: 'rentflees.com',
+        host: 'dev3.rentflees.com',
         path: '/uploadimg.php?file='+uploadedName+'&url='+newurl
       });
    	},
