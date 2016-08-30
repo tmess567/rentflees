@@ -26,6 +26,10 @@ Template.searchBox.helpers({
   listingsArr : function() {
   	listingsIndexDep.depend();
   	return listingsIndexVar===null?ListingsIndex.search(searchString).fetch():listingsIndexVar;
+  },
+  isVerified : function() {
+  	console.log(this.verified === "true");
+  	return this.verified === "true";
   }
 });
 
