@@ -14,8 +14,10 @@ Template.loginForm.events({
         Meteor.loginWithPassword(email, password, function(error)
         {
         	if(error){
-				//print.innerHTML = error.reason;
-                alert(error.reason);
+                $(".wrong-cred-warn").toggleClass("hidden");
+                $(".modal-content").animate({left:(17*-1)}, (((17/4)/4)))
+                    .animate({left:17}, ((1800/4)/2))
+                    .animate({left:0}, (((1800/4)/4)));
 			}
             else
 			{
