@@ -18,6 +18,13 @@ function updateIndex() {
 	ListingsIndex.getComponentMethods().search(searchString)
 }
 
+Template.horizontalListingCard.helpers({
+	isVerified : function() {
+  		console.log(this.verified === "true");
+  		return this.verified === "true";
+  	}
+});
+
 Template.searchBox.helpers({
   listingsIndex : function() {
   	listingsIndexDep.depend();

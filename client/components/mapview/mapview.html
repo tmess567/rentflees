@@ -47,17 +47,42 @@
     </div>
 
   </div>
-    
-    <ol class="leaderboard">
+  <div class="col-md-12">
+    <div class="col-md-6 map-container">
+      {{> mapAdd}}
+    </div>
+    <div class="col-md-6">
       {{#EasySearch.Each index=listingsIndex }}
         {{#if isVerified}}
-          {{> listingCard}}
+          {{> horizontalListingCard}}
         {{/if}}
       {{/EasySearch.Each}}
-    </ol>
-
+    </div>
+  </div>
 </template>
-
+<template name="horizontalListingCard">
+  <div class="col-md-12 listingCardContainer">
+    <div class="col-md-5">
+      <img src="images/home1.jpg" style="max-height: 150px;
+                                          max-width: 150px;
+                                          margin: auto;
+                                          height: 100%;"  >
+    </div>
+    <div class="col-md-7">
+      <h3>{{title}}</h3>
+      <b>City: </b>{{city}}
+      <b>Type: </b>{{type}}
+      <b>Rent: </b>{{rent}}
+      <b>Security: </b>{{rent}}
+      <h4>SCORE: {{score}}</h4>
+      {{#if isVerified}}
+        <h3><b>VERIFIED</b></h3>
+      {{else}}
+        <h3><b>NOT VERIFIED</b></h3>
+      {{/if}}
+    </div>
+  </div>
+</template>
 <template name="listingCard">
   <style type="text/css">
     .traceMap{

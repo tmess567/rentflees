@@ -1,5 +1,22 @@
+var listingsIndexVar = null;
+var currCity = "";
+var currAmenities = "";
+var searchString = "";
+var listingsIndexDep = new Tracker.Dependency();
+
 Template.listview.helpers({
-	images:['home1.jpg' ,'home2.jpg','home3.jpg','home4.jpg','home5.jpg','home6.jpg','home7.jpg','home8.jpg','home10.jpg']
+	listingsIndex : function() {
+	  	listingsIndexDep.depend();
+	  	return listingsIndexVar===null?ListingsIndex:listingsIndexVar;
+	},
+	listingsArr : function() {
+	 	listingsIndexDep.depend();
+	  	return listingsIndexVar===null?ListingsIndex.search(searchString).fetch():listingsIndexVar;
+	},
+	isVerified : function() {
+	  	console.log(this.verified === "true");
+	  	return this.verified === "true";
+	}
 });
 
 Template.listview.onRendered(function(){

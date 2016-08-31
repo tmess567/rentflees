@@ -1,0 +1,39 @@
+.renting-heading{
+	color: #fff;
+	font-size: 30px;
+	background-color: #0facf3;
+	padding: 50px;
+	text-align: center;
+	border-bottom: 10px solid #3498db; 
+	margin-bottom: 20px;
+}
+
+.navbar-collapse{
+	max-height: none;
+}
+
+.navbar-default{
+	border: none;
+	background-color: transparent;
+}
+
+.section-content{
+	padding: 20px 30px;
+}
+
+.section-heading{
+	color: #484848;
+	font-size: 16px;
+	font-weight: 900;
+	margin: 10px 0;
+}
+
+.section-body p{
+	font-size: 14px;
+	margin: 2px;
+}
+
+.panel-heading{
+	font-weight: bold;
+	margin: 8px 0 !important;
+}
