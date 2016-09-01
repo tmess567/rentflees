@@ -220,7 +220,7 @@ Template.addListing.events({
     let tenantPref = $('input[name=tenantPref]:checked').val();
     let occupation = $('input[name=occupation]:checked').val();
     let rent = $("#rent").val();
-    let security = $("security").val();
+    let security = $("#security").val();
     
     let foodarr = [];
     let foodstr = "";

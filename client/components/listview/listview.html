@@ -31,13 +31,13 @@
 					<div class="filter-name">Tenant Type</div>
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label><input type="checkbox"> Boys</label>
+							<label><input type="checkbox" name="tenantPref" value="male"> Male</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label><input type="checkbox"> Girls</label>
+							<label><input type="checkbox" name="tenantPref" value="female"> Female</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label><input type="checkbox"> Family</label>
+							<label><input type="checkbox" name="tenantPref" value="family"> Family</label>
 						</div>
 					</div>
 	  			</div>
@@ -112,8 +112,8 @@
   	</div>
   	-->
   	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel list-container">
-	{{#EasySearch.Each index=listingsIndex }}
-        {{#if isVerified}}
+	{{#each listingsArr}}
+        {{#if isVerifiedorAdmin}}
 			<div class="row list-card">
 				<div class="img-wrapper">
 					<div><img data-lazy="http://dev3.rentflees.com/upload/{{image}}"></div>
@@ -125,20 +125,20 @@
 							<div class="location"> {{address}}</div>
 							<div class="build-info"> {{furnishing}} {{type}}</div>
 						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4 no-padding" > <div class="sm-text">RENT</div> <div class="rent"> 10,000</div></div>
+						<div class="col-md-4 col-sm-4 col-xs-4 no-padding" > <div class="sm-text">RENT</div> <div class="rent"> {{rent}}</div></div>
 					</div>
 					<div class="row detail">
 						<div class="col-md-4 col-sm-4 col-xs-4 border-right">
 							<div class="sm-text">SECURITY</div>
-							<div class="amount"> 10,000</div>
+							<div class="amount"> {{security}}</div>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4 border-right">
 							<div class="sm-text">FURNISHING</div>
-							<div class="bold-text"> Unfurnished</div>
+							<div class="bold-text"> {{furnishing}}</div>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-4">
 							<div class="sm-text">AVAILABLE FOR</div>
-							<div class="bold-text"> Family</div>
+							<div class="bold-text"> {{tenantPref}}</div>
 						</div>
 					</div>
 					<div class="row footer">
@@ -152,16 +152,33 @@
 							<div class="sm-text">4 Reviews</div>
 						</div>
 						<div class="col-md-4 col-sm-4 col-xs-2 no-padding">
-							<button class="btn btn-default"><i class="fa fa-mobile fa-lg"></i> <span class="hidden-xs">Contact</span></button>
+							<button class="btn btn-default"
+								onclick="window.location.href='/aboutHome?id={{_id}}';">
+								<span class="hidden-xs">Read More</span>
+							</button>
 						</div>
-						<div class="col-md-4 col-sm-4 col-xs-2 no-padding">
-							<button class="btn btn-primary"><i class="fa fa-heart-o fa-lg"></i> <span class="hidden-xs">Shortlist</span></button>
-						</div>
+						{{#if isAdmin}}
+							<div class="col-md-4 col-sm-4 col-xs-2 no-padding">
+								{{#if isVerified}}
+									<button class="btn btn-success">
+										<span class="hidden-xs">Verified</span>
+									</button>
+								{{else}}
+									<button class="btn btn-danger">
+										<span class="hidden-xs">Not Verified</span>
+									</button>
+								{{/if}}
+							</div>
+						{{else}}
+							<div class="col-md-4 col-sm-4 col-xs-2 no-padding">
+								<button class="btn btn-primary"><i class="fa fa-heart-o fa-lg"></i> <span class="hidden-xs">Shortlist</span></button>
+							</div>
+						{{/if}}
 					</div>
 				</div>
 			</div>
 		{{/if}}
-    {{/EasySearch.Each}}
+    {{/each}}
 	</div>
   	</div>
 </div>

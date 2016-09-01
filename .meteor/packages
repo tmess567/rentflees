@@ -34,3 +34,4 @@ useraccounts:bootstrap
 easy:search
 deps
 tracker
+meteorhacks:fast-render

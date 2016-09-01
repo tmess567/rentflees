@@ -192,6 +192,11 @@
   visibility: hidden;
 }
 
+.city-card:hover .city-content{
+  font-size: 17px;
+  font-weight: 500;
+}
+
 .city-content{
   text-align: center;
   margin-top: 5px;

@@ -17,7 +17,8 @@ ListingsIndex = new EasySearch.Index({
     'foodstr',
   	'amenitiesstr',
   	'description',
-    'city'
+    'city',
+    'tenantPref'
   ],
   engine: new EasySearch.Minimongo(),
   aggregation: '$and'
