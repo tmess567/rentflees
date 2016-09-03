@@ -32,6 +32,12 @@ anonRoutes.route('/rentingGuide', {
   }
 });
 
+anonRoutes.route('/comingSoon', {
+  action: function() {
+    window.location = "http://landing.rentflees.com";
+  }
+});
+
 
 userRoutes.route('/addListing', {
   action: function() {
