@@ -9,21 +9,13 @@ Template.index.onRendered(function(){
 	$('.city-card').hover(function(e){
 		$(this).toggleClass('hover');
 	});
-
-	/*
-	$('.photo').slick({
-		dots: false,
+	
+	$('.fade-slider').slick({
 		arrows: false,
-		infinite: true,
-	  	speed: 500,
-	  	fade: true,
-	  	cssEase: 'linear',
-	  	slidesToShow: 1,
-		slidesToScroll: 1,
+		draggable: false,
+		fade: true,
 		autoplay: true,
-		autoplaySpeed: 5000,
-		//centerMode: true,
-  		//variableWidth: true
+  		autoplaySpeed: 1500,
+  		speed: 1000,
 	});
-	*/
 });

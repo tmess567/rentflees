@@ -225,52 +225,40 @@
 .chennai{
   background-image: url("images/city_gallery/chennai.jpg");
 }
-/*.city-carousel .slick-slide{
-  height: 500px;
+.how-it-works{
+  background: url("images/how-it-works-bg.png") center 0 no-repeat;
 }
 
-.city-gallery{
-  padding: 20px 0;
+.how-it-works .svg-wrapper,
+.how-it-works .svg-wrapper-lg{
+  margin: 100px auto;
+  margin-bottom: 35px;
+  border: 1px dashed;
+  border-radius: 50%;
+  background-color: #fff;
+  height: 208px;
+  width: 208px;
 }
 
-.photo{
-  height: 200px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  cursor: pointer;
+.how-it-works .svg-wrapper-lg{
+  margin: 20px auto;
+  margin-bottom: 35px;
+  width: 380px;
+  height: 380px;
 }
 
-.hover-img-wrapper{
-  position: relative;
-  height: inherit;
+#top-view,
+#docs{
+  padding: 20px;
 }
 
-.hover-img-wrapper:before{
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0);
-  transition: all 0.2s ease;
-  z-index: 2;
+#hand-shake,
+.svg-wrapper-lg img{
+  padding: 5px;
+  border-radius: 50%;
+  margin: 0;
 }
 
-.hover-img-wrapper:hover:before{
-  background: rgba(0,0,0,0.2);
+.how-it-works .h2{
+  color: #484848;
 }
-
-.photo:after{
-  content: attr(data-city);
-  text-align: center;
-  font-size: 24px;
-  color: white;
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 40%;
-  background: transparent;
-  z-index: 1;
-}*/
