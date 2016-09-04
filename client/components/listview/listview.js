@@ -1,6 +1,7 @@
 var listingsIndexVar = null;
 var listingArr = null;
 var listingsIndexDep = new Tracker.Dependency();
+var mapAdded = false;
 
 Template.listview.rendered = function() {
 	listingsArr = ListingsIndex.search("").fetch();
@@ -43,5 +44,9 @@ Template.listview.onRendered(function(){
 		infinite: false,
 		slidesToShow: 1,
 		slidesToScroll: 1
+	});
+	$("#show-map-button").click(function(evt){
+		$("#map-panel").toggleClass("map-panel");
+		$(".map-container-container").toggleClass("hidden");
 	});
 });

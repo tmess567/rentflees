@@ -56,6 +56,25 @@
     background-color: inherit;
 }
 */
+
+/*MAP PANEL STYLING*/
+#map-panel.map-panel{
+    height:500px;
+}
+
+#map-panel{
+    height: 50px;
+    transition: height 0.3s ease-in-out;
+}
+
+.map-container-container{
+    padding-top: 10px;
+}
+
+.map-container{
+    margin: auto;
+}
+
 .filter-panel{
     width: 100%;
     height: 100%;
