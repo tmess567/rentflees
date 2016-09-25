@@ -35,3 +35,4 @@ easy:search
 deps
 tracker
 meteorhacks:fast-render
+force-ssl
