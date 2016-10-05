@@ -95,6 +95,7 @@ reactive-dict@1.1.8
 reactive-var@1.0.10
 reload@1.1.10
 retry@1.0.8
+rgnevashev:bootstrap-slider@6.1.6
 routepolicy@1.0.11
 service-configuration@1.0.10
 sha@1.0.8
