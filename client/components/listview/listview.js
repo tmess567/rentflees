@@ -1,26 +1,14 @@
-var listingsIndexVar = null;
-var listingArr = null;
 var listingsIndexDep = new Tracker.Dependency();
 var mapAdded = false;
-var searchInit = true;
+var searchObj = {};
 
 Meteor.subscribe('listings');
-
-Template.listview.onCreated(function(){
-	listingArr = Listings.find().fetch();
-	listingsIndexDep.changed();
-});
-
-Template.listview.rendered = function() {
-	listingArr = Listings.find().fetch();
-	listingsIndexDep.changed();
-};
 
 Template.listview.helpers({
 	listingsArr : function() {
 		listingsIndexDep.depend();
-		console.log(listingArr);
-	 	return searchInit || listingArr.length === 0 ?Listings.find().fetch():listingArr;
+	 	if(searchObj.hasOwnProperty("tenantPref")) console.log(searchObj);
+	 	return Listings.find(searchObj).fetch();
 	},
 	isVerifiedorAdmin : function() {
 	  	return (this.verified === "true" || Meteor.user().username === "Tushar Mishra" );
@@ -40,11 +28,27 @@ Template.listview.onRendered(function(){
 		$('input[name=tenantPref]').each(function(){
 			if($(this).is(":checked")){
 				console.log("Searching for "+$(this).val());
-				listingArr = listingArr.concat(Listings.find({tenantPref : $(this).val()}).fetch());
+				if(!searchObj.hasOwnProperty("tenantPref")){
+					searchObj["tenantPref"] = { $in: [] };
+					console.log(searchObj);
+				}
+				if(searchObj.tenantPref.$in.indexOf($(this).val())<0)
+					searchObj.tenantPref.$in.push($(this).val());
+				if(searchObj.hasOwnProperty("tenantPref")) console.log(searchObj.tenantPref.$in);
+			} else {
+				if(searchObj.hasOwnProperty("tenantPref")){
+					for(let i = searchObj.tenantPref.$in.length - 1; i >= 0; i--) {
+					    if(searchObj.tenantPref.$in[i] === $(this).val()) {
+					       searchObj.tenantPref.$in.splice(i, 1);
+					    }
+					}
+					if(searchObj.tenantPref.$in.length == 0){
+						delete searchObj.tenantPref;
+					}
+				}
 			}
 		});
 		listingsIndexDep.changed();
-		console.log(listingArr);
 	});
 	
 	$('.img-wrapper').slick({
