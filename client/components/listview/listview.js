@@ -2,15 +2,25 @@ var listingsIndexVar = null;
 var listingArr = null;
 var listingsIndexDep = new Tracker.Dependency();
 var mapAdded = false;
+var searchInit = true;
+
+Meteor.subscribe('listings');
+
+Template.listview.onCreated(function(){
+	listingArr = Listings.find().fetch();
+	listingsIndexDep.changed();
+});
 
 Template.listview.rendered = function() {
-	listingsArr = ListingsIndex.search("").fetch();
+	listingArr = Listings.find().fetch();
 	listingsIndexDep.changed();
 };
 
 Template.listview.helpers({
 	listingsArr : function() {
-	 	return Listings.find().fetch();
+		listingsIndexDep.depend();
+		console.log(listingArr);
+	 	return searchInit || listingArr.length === 0 ?Listings.find().fetch():listingArr;
 	},
 	isVerifiedorAdmin : function() {
 	  	return (this.verified === "true" || Meteor.user().username === "Tushar Mishra" );
@@ -23,21 +33,20 @@ Template.listview.helpers({
 	}
 });
 
-Template.listview.onCreated(function(){
-	console.log("called");
-	listingArr = ListingsIndex.search("").fetch();
-});
-
 Template.listview.onRendered(function(){
 	$('input[name=tenantPref]').click(function(evt){
+		searchInit = false;
 		listingArr = [];
 		$('input[name=tenantPref]').each(function(){
 			if($(this).is(":checked")){
-				listingArr.concat(ListingsIndex.search({tenantPref : $(this).val()}).fetch());
+				console.log("Searching for "+$(this).val());
+				listingArr = listingArr.concat(Listings.find({tenantPref : $(this).val()}).fetch());
 			}
 		});
+		listingsIndexDep.changed();
 		console.log(listingArr);
 	});
+	
 	$('.img-wrapper').slick({
 		lazyLoad: 'ondemand',
 		arrows: true,

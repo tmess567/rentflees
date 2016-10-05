@@ -10,8 +10,7 @@ ListingsIndex = new EasySearch.Index({
   collection: Listings,
   fields: [
   	'title', 
-  	'address', 
-  	'type', 
+  	'address',
   	'category', 
   	'owner', 
     'foodstr',
