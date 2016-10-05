@@ -7,7 +7,6 @@ Meteor.subscribe('listings');
 Template.listview.helpers({
 	listingsArr : function() {
 		listingsIndexDep.depend();
-	 	if(searchObj.hasOwnProperty("tenantPref")) console.log(searchObj);
 	 	return Listings.find(searchObj).fetch();
 	},
 	isVerifiedorAdmin : function() {
@@ -44,6 +43,35 @@ Template.listview.onRendered(function(){
 					}
 					if(searchObj.tenantPref.$in.length == 0){
 						delete searchObj.tenantPref;
+					}
+				}
+			}
+		});
+		listingsIndexDep.changed();
+	});
+
+	$('input[name=type]').click(function(evt){
+		searchInit = false;
+		listingArr = [];
+		$('input[name=type]').each(function(){
+			if($(this).is(":checked")){
+				console.log("Searching for "+$(this).val());
+				if(!searchObj.hasOwnProperty("type")){
+					searchObj["type"] = { $in: [] };
+					console.log(searchObj);
+				}
+				if(searchObj.type.$in.indexOf($(this).val())<0)
+					searchObj.type.$in.push($(this).val());
+				if(searchObj.hasOwnProperty("type")) console.log(searchObj.type.$in);
+			} else {
+				if(searchObj.hasOwnProperty("type")){
+					for(let i = searchObj.type.$in.length - 1; i >= 0; i--) {
+					    if(searchObj.type.$in[i] === $(this).val()) {
+					       searchObj.type.$in.splice(i, 1);
+					    }
+					}
+					if(searchObj.type.$in.length == 0){
+						delete searchObj.type;
 					}
 				}
 			}
