@@ -1,4 +1,5 @@
 var listingsIndexDep = new Tracker.Dependency();
+var mapAddedDep = new Tracker.Dependency();
 var mapAdded = false;
 var searchObj = {
 	rent: {
@@ -23,6 +24,10 @@ Template.listview.helpers({
 	},
 	isAdmin : function() {
 	  	return Meteor.user().username === "Tushar Mishra";
+	},
+	mapShown : function(){
+		mapAddedDep.depend();
+		return mapAdded;
 	}
 });
 
@@ -51,14 +56,10 @@ Template.listview.onRendered(function(){
 		searchInit = false;
 		$('input[name=tenantPref]').each(function(){
 			if($(this).is(":checked")){
-				console.log("Searching for "+$(this).val());
-				if(!searchObj.hasOwnProperty("tenantPref")){
+				if(!searchObj.hasOwnProperty("tenantPref"))
 					searchObj["tenantPref"] = { $in: [] };
-					console.log(searchObj);
-				}
 				if(searchObj.tenantPref.$in.indexOf($(this).val())<0)
 					searchObj.tenantPref.$in.push($(this).val());
-				if(searchObj.hasOwnProperty("tenantPref")) console.log(searchObj.tenantPref.$in);
 			} else {
 				if(searchObj.hasOwnProperty("tenantPref")){
 					for(let i = searchObj.tenantPref.$in.length - 1; i >= 0; i--) {
@@ -79,14 +80,11 @@ Template.listview.onRendered(function(){
 		searchInit = false;
 		$('input[name=type]').each(function(){
 			if($(this).is(":checked")){
-				console.log("Searching for "+$(this).val());
 				if(!searchObj.hasOwnProperty("type")){
 					searchObj["type"] = { $in: [] };
-					console.log(searchObj);
 				}
 				if(searchObj.type.$in.indexOf($(this).val())<0)
 					searchObj.type.$in.push($(this).val());
-				if(searchObj.hasOwnProperty("type")) console.log(searchObj.type.$in);
 			} else {
 				if(searchObj.hasOwnProperty("type")){
 					for(let i = searchObj.type.$in.length - 1; i >= 0; i--) {
@@ -107,14 +105,11 @@ Template.listview.onRendered(function(){
 		searchInit = false;
 		$('input[name=furnishing]').each(function(){
 			if($(this).is(":checked")){
-				console.log("Searching for "+$(this).val());
 				if(!searchObj.hasOwnProperty("furnishing")){
 					searchObj["furnishing"] = { $in: [] };
-					console.log(searchObj);
 				}
 				if(searchObj.furnishing.$in.indexOf($(this).val())<0)
 					searchObj.furnishing.$in.push($(this).val());
-				if(searchObj.hasOwnProperty("furnishing")) console.log(searchObj.furnishing.$in);
 			} else {
 				if(searchObj.hasOwnProperty("furnishing")){
 					for(let i = searchObj.furnishing.$in.length - 1; i >= 0; i--) {
@@ -135,14 +130,10 @@ Template.listview.onRendered(function(){
 		searchInit = false;
 		$('input[name=amenities]').each(function(){
 			if($(this).is(":checked")){
-				console.log("Searching for "+$(this).val());
-				if(!searchObj.hasOwnProperty("amenities")){
+				if(!searchObj.hasOwnProperty("amenities"))
 					searchObj["amenities"] = { $all: [] };
-					console.log(searchObj);
-				}
 				if(searchObj.amenities.$all.indexOf($(this).val())<0)
 					searchObj.amenities.$all.push($(this).val());
-				if(searchObj.hasOwnProperty("amenities")) console.log(searchObj.amenities.$all);
 			} else {
 				if(searchObj.hasOwnProperty("amenities")){
 					for(let i = searchObj.amenities.$all.length - 1; i >= 0; i--) {
@@ -163,14 +154,10 @@ Template.listview.onRendered(function(){
 		searchInit = false;
 		$('input[name=foodServices]').each(function(){
 			if($(this).is(":checked")){
-				console.log("Searching for "+$(this).val());
-				if(!searchObj.hasOwnProperty("foodServices")){
+				if(!searchObj.hasOwnProperty("foodServices"))
 					searchObj["foodServices"] = { $all: [] };
-					console.log(searchObj);
-				}
 				if(searchObj.foodServices.$all.indexOf($(this).val())<0)
 					searchObj.foodServices.$all.push($(this).val());
-				if(searchObj.hasOwnProperty("foodServices")) console.log(searchObj.foodServices.$all);
 			} else {
 				if(searchObj.hasOwnProperty("foodServices")){
 					for(let i = searchObj.foodServices.$all.length - 1; i >= 0; i--) {
@@ -191,14 +178,10 @@ Template.listview.onRendered(function(){
 		searchInit = false;
 		$('input[name=building-amenities]').each(function(){
 			if($(this).is(":checked")){
-				console.log("Searching for "+$(this).val());
-				if(!searchObj.hasOwnProperty("amenities")){
+				if(!searchObj.hasOwnProperty("amenities"))
 					searchObj["amenities"] = { $all: [] };
-					console.log(searchObj);
-				}
 				if(searchObj.amenities.$all.indexOf($(this).val())<0)
 					searchObj.amenities.$all.push($(this).val());
-				if(searchObj.hasOwnProperty("amenities")) console.log(searchObj.amenities.$all);
 			} else {
 				if(searchObj.hasOwnProperty("amenities")){
 					for(let i = searchObj.amenities.$all.length - 1; i >= 0; i--) {
@@ -225,5 +208,7 @@ Template.listview.onRendered(function(){
 	$("#show-map-button").click(function(evt){
 		$("#map-panel").toggleClass("map-panel");
 		$(".map-container-container").toggleClass("hidden");
+		mapAdded = true;
+		mapAddedDep.changed();
 	});
 });

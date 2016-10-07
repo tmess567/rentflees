@@ -20,18 +20,13 @@ Template.loginForm.events({
                     .animate({left:0}, (((1800/4)/4)));
 			}
             else
-			{
 				$('#login-modal').modal('hide');
-                console.log(Meteor.user());
-			}
 		});
     }
 });
 
 Template.loginModal.onCreated(function(){
-    console.log("reached");
     $('#login-modal').one('shown.bs.modal',function(){
-        console.log('login open');
         $('.main-content').slick({
             arrows: false,
             draggable: false,
