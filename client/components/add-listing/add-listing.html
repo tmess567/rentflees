@@ -19,12 +19,6 @@
   </div>
   {{> usernameModal}}
 </template>
-<template name="mapAdd">
-  <div class="map-container">
-    <!--<input id="pac-input" class="controls form-control input-lg" type="text" placeholder="Search Box">-->
-    {{> googleMap name="map" options = mapOptions}}
-  </div>
-</template>
 
 <template name="addListing">
 <div class="container-fluid">
@@ -237,10 +231,10 @@
       <fieldset id="location" data-prev="amenities" data-next="photo">
         <legend>Step 3: <strong>Location</strong> </legend>
         <div>
-        <div class="col-md-8 col-sm-12 col-xs-12"> 
+        <div class="col-md-7 col-sm-12 col-xs-12"> 
         {{> mapAdd}}
         </div>
-        <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="col-md-3 col-sm-12 col-xs-12">
           <div class="form-group">
             <label>City</label>
             <select class="form-control" id="cityListing">
@@ -261,15 +255,16 @@
             <label>Address</label>
             <input name="text" class="form-control address" id="pac-input">
           </div>
+          <p>Now point marker in map on right side to the exact location.</p>
+          <div class="col-md-5 col-sm-4 col-xs-6 pull-left" >
+            <button class="btn btn-primary btn-block btn-flat prev-step">Back</button>
+          </div>
+          <div class="col-md-5 col-sm-4 col-xs-6 pull-right" >
+            <button class="btn btn-primary btn-block btn-flat next-step">Next</button>
+          </div>
         </div>
         </div>
-        <p>Now point marker in map on right side to the exact location.</p>
-        <div class="col-md-2 col-sm-4 col-xs-6 pull-left" >
-          <button class="btn btn-primary btn-block btn-flat prev-step">Back</button>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 pull-right" >
-          <button class="btn btn-primary btn-block btn-flat next-step">Next</button>
-        </div>
+        
       </fieldset>
     </div>
     <div>

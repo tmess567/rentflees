@@ -1,3 +1,11 @@
+.slick-slide{
+  width: 100vw;
+}
+
+.slider input{
+  display: inline-block !important;
+}
+
 #addListingForm{
 	max-width: 500px;
 }

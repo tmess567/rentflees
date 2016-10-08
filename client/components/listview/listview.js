@@ -1,6 +1,8 @@
 var listingsIndexDep = new Tracker.Dependency();
 var mapAddedDep = new Tracker.Dependency();
 var mapAdded = false;
+var markers = [];
+var infowindows = [];
 var searchObj = {
 	rent: {
 		$gt: 14000,
@@ -14,6 +16,7 @@ Meteor.subscribe('listings');
 Template.listview.helpers({
 	listingsArr : function() {
 		listingsIndexDep.depend();
+		clearAndAddMarkers();
 	 	return Listings.find(searchObj, sortObj).fetch();
 	},
 	isVerifiedorAdmin : function() {
@@ -210,5 +213,88 @@ Template.listview.onRendered(function(){
 		$(".map-container-container").toggleClass("hidden");
 		mapAdded = true;
 		mapAddedDep.changed();
+
+		let listingArrLocal = Listings.find(searchObj, sortObj).fetch();
+		let mapObj = null, mapObjInit = false;
+
+		GoogleMaps.ready('mapNoMarker', function(map) {
+			console.log(hasParams());
+			if(hasParams())
+				setCenterLocation();
+			else
+				addMarkers();
+			mapObjInit = true;
+		});
 	});
 });
+
+function addMarkers(){
+	if (!(typeof google === 'undefined' || google === null)) {
+		for(k of Listings.find(searchObj, sortObj).fetch()) {
+			let latlng = new google.maps.LatLng(k.XCoordinate, k.YCoordinate);
+			let infowindow = new google.maps.InfoWindow({
+	          content: 
+	          "<b>Title:</b> "+k.title + 
+	          " <br/><b>Address:</b> "+k.address +
+	          " <br/><a href='aboutHome?id="+k._id+"'>View Listing Details</a>"
+	        });
+			createMarker(latlng, k.title, k._id,
+				GoogleMaps.maps.mapNoMarker.instance, infowindow);
+	    }
+		let mapObj = GoogleMaps.maps.mapNoMarker.instance;
+		var newBoundary = new google.maps.LatLngBounds();
+
+		for(index in markers){
+		  var position = markers[index].position;
+		  newBoundary.extend(position);
+		}
+
+		mapObj.fitBounds(newBoundary);
+	}
+}
+
+function createMarker(latlng, titleApp, idApp, mapObj, infowindow){
+	let marker=(new google.maps.Marker({
+	    position: latlng, zoom: 17,
+	    map: mapObj, 
+	    draggable: false, 
+	    title: titleApp,
+	    id: idApp
+	}));
+	marker.addListener('click', function() {
+		closeAllInfoWindows();
+        infowindow.open(mapObj, marker);
+        infowindows.push(infowindow);
+    });
+	markers.push(marker);
+}
+
+function clearAndAddMarkers(){
+	for(marker of markers)
+		marker.setMap(null);
+	addMarkers();
+}
+
+function closeAllInfoWindows(){
+	for(infowindow of infowindows)
+		infowindow.close();
+	addMarkers();
+}
+
+function setCenterLocation(){
+	let currCenter = null;
+	currCenter = new google.maps.LatLng(
+		FlowRouter.current().queryParams.lat,
+		FlowRouter.current().queryParams.lng);
+
+	GoogleMaps.maps.mapNoMarker.instance.setCenter(currCenter);
+	GoogleMaps.maps.mapNoMarker.instance.setZoom(14);
+
+	return currCenter;
+
+}
+
+function hasParams(){
+	return (FlowRouter.current().queryParams.lat !== undefined
+		&& FlowRouter.current().queryParams.lng !== undefined);
+}

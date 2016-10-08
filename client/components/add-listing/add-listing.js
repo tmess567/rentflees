@@ -22,8 +22,8 @@ Template.addListing.onRendered ( function() {
       infinite: false,
       slidesToShow: 1,
       slidesToScroll: 1,
+      variableWidth: true,
       onBeforeChange: function(event, currentSlide, nextSlide){
-        console.log(currentSlide, nextSlide);
         if(nextSlide > currentSlide)
           $("ul.form-progress > li:nth-child("+ (nextSlide+1) +")").addClass("active");
         else
@@ -153,58 +153,6 @@ AutoForm.hooks({
   }
  });
 
-
-Template.mapAdd.helpers({
-  mapOptions: function() {
-    if (GoogleMaps.loaded()) {
-      console.log('Map Loaded');
-      return {
-        center: new google.maps.LatLng(latitude, longitude),
-        zoom: 8
-      }
-    }
-  }
-
-});
-
-Template.mapAdd.onRendered(function() {
-  GoogleMaps.load({
-    v: '3',
-    key: 'AIzaSyBiTVrSTOhuNSaxTT29FqS1bsa3OXHhulc',
-    libraries: 'geometry,places'
-  });
-  console.log("Map Rendered");
-});
-
-Template.mapAdd.onCreated(function() {
-  var marker;
-  GoogleMaps.ready('map', function(map) {
-    marker = new google.maps.Marker({
-      position: {lat: latitude, lng: longitude}, zoom: 17,
-      map: map.instance, draggable: true, 
-    });
-    var input = document.getElementById('pac-input');
-    var searchBox = new google.maps.places.SearchBox(input);
-
-    searchBox.addListener('places_changed', function() {
-      var places = searchBox.getPlaces();
-      if (places.length == 0) {
-        return;
-      }
-      if (places.length == 1){
-        map.instance.panTo(places[0].geometry.location);
-        marker.setPosition(places[0].geometry.location);
-      }
-    });
-
-    google.maps.event.addListener(map.instance, 'click', function(event) {
-      marker.setPosition(event.latLng);
-      latitude = event.latLng.lat();
-      longitude = event.latLng.lng();
-    });
-  });
-});
-
 Template.addListing.helpers({
   isAdmin : function() { 
     console.log("checking admin");
@@ -278,6 +226,9 @@ Template.addListing.events({
       city: city,
       locality: locality,
       landmark: landmark,
+
+      XCoordinate: GoogleMaps.maps.map.instance.center.lat(),
+      YCoordinate: GoogleMaps.maps.map.instance.center.lng(),
 
       score: score,
       verified: verified,

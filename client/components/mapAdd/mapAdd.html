@@ -1,0 +1,12 @@
+<template name="mapAdd">
+  <div class="map-container">
+    <!--<input id="pac-input" class="controls form-control input-lg" type="text" placeholder="Search Box">-->
+    {{> googleMap name="map" options = mapOptions}}
+  </div>
+</template>
+<template name="mapAddNoMarker">
+  <div class="map-container">
+    <!--<input id="pac-input" class="controls form-control input-lg" type="text" placeholder="Search Box">-->
+    {{> googleMap name="mapNoMarker" options = mapOptions}}
+  </div>
+</template>

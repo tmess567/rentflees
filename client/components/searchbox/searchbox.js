@@ -35,8 +35,21 @@ Template.searchbox.onRendered(function(){
 	});
 	$(".go").click(function(e){
 		let query = $("#autocomplete").val();
-		if(query !== "")
-			window.location.href="/map?q="+query;
+		if(query !== ""){
+      let address = $("#autocomplete").val();
+      let geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+                //alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+                window.location.href="/map?lat="+latitude+"&lng="+longitude;
+            } else {
+                alert("Request failed.")
+            }
+        });
+			//window.location.href="/map?q="+query;
+    }
 	});
 	GoogleMaps.load({
     v: '3',
