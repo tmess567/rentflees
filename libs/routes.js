@@ -7,7 +7,8 @@ var userRoutes = FlowRouter.group({
   name: 'user',
   triggersEnter: [function(context, redirect) {
     if(Meteor.user() === null){
-      console.log("/addListing called without logging in");
+      console.log("Called without logging in");
+      $("#login-modal").modal();
       redirect('/');
     }
   }],
