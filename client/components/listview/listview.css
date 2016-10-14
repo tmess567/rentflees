@@ -208,8 +208,14 @@
     width: 100%;
 }
 
-#show-map{
+#map-control-links{
     padding: 10px 0;
+}
+#show-all-map-button{
+    display: none;
+}
+#filter-map-button{
+    display: none;
 }
 
 #sort{

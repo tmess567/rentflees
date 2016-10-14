@@ -209,6 +209,11 @@ Template.listview.onRendered(function(){
 		slidesToScroll: 1
 	});
 	$("#show-map-button").click(function(evt){
+		$("#filter-map-button").show();
+		if($(".map-container-container").hasClass("hidden"))
+			$("#show-map-button").text("Hide Map View");
+		else
+			$("#show-map-button").text("Show Map View");
 		$("#map-panel").toggleClass("map-panel");
 		$(".map-container-container").toggleClass("hidden");
 		mapAdded = true;
@@ -226,7 +231,45 @@ Template.listview.onRendered(function(){
 			mapObjInit = true;
 		});
 	});
+
+	$("#filter-map-button").on('click', function(evt){
+		$("#show-all-map-button").show();
+		filterByMap();
+	});
+
+	$("#show-all-map-button").on("click", function(){
+		if(searchObj.hasOwnProperty("XCoordinate"))
+			delete searchObj.XCoordinate;
+		if(searchObj.hasOwnProperty("YCoordinate"))
+			delete searchObj.YCoordinate;
+		listingsIndexDep.changed();
+	});
 });
+
+function filterByMap(){
+	if (!(typeof google === 'undefined' || google === null)) {
+
+			if(!searchObj.hasOwnProperty("XCoordinate"))
+				searchObj["XCoordinate"] = { 
+					$gt: GoogleMaps.maps.mapNoMarker.instance.getBounds().getSouthWest().lat().toString(),
+					$lt: GoogleMaps.maps.mapNoMarker.instance.getBounds().getNorthEast().lat().toString() };
+			else
+				searchObj.XCoordinate = { 
+					$gt: GoogleMaps.maps.mapNoMarker.instance.getBounds().getSouthWest().lat().toString(),
+					$lt: GoogleMaps.maps.mapNoMarker.instance.getBounds().getNorthEast().lat().toString() };
+			if(!searchObj.hasOwnProperty("YCoordinate"))
+				searchObj["YCoordinate"] = { 
+					$gt: GoogleMaps.maps.mapNoMarker.instance.getBounds().getSouthWest().lng().toString(),
+					$lt: GoogleMaps.maps.mapNoMarker.instance.getBounds().getNorthEast().lng().toString() };
+			else
+				searchObj.YCoordinate = { 
+					$gt: GoogleMaps.maps.mapNoMarker.instance.getBounds().getSouthWest().lng().toString(),
+					$lt: GoogleMaps.maps.mapNoMarker.instance.getBounds().getNorthEast().lng().toString() };
+			
+			listingsIndexDep.changed();
+			//clearAndAddMarkers();
+		}
+}
 
 function addMarkers(){
 	if (!(typeof google === 'undefined' || google === null)) {
@@ -238,6 +281,7 @@ function addMarkers(){
 	          " <br/><b>Address:</b> "+k.address +
 	          " <br/><a href='aboutHome?id="+k._id+"'>View Listing Details</a>"
 	        });
+	        console.log(latlng);	
 			createMarker(latlng, k.title, k._id,
 				GoogleMaps.maps.mapNoMarker.instance, infowindow);
 	    }
@@ -289,6 +333,7 @@ function setCenterLocation(){
 
 	GoogleMaps.maps.mapNoMarker.instance.setCenter(currCenter);
 	GoogleMaps.maps.mapNoMarker.instance.setZoom(14);
+	filterByMap();
 
 	return currCenter;
 
