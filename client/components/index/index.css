@@ -5,6 +5,7 @@
   background: url('images/index-background.gif');
   background-repeat: no-repeat;
   background-size: cover;
+  height: 663px;
 }
 
 #top-cities-div{
@@ -226,7 +227,11 @@
   background-image: url("images/city_gallery/chennai.jpg");
 }
 .how-it-works{
-  background: url("images/home-concept.png") center 0 no-repeat;
+  background: url("images/home-concept.png") no-repeat;
+  background-size: contain;
+}
+.how-it-works-wrapper{
+  background-color: white;
 }
 
 .how-it-works .svg-wrapper,
