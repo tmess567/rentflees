@@ -1,34 +1,285 @@
 <template name="list-your-house">
-<div class="container-fluid" id="list-house-container">
-	<div class="row" >
-		<div class="col-md-12">
-			<div class="h1 center-text">
-				We'll find your next tenant.
-			</div>
-		</div>
-		<div class="col-md-12">
-			<div class="help center-text">
-				You may have look at <a href="#">Home Owners Guide</a> first.
-			</div>
-		</div>
-		<div class="col-md-12">
-		<div class="row" id="options">
-		<div class="col-xs-12 col-sm-10 col-md-6">
-			<div class="center-text option">
-				<h3>Just sit back and relax.</h3>
-				<p>A Rentflees execeutive will visit your house.</p>
-				<a href="#" id="op1" class="button">Schedule an Appointement Now</a>
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-10 col-md-6">
-			<div class="center-text option">
-				<h3>But if you are Restless</h3>
-				<p>Fill out details yourself.</p>
-				<a href="addListingForm" id="op2" class="button">Add Listing Yourself</a>
-			</div>
-		</div>
-		</div>
-		</div>
-	</div>
+	<link rel="stylesheet" href="css3-animate-it-master/css/animations.css">
+	<style>
+	  	.carousel-inner > .item > img,
+	  	.carousel-inner > .item > a > img {
+	    	width: 100%;
+	    	height:500px;
+	    	margin: auto;
+	    }
+
+		.imiText{
+		    color:#424242;
+		    font-size: 170%;
+		    font-family:"Comic Sans MS", cursive, sans-serif;
+		}
+		.courasel_pvt{
+			width: 100%;
+			height: 500px ;
+		}
+		.list-your-house>h1{
+		  font-family:"Comic Sans MS", cursive, sans-serif;
+		  font-size: 300%;
+		}
+		.list-your-house>h2{
+		  font-family:"Comic Sans MS", cursive, sans-serif;
+		  font-size: 270%;
+		  color:#00b0ff;
+		  padding-top:110px;
+		  padding-bottom:40px;
+		  padding-left: 100px;
+		  padding-right: 100px;
+		}
+		.list-your-house>h4{
+		    font-family:Verdana;
+		    color:#424242;
+		}
+		.list-your-house>h5{
+		  font-family:Verdana;
+	      color:#616161;
+	    }
+	    .list-your-house>p{
+	      font-family:"Comic Sans MS", cursive, sans-serif;
+	      font-size: 150%;
+	    }
+	</style>
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+
+	  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox" s>
+
+    <div class="item active" >
+      <img src="http://network.apartments.com/images/default-source/spm-hero/hero-1.jpg?sfvrsn=2" alt="..."  >
+      <div class="carousel-caption">
+            <h1 style="color:#03a9f4;position:relative;margin-top:-350px;">Need</h1>
+            <h1>Renters?</h1>
+            <p>We have the renters that matter to you.<br />
+List your property today. It’s quick, easy and free!</p>
+          <br>
+          <p><button type="button" class="btn btn-info btn-lg" style="background: #29b6f6; ">Add Your Listing</button></p>
+            
+      </div>
+    </div>
+
+    <div class="item">
+    <img src="http://network.apartments.com/images/default-source/spm-hero/hero-2.jpg?sfvrsn=2" alt="..." >
+      <div class="carousel-caption">
+              <h1 style="color:#03a9f4;position:relative;margin-top:-350px;">Need</h1>
+                          <h1>Renters?</h1>
+                          <p>We have the renters that matter to you.<br />
+              List your property today. It’s quick, easy and free!</p>
+              <br>
+          <p><button type="button" class="btn btn-info btn-lg" style="background: #29b6f6; ">Add Your Listing</button></p>
+      </div>
+    </div>
+
+
+    <div class="item">
+      <img src="http://network.apartments.com/images/default-source/spm-hero/hero-3.jpg?sfvrsn=2" alt="..." >
+      <div class="carousel-caption">
+                <h1 style="color:#03a9f4;position:relative;margin-top:-350px;">Need</h1>
+                          <h1>Renters?</h1>
+                          <p>We have the renters that matter to you.<br />
+              List your property today. It’s quick, easy and free!</p>
+              <br>
+          <p><button type="button" class="btn btn-info btn-lg" style="background: #29b6f6; ">Add Your Listing</button></p>
+      </div>
+    </div>
+
+  
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
+
+
+
+
+<div class="row" style="margin-top:50px">
+  <div class="col-sm-5 col-md-5 col-md-offset-1 animatedParent">
+      <br>
+      <br>
+            <button type="button" class="btn btn-info btn-lg animated bounceInLeft" style="background: #29b6f6;color:#fafafa;font-size: 25px;font-family: Verdana;border:5px solid #03a9f4">  Home Owner Guide</button>
+
+  </div>
+
+     <div class="col-sm-5 col-md-5 col-md-offset-1 animatedParent">
+        <br>
+        <br>
+              <button type="button" class="btn btn-info btn-lg animated bounceInRight" style="background: #29b6f6;color:#fafafa;font-size: 25px;font-family: Verdana;border:5px solid #03a9f4">Schedule an appointment</button>
+
+    </div>
+</div>
+
+
+
+
+<div class="container" style="background:#fafafa;padding-top:60px;padding-bottom:70px;margin-top:90px;">
+  <div class="row animatedParent" style="text-align:center;" >
+      <h1 style="font-size: 250%;" class="animated bounceIn" >How <span style="color:#03a9f4">Rent</span>flees help you grow your bussiness...</h1>
+  </div>
+
+
+  <div class="row" style="margin-top:80px;">
+      <div class="col-sm-4 col-md-4 col-md-offset-2 animatedParent">
+          <div class="imiText animated bounceInLeft" style="float:left;margin-right:20px;">
+              reach out to<br>over 50 Lack<br>Travellers
+          </div>
+          <div style="float:left;" class="animated bounceInLeft">
+              <img src="http://placehold.it/130x130">
+          </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-md-offset-1 animatedParent">
+             
+          <div style="float:left;" class="animated bounceInRight">
+              <img src="http://placehold.it/130x130">
+          </div>
+
+          <div class="imiText animated bounceInRight" style="float:left;margin-left:20px;" >
+              reach out to<br>over 50 Lack<br>Travellers
+          </div>
+      </div>
+  </div>
+
+
+
+ <div class="row" style="margin-top:80px;">
+      <div class="col-sm-4 col-md-4 col-md-offset-2 animatedParent">
+          <div class="imiText animated bounceInLeft" style="float:left;margin-right:20px;">
+              reach out to<br>over 50 Lack<br>Travellers
+          </div>
+          <div style="float:left;" class="animated bounceInLeft">
+              <img src="http://placehold.it/130x130">
+          </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-md-offset-1 animatedParent">
+             
+          <div style="float:left;" class="animated bounceInRight">
+              <img src="http://placehold.it/130x130">
+          </div>
+
+          <div class="imiText animated bounceInRight" style="float:left;margin-left:20px;" >
+              reach out to<br>over 50 Lack<br>Travellers
+          </div>
+      </div>
+  </div>
+
+  
+
+   <div class="row" style="margin-top:80px;">
+      <div class="col-sm-4 col-md-4 col-md-offset-2 animatedParent">
+          <div class="imiText animated bounceInLeft" style="float:left;margin-right:20px;">
+              reach out to<br>over 50 Lack<br>Travellers
+          </div>
+          <div style="float:left;" class="animated bounceInLeft">
+              <img src="http://placehold.it/130x130">
+          </div>
+      </div>
+      <div class="col-sm-4 col-md-4 col-md-offset-1 animatedParent">
+             
+          <div style="float:left;" class="animated bounceInRight">
+              <img src="http://placehold.it/130x130">
+          </div>
+
+          <div class="imiText animated bounceInRight" style="float:left;margin-left:20px;" >
+              reach out to<br>over 50 Lack<br>Travellers
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+<br>
+<br><br><br><br><br><br><br>
+
+
+
+
+<div style="overflow:hidden;">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="datetimepicker12"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+ <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel" style="background:#eeeeee; ">
+  <!-- Indicators -->
+ 
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox" style="text-align:center;" >
+
+    <div class="item active list-your-house" style="padding-bottom:40px;">
+      <h2>"After weeks of having my listing on other sites with no luck, I found Apartments.com and decided to give it a try. Within 3 days I had a qualified renter!"</h2>
+      <hr>
+      <h4>Sydney L. in Austin, TX </h4>
+      <h5>June 13th, 2016</h5>
+    </div>
+
+    <div class="item list-your-house">
+    <h2>"After weeks of having my listing on other sites with no luck, I found Apartments.com and decided to give it a try. Within 3 days I had a qualified renter!"</h2>
+     <hr>
+      <h4>Sydney L. in Austin, TX </h4>
+      <h5>June 13th, 2016</h5>
+    </div>
+
+<div class="item list-your-house">
+    <h2>"After weeks of having my listing on other sites with no luck, I found Apartments.com and decided to give it a try. Within 3 days I had a qualified renter!"</h2>
+     <hr>
+      <h4>Sydney L. in Austin, TX </h4>
+      <h5>June 13th, 2016</h5>
+    </div>
+
+<div class="item list-your-house">
+    <h2>"After weeks of having my listing on other sites with no luck, I found Apartments.com and decided to give it a try. Within 3 days I had a qualified renter!"</h2>
+     <hr>
+      <h4>Sydney L. in Austin, TX </h4>
+      <h5>June 13th, 2016</h5>
+    </div>
+
+
+  
+
+  
+  </div>
+
+  <!-- Controls -->
+  <a class=" carousel-control" href="#carousel-example-generic1" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic1" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+   <script src="css3-animate-it-master/js/css3-animate-it.js"></script>
+
 </template>
