@@ -63,6 +63,20 @@ AccountsTemplates.configure({
 });
 
 
+//FOR VERIFICATION EMAIL
+
+Meteor.methods({
+  sendVerificationLink() {
+    let userId = Meteor.userId();
+    if ( userId ) {
+      console.log(userId);
+      return Accounts.sendVerificationEmail( userId );
+    } else {
+      console.log("Problem here");
+    }
+  }
+});
+
 //AccountsTemplates.configureRoute('signOut');
 
 //Fields Added
@@ -86,6 +100,13 @@ AccountsTemplates.addField({
     _id: "username",
     type: "text",
     displayName: "username",
+    required: true,
+    //minLength: 5,
+});
+AccountsTemplates.addField({
+    _id: "nameVal",
+    type: "text",
+    displayName: "nameVal",
     required: true,
     //minLength: 5,
 });

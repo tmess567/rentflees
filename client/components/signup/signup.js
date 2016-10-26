@@ -4,7 +4,8 @@ Template.signupForm.events({
         print.innerHTML='';
         var user = {};
         event.preventDefault();
-        user.username = $('[name=realName]').val();
+        user.username = $('[name=userName]').val();
+        user.nameVal = $('[name=realName]').val();
         user.email = $('[name=emailSel]').val();
         user.password = $('[name=password1]').val();
         user.profile = {
@@ -14,14 +15,28 @@ Template.signupForm.events({
         role = $("input[type='radio'][name='userrole']:checked").val();
         if($('[name=password1]').val() == $('[name=password2]').val()){
             Meteor.call( "registerUser",user,role,function(err){
-                if(err)
-                {
+                if(err){
                     alert(err);
                 }
-                else
-                {
+                else{
                     $('#login-modal').modal('hide');
-                    alert("Signed up successfully");
+                    console.log("Signed up successfully.\n Please Check your email for verification code");
+
+                    //Logging User in
+                    Meteor.loginWithPassword(user.email, user.password, function(error){
+                        if(error){
+                            console.log("Problem logging in");
+                        }
+                        else{
+                            Meteor.call( 'sendVerificationLink', ( error, response ) => {
+                                if ( error ) {
+                                  alert( error.reason );
+                                } else {
+                                  alert( 'Email Verification link sent' );
+                                }
+                            });
+                        }
+                    });
                 }
             });
         }
