@@ -1,4 +1,9 @@
 <template name="listview">
+
+{{> foodServicesModal}}
+{{> houseModal}}
+{{> buildingModal}}
+
 <div class="container-fluid bg-grey no-padding">
   	<div class="col-md-2 col-sm-2 col-lg-2 hidden-xs panel">
   		<div class="filter-panel">
@@ -80,154 +85,24 @@
 					</div>
 	  			</div>
 	  			<div class="filter-section">
-					<div class="filter-name">Food Services</div>
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="foodServices" value="Breakfast"> Breakfast
-							</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="foodServices" value="Lunch"> Lunch
-							</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="foodServices" value="Dinner"> Dinner
-							</label>
-						</div>
+					<div class="filter-name">
+						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#foodServices">
+							Food Services
+						</button>
 					</div>
-				</div>
-			    <div class="filter-section">
-					<div class="filter-name">Building Amenities and Services</div>
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="CCTV"> CCTV
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="Security"> Security
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="Power Backup"> Power Backup
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="Water Supply"> Water Supply
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="Clubhouse"> Clubhouse
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="Parking"> Parking
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="Swimming Pool"> Swimming Pool
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="Gym"> Gym
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						                <input type="checkbox" name="building-amenities" value="Elevator"> Elevator
-						        </label>
-						</div>
+	  			</div>
+	  			<div class="filter-section">
+					<div class="filter-name">
+						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#buildingAmenities">
+							Building Amenities
+						</button>
 					</div>
-				</div>
-
-				<div class="filter-section">
-					<div class="filter-name">House Amenities and Services</div>
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="TV"> TV
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="DTH Service"> DTH S
-						        ervice</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Wi-Fi"> Wi-Fi
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Fridge"> Fridge
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="AC"> AC
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Geyser"> Geyser
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Water Purifier"
-						        > Water Purifier </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Washing Machine"> 
-						        Washing Machine</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Sofa"> Sofa
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Table"> Table
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Cupboards"> Cupboards
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Shoe Rack"> Shoe Rack
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Gas Stove"> Gas Stove
-						        </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Modular Kitchen"> 
-						        Modular Kitchen</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-						        <label>
-						        	<input type="checkbox" name="amenities" value="Room Service"> Room Service
-						        </label>
-						</div>
+	  			</div>
+	  			<div class="filter-section">
+					<div class="filter-name">
+						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#houseAmenities">
+							House Amenities
+						</button>
 					</div>
 	  			</div>
   			</div>
@@ -284,7 +159,7 @@
         {{#if isVerifiedorAdmin}}
 			<div class="row list-card">
 				<div class="img-wrapper">
-					<div><img data-lazy="http://dev3.rentflees.com/upload/{{image}}"></div>
+					<div><img src="http://dev3.rentflees.com/upload/{{image}}"></div>
 				</div>
 				<div class="info-wrapper">
 					<div class="row info-head">

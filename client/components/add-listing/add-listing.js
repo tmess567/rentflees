@@ -143,8 +143,10 @@ AutoForm.hooks({
   			insertDoc.image = imageName;
   			Listings.insert(insertDoc);
   			console.log("Done");
+        alert("Listing added");
         //Router.go('/');
   		} else {
+        alert("Problem with Listing");
   			this.done(new Error("Submission failed"));
   		}
       //Listings.insert(insertDoc);

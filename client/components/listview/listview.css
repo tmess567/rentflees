@@ -1,3 +1,21 @@
+.filterLabel>img{
+    margin-bottom: 15px;
+}
+
+.filterLabel{
+    padding: 18px;
+    text-align: center;
+    min-width: 160px;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    max-height: 450px;
+    overflow-y: auto;
+}
+
 /*
 .box{
 	position: relative;

@@ -36,6 +36,14 @@ Template.listview.helpers({
 
 Template.listview.onRendered(function(){
 
+	$(".filterLabel>img").on("click", function(evt){
+		let r = evt.target.src;
+		if(r.indexOf("filterLabelGrey")>=0)
+		  evt.target.src = r.replace("filterLabelGrey", "filterLabelBlue");
+		if(r.indexOf("filterLabelBlue")>=0)
+		  evt.target.src = r.replace("filterLabelBlue", "filterLabelGrey");
+	});
+
 	let rentSlider = $("#rentSlider").slider({}).data('slider');
 	rentSlider.on('slide', function(){
 		searchInit = false;
