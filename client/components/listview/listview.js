@@ -232,8 +232,10 @@ Template.listview.onRendered(function(){
 
 		GoogleMaps.ready('mapNoMarker', function(map) {
 			console.log(hasParams());
-			if(hasParams())
+			if(hasParams()){
+				console.log("has been searched");
 				setCenterLocation();
+			}
 			else
 				addMarkers();
 			mapObjInit = true;
