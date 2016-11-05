@@ -1,3 +1,19 @@
+.filterModalBtn{
+    width: 100%;
+}.accordionLink{
+    color: white;
+}.accordionLink:hover{
+    color: white;
+}.accordionLink:focus{
+    color: white;
+}.accordionHead{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #357ebd;
+    text-align: center;
+    border-radius: 20px;
+}
 .filterLabel>img{
     margin-bottom: 15px;
 }

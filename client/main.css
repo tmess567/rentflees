@@ -924,6 +924,10 @@ a,a:hover,a:visited,a:link{
   border-radius:0;
 }
 
+.new-filter-panel{
+  min-height: 100vh;
+}
+
 .auto-margin{
   margin: 0 auto;
   display: block;

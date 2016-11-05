@@ -5,30 +5,89 @@
 {{> buildingModal}}
 
 <div class="container-fluid bg-grey no-padding">
-  	<div class="col-md-2 col-sm-2 col-lg-2 hidden-xs panel">
+  	<div class="col-md-2 col-sm-2 col-lg-2 hidden-xs panel new-filter-panel">
   		<div class="filter-panel">
   			<div class="filter-heading"> Filter your Search </div>
   			<div class="filter-container">
-	  			<div class="filter-section">
-					<div class="filter-name">Property Type</div>
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="type" value="Room"> Room
-							</label>
+	  			<div id="accordion" role="tablist" aria-multiselectable="true">
+			        <div class="accordionHead" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+			        	<a class="accordionLink">
+			          Furnishing
+			        	</a>
+			        </div>
+
+				    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+				        <div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="furnishing" value="Furnished"> Furnished
+								</label>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="furnishing" value="Semi Furnished"> Semi-Furnished
+								</label>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="furnishing" value="Unfurnished"> Unfurnished
+								</label>
+							</div>
 						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="type" value="Apartment"> Apartment
-							</label>
+				    </div>
+
+				    <div class="accordionHead" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+			        	<a class="accordionLink" >
+			          Tenant Type
+			        	</a>
+			        </div>
+
+				    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+				        <div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="tenantPref" value="Male"> Male
+								</label>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="tenantPref" value="Female"> Female
+								</label>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="tenantPref" value="Family"> Family
+								</label>
+							</div>
 						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="type" value="Entire House"> Entire House
-							</label>
+				    </div>
+
+				    <div class="accordionHead" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+			        	<a class="accordionLink" >
+			          Property Type
+			        	</a>
+			        </div>
+
+				    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+				        <div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="type" value="Room"> Room
+								</label>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="type" value="Apartment"> Apartment
+								</label>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<label>
+									<input type="checkbox" name="type" value="Entire House"> Entire House
+								</label>
+							</div>
 						</div>
-					</div>
-	  			</div>
+				    </div>
+			</div>
 	  			<div class="filter-section">
 		        	<div class="filter-name">
 		       			Monthly Rent
@@ -44,63 +103,24 @@
 		      			data-slider-value="[14000,40000]"
 		      			data-slider-tooltip="hide"/>
 		     	</div>
-		     	<div class="filter-section">
-					<div class="filter-name">Tenant Type</div>
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="tenantPref" value="Male"> Male
-							</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="tenantPref" value="Female"> Female
-							</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="tenantPref" value="Family"> Family
-							</label>
-						</div>
-					</div>
-	  			</div>
-			    <div class="filter-section">
-					<div class="filter-name">Furnishing</div>
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="furnishing" value="Furnished"> Furnished
-							</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="furnishing" value="Semi Furnished"> Semi-Furnished
-							</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-12">
-							<label>
-								<input type="checkbox" name="furnishing" value="Unfurnished"> Unfurnished
-							</label>
-						</div>
-					</div>
-	  			</div>
+
 	  			<div class="filter-section">
 					<div class="filter-name">
-						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#foodServices">
+						<button type="button" class="filterModalBtn btn btn-info" data-toggle="modal" data-target="#foodServices">
 							Food Services
 						</button>
 					</div>
 	  			</div>
 	  			<div class="filter-section">
 					<div class="filter-name">
-						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#buildingAmenities">
+						<button type="button" class="filterModalBtn btn btn-info" data-toggle="modal" data-target="#buildingAmenities">
 							Building Amenities
 						</button>
 					</div>
 	  			</div>
 	  			<div class="filter-section">
 					<div class="filter-name">
-						<button type="button" class="btn btn-info" data-toggle="modal" data-target="#houseAmenities">
+						<button type="button" class="filterModalBtn btn btn-info" data-toggle="modal" data-target="#houseAmenities">
 							House Amenities
 						</button>
 					</div>

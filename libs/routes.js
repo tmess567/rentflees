@@ -42,7 +42,7 @@ anonRoutes.route('/comingSoon', {
 
 userRoutes.route('/addListing', {
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "list-your-house", nav: "nav"});
+    BlazeLayout.render("mainLayout", {content: "listYourHouse", nav: "nav"});
   }
 });
 

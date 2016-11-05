@@ -77,6 +77,35 @@ Meteor.methods({
   }
 });
 
+//FOR VERIFICATION SMS
+
+Meteor.methods({
+  sendScheduleSMS() {
+    let userId = Meteor.userId();
+    if ( userId ) {
+      let reqURLstart = "http://enterprise.smsgupshup.com/GatewayAPI/rest?method=SendMessage&send_to=";
+      let message = "Hi "+Meteor.user().username+",\n"+
+      "Your appointment has been booked. A rentflees representative will contact you shortly.\n"+
+      "Thankyou for using Rentflees.\n"+
+      "www.rentflees.com"
+      let afterMsg = "&msg_type=TEXT&userid=2000140300&auth_scheme=plain&password=GodBlessMe22@$&v=1.1&format=text&overide_dnd=TRUE";
+
+      let http = require('http');
+      let newurl = encodeURI(reqURLstart + "9675785996&msg=" + message + afterMsg);
+      //console.log(newurl);
+      http.get({
+        host: 'enterprise.smsgupshup.com',
+        path: newurl
+      });
+
+          } else {
+      console.log("Problem here");
+    }
+  }
+});
+
+
+
 //AccountsTemplates.configureRoute('signOut');
 
 //Fields Added
