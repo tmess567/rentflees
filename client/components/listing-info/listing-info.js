@@ -2,6 +2,9 @@ var currListing = null;
 var currListingID = null;
 var currListingDep = new Tracker.Dependency();
 Meteor.subscribe('listings');
+Handlebars.registerHelper('toLowerCase', function(str) {
+  return str.toLowerCase().replace(/ /g,'').replace(/-/g,'');
+});
 Template.listing_info.helpers({
 	images: ['images/home1.jpg','images/home2.jpg','images/home3.jpg','images/home4.jpg','images/home5.jpg'],
 	routeHasID: function(){

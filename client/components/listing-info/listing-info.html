@@ -55,7 +55,8 @@
 						<div class="panel-body">
 							<ul class="amenities">
 								{{#each listing.amenities}}
-									<li>{{this}}</li>
+									<img src="images/filterLabelBlue/{{toLowerCase this}}.png" 
+										style="height: 60px;">
 								{{/each}}
 							</ul>
 						</div>
@@ -66,7 +67,8 @@
 						<div class="panel-body">
 							<ul class="amenities">
 								{{#each listing.foodServices}}
-									<li>{{this}}</li>
+									<img src="images/filterLabelBlue/{{toLowerCase this}}.png" 
+										style="height: 60px;">
 								{{/each}}
 							</ul>
 						</div>
@@ -162,8 +164,11 @@
 						      </ul>
 						  </div>
 						</div>
+						<span id="XCoord" style="display:none;">{{listing.XCoordinate}}</span>
+						<span id="YCoord" style="display:none;">{{listing.YCoordinate}}</span>
+
 						<div class="panel-body no-padding">
-							{{> mapAdd}}
+							{{> mapAddFixMarker}}
 						</div>
 					</div>
 				</div>

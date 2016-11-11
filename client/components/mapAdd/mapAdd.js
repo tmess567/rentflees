@@ -73,3 +73,39 @@ Template.mapAddNoMarker.onRendered(function() {
   });
   console.log("Map Rendered");
 });
+
+
+Template.mapAddFixMarker.helpers({
+  mapOptions: function() {
+    if (GoogleMaps.loaded()) {
+      console.log('Map Loaded');
+      var x = parseFloat($("#XCoord").html());
+      var y = parseFloat($("#YCoord").html());
+      return {
+        center: new google.maps.LatLng(x, y),
+        zoom: 17
+      }
+    }
+  }
+
+});
+
+Template.mapAddFixMarker.onRendered(function() {
+
+  GoogleMaps.load({
+    v: '3',
+    key: 'AIzaSyBiTVrSTOhuNSaxTT29FqS1bsa3OXHhulc',
+    libraries: 'geometry,places'
+  });
+  console.log("Map Rendered");
+  var marker;
+  GoogleMaps.ready('mapFixMarker', function(map) {
+
+    var x = parseFloat($("#XCoord").html());
+    var y = parseFloat($("#YCoord").html());
+    marker = new google.maps.Marker({
+      position: {lat: x, lng: y}, zoom: 17,
+      map: map.instance, draggable: true, 
+    });
+  });
+});
