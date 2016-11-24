@@ -91,7 +91,7 @@ Meteor.methods({
       let afterMsg = "&msg_type=TEXT&userid=2000140300&auth_scheme=plain&password=GodBlessMe22@$&v=1.1&format=text&overide_dnd=TRUE";
 
       let http = require('http');
-      let newurl = encodeURI(reqURLstart + "9675785996&msg=" + message + afterMsg);
+      let newurl = encodeURI(reqURLstart + Meteor.user().profile.phone + "&msg=" + message + afterMsg);
       //console.log(newurl);
       http.get({
         host: 'enterprise.smsgupshup.com',
@@ -101,7 +101,29 @@ Meteor.methods({
           } else {
       console.log("Problem here");
     }
+  },
+  sendWelcomeSMS() {
+    let userId = Meteor.userId();
+    if ( userId ) {
+      let reqURLstart = "http://enterprise.smsgupshup.com/GatewayAPI/rest?method=SendMessage&send_to=";
+      let message = "Hi "+Meteor.user().username+",\n"+
+      "Welcome to the Rentflees family.\n"+
+      "www.rentflees.com"
+      let afterMsg = "&msg_type=TEXT&userid=2000140300&auth_scheme=plain&password=GodBlessMe22@$&v=1.1&format=text&overide_dnd=TRUE";
+
+      let http = require('http');
+      let newurl = encodeURI(reqURLstart + Meteor.user().profile.phone + "&msg=" + message + afterMsg);
+      console.log(newurl);
+      http.get({
+        host: 'enterprise.smsgupshup.com',
+        path: newurl
+      });
+
+          } else {
+      console.log("Problem here");
+    }
   }
+
 });
 
 
@@ -139,6 +161,13 @@ AccountsTemplates.addField({
     required: true,
     //minLength: 5,
 });
+AccountsTemplates.addField({
+    _id: "phone",
+    type: "text",
+    displayName: "phone",
+    required: true,
+    //minLength: 5,
+});
 
 AccountsTemplates.removeField('email');
 AccountsTemplates.addField({
@@ -160,6 +189,7 @@ AccountsTemplates.addField({
     //re: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/,
     //errStr: 'At least 1 digit, 1 lowercase and 1 uppercase',
 });
+
 /*
 var mySubmitFunc = function(error, state){
   if (!error) {

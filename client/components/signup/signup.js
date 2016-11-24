@@ -8,13 +8,16 @@ Template.signupForm.events({
         user.nameVal = $('[name=realName]').val();
         user.email = $('[name=emailSel]').val();
         user.password = $('[name=password1]').val();
+        phone = $('[name=phone]').val();
         user.profile = {
             //role : $('[name=userrole]');
         };
         //role = $('[name=userrole]').value;
         role = $("input[type='radio'][name='userrole']:checked").val();
+        phone = $('[name=phone]').val();
         if($('[name=password1]').val() == $('[name=password2]').val()){
-            Meteor.call( "registerUser",user,role,function(err){
+            console.log(user);
+            Meteor.call( "registerUser",user,role,phone,function(err){
                 if(err){
                     alert(err);
                 }
@@ -35,6 +38,12 @@ Template.signupForm.events({
                                   alert( 'Email Verification link sent' );
                                 }
                             });
+                            Meteor.call( 'sendWelcomeSMS', ( error, response ) => {
+                                if ( error ) {
+                                  alert( error.reason );
+                                }
+                            });
+
                         }
                     });
                 }

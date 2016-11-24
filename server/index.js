@@ -54,8 +54,9 @@ Accounts.onCreateUser(function(options, user) {
 
 
 Meteor.methods({
-  registerUser: function (user,role) {
+  registerUser: function (user,role,phone) {
     user.profile.role = role;
+    user.profile.phone = phone;
     Accounts.createUser(user);
   }
 });
