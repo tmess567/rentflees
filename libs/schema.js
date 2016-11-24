@@ -47,12 +47,19 @@ Listings.attachSchema(new SimpleSchema({
 		}
 
 	},
-	address: {
-		type: String,
-		label: "Address",
-		max: 200
-	},
-	rent: {
+
+  avail: {
+    type: Number,
+    label: "avail",
+    max: 200
+  },
+  
+  address: {
+    type: String,
+    label: "Address",
+    max: 200
+  },
+  rent: {
 		type: Number,
 		label: "Rent",
 		min: 0
@@ -199,7 +206,7 @@ Listings.attachSchema(new SimpleSchema({
   	optional: true
   }, 
   score: {
-  	type: String,
+  	type: Number,
   	label: "score",
   	optional: true
   }, 

@@ -17,6 +17,7 @@ Template.listview.helpers({
 	listingsArr : function() {
 		listingsIndexDep.depend();
 		clearAndAddMarkers();
+		console.log(searchObj);
 	 	return Listings.find(searchObj, sortObj).fetch();
 	},
 	isVerifiedorAdmin : function() {

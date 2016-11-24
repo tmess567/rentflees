@@ -196,6 +196,8 @@ Template.addListing.events({
     let landmark = $(".landmark").val();
     let address = $(".address").val();
 
+    let avail = $("#avail").val();
+
     let imageNameAddListing =  null;
     if(imageName != null){
         imageNameAddListing = imageName;
@@ -238,6 +240,7 @@ Template.addListing.events({
 
       author: Meteor.userId(),
       owner: Meteor.userId(),
+      avail: avail,
 
       //To allow Easy search indexing
       foodstr: foodstr,

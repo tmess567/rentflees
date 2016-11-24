@@ -23,11 +23,49 @@
 						<div class="location"> {{listing.address}}</div>
 							{{listing.furnishing}}
 							{{listing.type}}<br />
-						<span><b>Rent: </b>{{listing.rent}}</span>
+						<span><b>Rent: </b>{{listing.rent}}</span><br/>
+						<span><b>Availability: </b></span>
+						{{#if isOwner}}
+							<span class="glyphicon glyphicon-chevron-left avail-mod" 
+							aria-hidden="true"
+							onclick="Listings.update(
+											{'_id': '{{listing._id}}'},
+											{$inc: {'avail': -1}});"></span>
+						{{/if}}
+
+						<span>{{listing.avail}}</span>
+
+						{{#if isOwner}}
+							<span class="glyphicon glyphicon-chevron-right avail-mod" 
+							aria-hidden="true"
+							onclick="Listings.update(
+											{'_id': '{{listing._id}}'},
+											{$inc: {'avail': 1}});"></span>
+						{{/if}}
+
 					</div>
 					<div class="col-md-3">
 						<div class="title"> </div>
-						<h3><b>SCORE: </b>{{listing.score}}</h3>
+						<h3><b>SCORE: </b>
+						{{#if isOwner}}
+							<span class="glyphicon glyphicon-chevron-left avail-mod" 
+							aria-hidden="true"
+							onclick="Listings.update(
+											{'_id': '{{listing._id}}'},
+											{$inc: {'score': -1}});"></span>
+						{{/if}}
+
+						{{listing.score}}
+
+						{{#if isOwner}}
+							<span class="glyphicon glyphicon-chevron-right avail-mod" 
+							aria-hidden="true"
+							onclick="Listings.update(
+											{'_id': '{{listing._id}}'},
+											{$inc: {'score': 1}});"></span>
+						{{/if}}
+
+						</h3>
 						{{#if isVerified}}
 							<h3><b>VERIFIED</b></h3>
 							{{#if isAdmin}}

@@ -26,6 +26,12 @@ Template.listing_info.helpers({
 		if(currListingID === null)
 			return "";
 		return Listings.findOne({_id: currListingID}).verified === "true";
+	},
+	isOwner: function(){
+		currListingDep.depend();
+		if(currListingID === null)
+			return "";
+		return Listings.findOne({_id: currListingID}).ownerUname === Meteor.user().username;
 	}
 });
 

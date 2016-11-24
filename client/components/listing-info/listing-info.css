@@ -1,3 +1,9 @@
+.avail-mod:hover {color: #fff;background-color: #2A6496; cursor: pointer;}
+.avail-mod {
+    padding: 8px;
+    display: inline-block;
+    margin-left: 30px;
+}
 .main-image > img {
 	max-height: 80vh;
 	margin: auto;
