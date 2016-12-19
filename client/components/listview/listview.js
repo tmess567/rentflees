@@ -283,7 +283,8 @@ function filterByMap(){
 }
 
 function addMarkers(){
-	if (!(typeof google === 'undefined' || google === null)) {
+	if (!(typeof google === 'undefined' || google === null 
+			|| GoogleMaps.maps.mapNoMarker === undefined)) {
 		for(k of Listings.find(searchObj, sortObj).fetch()) {
 			let latlng = new google.maps.LatLng(k.XCoordinate, k.YCoordinate);
 			let infowindow = new google.maps.InfoWindow({

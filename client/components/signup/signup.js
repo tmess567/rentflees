@@ -9,6 +9,7 @@ Template.signupForm.events({
         user.email = $('[name=emailSel]').val();
         user.password = $('[name=password1]').val();
         phone = $('[name=phone]').val();
+        name = $('[name=realName]').val();
         user.profile = {
             //role : $('[name=userrole]');
         };
@@ -17,7 +18,7 @@ Template.signupForm.events({
         phone = $('[name=phone]').val();
         if($('[name=password1]').val() == $('[name=password2]').val()){
             console.log(user);
-            Meteor.call( "registerUser",user,role,phone,function(err){
+            Meteor.call( "registerUser",user,role,phone,name,function(err){
                 if(err){
                     alert(err);
                 }

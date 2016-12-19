@@ -15,7 +15,7 @@
 					<div class="col-md-2">
 						<div class="owner">
 							<div class="owner-img"><img alt="owner"></div>
-							<div class="owner-name">MR. XYZ</div>
+							<div class="owner-name">{{ownerUname}}</div>
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -23,7 +23,23 @@
 						<div class="location"> {{listing.address}}</div>
 							{{listing.furnishing}}
 							{{listing.type}}<br />
-						<span><b>Rent: </b>{{listing.rent}}</span><br/>
+							{{#if isOwner}}
+							<div class="editNotEnabled">
+									<span><b>Rent: </b>{{listing.rent}}
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<a style="color:blue;" id="enableEdit">Edit</a>
+									</span>
+								<br/>
+							</div>
+							<div class="editEnabled" style="display:none;">
+									<span><b>Rent: </b>
+									<input id="rentInput" type="number" value="{{listing.rent}}">
+									<a style="color:blue;" id="updateRent">Save</a>
+									</span>
+								<br/>
+							</div>
+
+							{{/if}}
 						<span><b>Availability: </b></span>
 						{{#if isOwner}}
 							<span class="glyphicon glyphicon-chevron-left avail-mod" 
@@ -47,7 +63,7 @@
 					<div class="col-md-3">
 						<div class="title"> </div>
 						<h3><b>SCORE: </b>
-						{{#if isOwner}}
+						{{#if isAdmin}}
 							<span class="glyphicon glyphicon-chevron-left avail-mod" 
 							aria-hidden="true"
 							onclick="Listings.update(
@@ -57,7 +73,7 @@
 
 						{{listing.score}}
 
-						{{#if isOwner}}
+						{{#if isAdmin}}
 							<span class="glyphicon glyphicon-chevron-right avail-mod" 
 							aria-hidden="true"
 							onclick="Listings.update(

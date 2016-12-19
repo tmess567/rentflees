@@ -31,9 +31,40 @@ Template.listing_info.helpers({
 		currListingDep.depend();
 		if(currListingID === null)
 			return "";
-		return Listings.findOne({_id: currListingID}).ownerUname === Meteor.user().username;
+		return Listings.findOne({_id: currListingID}).owner === Meteor.user()._id;
+	},
+	ownerUname: function(){
+		let ownerID = Listings.findOne({_id: currListingID}).owner;
+		return Meteor.users.findOne({_id: ownerID}).profile.realName;
+	},
+	enableEdit: function(){
+		$(".editNotEnabled").hide();
+		$(".editEnabled").show();
+	},
+	updateRent: function(){
+		let newRent = $("#rentInput").val();
+		Listings.update(
+			{'_id': currListingID},
+			{$set: {'rent': newRent}});
+		$(".editNotEnabled").show();
+		$(".editEnabled").hide();
 	}
 });
+
+Template.listing_info.events({
+	'click #enableEdit': function(evt){
+		$(".editNotEnabled").hide();
+		$(".editEnabled").show();
+	},
+	'click #updateRent': function(evt){
+		let newRent = $("#rentInput").val();
+		Listings.update(
+			{'_id': currListingID},
+			{$set: {'rent': newRent}});
+		$(".editNotEnabled").show();
+		$(".editEnabled").hide();
+	}
+})
 
 Template.listing_info.onCreated(function(){
 	currListingID = FlowRouter.current().queryParams.id;
@@ -71,3 +102,17 @@ Template.listing_info.onRendered(function(){
 		  ]
   	});
 });
+
+function enableEdit(){
+	$(".editNotEnabled").hide();
+	$(".editEnabled").show();
+}
+
+function updateRent(){
+	let newRent = $("#rentInput").val();
+	Listings.update(
+		{'_id': currListingID},
+		{$set: {'rent': newRent}});
+	$(".editNotEnabled").show();
+	$(".editEnabled").hide();
+}
