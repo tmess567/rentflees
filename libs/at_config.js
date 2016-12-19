@@ -109,7 +109,7 @@ Meteor.methods({
       let message = "Hi "+Meteor.user().username+",\n"+
       "Welcome to the Rentflees family.\n"+
       "www.rentflees.com"
-      let afterMsg = "&msg_type=TEXT&userid=2000140300&auth_scheme=plain&password=GodBlessMe22@$&v=1.1&format=text&overide_dnd=TRUE";
+      let afterMsg = "&msg_type=TEXT&userid=2000163555&auth_scheme=plain&password=TBOL3n0U2&v=1.1&format=text&overide_dnd=TRUE";
 
       let http = require('http');
       let newurl = encodeURI(reqURLstart + Meteor.user().profile.phone + "&msg=" + message + afterMsg);

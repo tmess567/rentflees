@@ -310,9 +310,14 @@ function addMarkers(){
 }
 
 function createMarker(latlng, titleApp, idApp, mapObj, infowindow){
+    let icon = {
+        url: "images/map-icon.png", // url
+        scaledSize: new google.maps.Size(35, 50), // scaled size
+    };
 	let marker=(new google.maps.Marker({
 	    position: latlng, zoom: 17,
 	    map: mapObj, 
+        icon: icon,
 	    draggable: false, 
 	    title: titleApp,
 	    id: idApp

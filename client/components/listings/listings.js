@@ -32,7 +32,9 @@ Template.map.onCreated(function() {
 
     marker = new google.maps.Marker(
       {
-        position: {lat: -37.8136, lng: 144.9631}, map: map.instance, draggable: true });
+        position: {lat: -37.8136, lng: 144.9631},
+        icon: "images/map-icon.png",
+        map: map.instance, draggable: true });
 
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);

@@ -28,6 +28,7 @@ Template.mapAdd.onCreated(function() {
   GoogleMaps.ready('map', function(map) {
     marker = new google.maps.Marker({
       position: {lat: latitude, lng: longitude}, zoom: 17,
+      icon: "images/map-icon.png",
       map: map.instance, draggable: true, 
     });
     var input = document.getElementById('pac-input');
@@ -105,6 +106,7 @@ Template.mapAddFixMarker.onRendered(function() {
     var y = parseFloat($("#YCoord").html());
     marker = new google.maps.Marker({
       position: {lat: x, lng: y}, zoom: 17,
+      icon: "images/map-icon.png",
       map: map.instance, draggable: true, 
     });
   });
