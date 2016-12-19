@@ -88,7 +88,7 @@ Meteor.methods({
       "Your appointment has been booked. A rentflees representative will contact you shortly.\n"+
       "Thankyou for using Rentflees.\n"+
       "www.rentflees.com"
-      let afterMsg = "&msg_type=TEXT&userid=2000140300&auth_scheme=plain&password=GodBlessMe22@$&v=1.1&format=text&overide_dnd=TRUE";
+      let afterMsg = "&msg_type=TEXT&userid=2000163555&auth_scheme=plain&password=TBOL3n0U2&v=1.1&format=text&overide_dnd=TRUE";
 
       let http = require('http');
       let newurl = encodeURI(reqURLstart + Meteor.user().profile.phone + "&msg=" + message + afterMsg);
