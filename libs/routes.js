@@ -33,6 +33,12 @@ anonRoutes.route('/aboutUs', {
   }
 });
 
+anonRoutes.route('/contactUs', {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "contact-us", nav: "nav"});
+  }
+});
+
 anonRoutes.route('/rentingGuide', {
   action: function() {
     BlazeLayout.render("mainLayout", {content: "renting-guide", nav: "nav"});
