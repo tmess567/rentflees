@@ -48,6 +48,18 @@ Template.listing_info.helpers({
 			{$set: {'rent': newRent}});
 		$(".editNotEnabled").show();
 		$(".editEnabled").hide();
+	},
+	convenienceFee: function(){
+		let rent = Listings.findOne({_id: currListingID}).rent;
+		return 0.02*rent;
+	},
+	gatewayCharge: function(){
+		let rent = Listings.findOne({_id: currListingID}).rent;
+		return 0.05*rent;
+	},
+	totalCost: function(){
+		let rent = Listings.findOne({_id: currListingID}).rent;
+		return rent + 0.02*rent + 0.05*rent;
 	}
 });
 

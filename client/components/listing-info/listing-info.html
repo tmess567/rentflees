@@ -25,7 +25,7 @@
 							{{listing.type}}<br />
 							{{#if isOwner}}
 							<div class="editNotEnabled">
-									<span><b>Rent: </b>{{listing.rent}}
+									<span><b>Rent: </b>&#8377; {{listing.rent}}
 									&nbsp;&nbsp;&nbsp;&nbsp;
 									<a style="color:blue;" id="enableEdit">Edit</a>
 									</span>
@@ -38,7 +38,11 @@
 									</span>
 								<br/>
 							</div>
-
+							{{else}}
+							<div>
+									<span><b>Rent: </b>&#8377; {{listing.rent}}</span>
+								<br/>
+							</div>
 							{{/if}}
 						<span><b>Availability: </b></span>
 						{{#if isOwner}}
@@ -102,7 +106,22 @@
 							{{/if}}
 						{{/if}}
 					</div>
+					<div class="col-md-offset-1 col-md-3 calc-container">
+						<span class="title">Cost Calculator</span>
+						<div class="calc-content">
+							<span class="calc-head">Token Amount: </span> 
+								<span class="calc-value inRs">&#8377; {{listing.rent}}</span> <br/>
+							<span class="calc-head">Convenience Charge: </span>
+								<span class="calc-value inRs">&#8377; {{convenienceFee}}</span> <br/>
+							<span class="calc-head">Gateway Charge: </span>
+								<span class="calc-value inRs">&#8377; {{gatewayCharge}}</span> <br/>
+							<hr class="calc-breaker" />
+							<span class="calc-head">Total Cost: </span>
+								<span class="calc-value inRs">&#8377; {{totalCost}}</span> <br/>
+						</div>
+					</div>
 				</div>
+
 				<div class="col-md-offset-1 col-md-7">
 					<div class="panel panel-info">
 						<div class="panel-heading">House Amenities</div>
