@@ -1,9 +1,7 @@
 Template.searchbox.onRendered(function(){
   	$('.searchbox .dropdown-menu').find('a').click(function(e) {
 		e.preventDefault();
-		var city = $(this).attr("href").replace("#","");
 		var cityName = $(this).text();
-		$('#autocomplete').val(city);
 		$('#autocomplete').focus();		
 		$('.searchbox span#city-span').text(cityName);
   	});
@@ -43,7 +41,9 @@ Template.searchbox.onRendered(function(){
                 var latitude = results[0].geometry.location.lat();
                 var longitude = results[0].geometry.location.lng();
                 //alert("Latitude: " + latitude + "\nLongitude: " + longitude);
-                window.location.href="/map?lat="+latitude+"&lng="+longitude;
+                let propertyType = $('.searchbox span#city-span').html();
+                window.location.href="/map?lat="+latitude+"&lng="+longitude
+                  +"&propertyType="+propertyType;
             } else {
                 alert("Request failed.")
             }

@@ -255,6 +255,13 @@ Template.listview.onRendered(function(){
 			delete searchObj.YCoordinate;
 		listingsIndexDep.changed();
 	});
+
+
+	if(hasPropertyParams()){
+		let type = FlowRouter.current().queryParams.propertyType;
+		$("input[value='"+type+"']")[0].click();
+	}
+	
 });
 
 function filterByMap(){
@@ -359,4 +366,8 @@ function setCenterLocation(){
 function hasParams(){
 	return (FlowRouter.current().queryParams.lat !== undefined
 		&& FlowRouter.current().queryParams.lng !== undefined);
+}
+
+function hasPropertyParams(){
+	return (FlowRouter.current().queryParams.propertyType !== undefined);
 }
