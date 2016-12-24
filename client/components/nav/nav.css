@@ -1,3 +1,7 @@
+.displayPic{
+    height: 50px;
+    border-radius: 50%;
+}
 #list-your-house{
   position: relative;
   height: 30px;

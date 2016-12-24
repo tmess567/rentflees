@@ -4,3 +4,9 @@ Template.nav.events({
         Meteor.logout();
     }
 });
+
+Template.nav.helpers({
+	displayPic: function(){
+		return Meteor.user().services.google.picture;
+	}
+})
