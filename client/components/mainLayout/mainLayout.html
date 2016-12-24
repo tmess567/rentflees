@@ -1,4 +1,13 @@
 <template name="mainLayout">
 		{{>Template.dynamic template=nav}}
 		{{>Template.dynamic template=content}}
+		<script type="text/javascript">
+			Meteor.startup(function() {
+		        setTimeout(function() {
+		            $("#loading").fadeOut(500, function() { $("#loading").remove(); });
+		            $(".main-header").show();
+		            $("body").css("padding-top", "50px");
+		        }, 500);
+		    });
+		</script>
 </template>

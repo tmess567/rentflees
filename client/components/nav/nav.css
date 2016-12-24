@@ -81,6 +81,7 @@
 }
 /* Header */
 .main-header {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
