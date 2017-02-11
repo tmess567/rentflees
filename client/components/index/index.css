@@ -8,6 +8,10 @@
   height: 663px;
 }
 
+.row-head{
+  color: #2684B6;
+}
+
 #top-cities-div{
   background-repeat: no-repeat;
   background-size: 100%;
@@ -229,11 +233,19 @@
 .how-it-works{
   background: url("images/home-concept.png") no-repeat;
   background-size: contain;
+  padding-bottom: 20px;
 }
 .how-it-works-wrapper{
   background-color: white;
+  margin-top: 50px;
 }
-
+.caption-head{
+  text-align: center;
+}
+.step-container{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 .how-it-works .svg-wrapper,
 .how-it-works .svg-wrapper-lg{
   margin: 100px auto;
@@ -248,8 +260,12 @@
 .how-it-works .svg-wrapper-lg{
   margin: 20px auto;
   margin-bottom: 35px;
-  width: 380px;
-  height: 380px;
+  width: 280px;
+  height: 280px;
+  margin-top: 60px;
+}
+.step-text{
+  padding-top: 10px
 }
 
 #top-view,

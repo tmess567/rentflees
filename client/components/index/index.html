@@ -39,7 +39,7 @@
         </div>
       </div>
        <div class="row city-gallery bg-white">
-        <h1 class="center-text">Trending Cities</h1>
+        <h1 class="center-text row-head">Trending Cities</h1>
         <div class="col-sm-6 col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3">
           <div class="city-card hover chandigarh">
               <a href="#">
@@ -103,66 +103,55 @@
        </div> 
        <div class="how-it-works-wrapper">
          <div class="row">
-          <div class="h2 center-text">How It Works</div>
+          <div class="h2 center-text row-head">How It Works</div>
          </div>
          <div class="row how-it-works">
-          <div class="col-md-8">
+          <div class="col-md-12">
             <div class="row">
-              <div class="col-md-4">
+              <div class="step-container col-md-3">
                 <div class="svg-wrapper">
                   <img class="img-responsive" id="top-view" src="images/top-view.svg" alt="1st image">
                 </div>
-                <div class="caption center-text">
-                  <h3>Lorem Ipsum</h3>
-                  <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                <div class="step-text caption center-text">
+                  <h3 class="caption-head">List your House</h3>
+                  <p>Go to our website and the details of your property.</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="step-container col-md-3">
                 <div class="svg-wrapper">
                   <img class="img-responsive" id="docs" src="images/documentation.svg" alt="2nd image">
                 </div>
-                <div class="caption center-text">
-                  <h3>Lorem Ipsum</h3>
-                  <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                <div class="step-text caption center-text">
+                  <h3 class="caption-head">Verification</h3>
+                  <p>A representative will visit your house and verify the details entered.</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="step-container col-md-3">
                 <div class="svg-wrapper">
                   <img class="img-responsive" id="hand-shake" src="images/hand-shake-hut.svg" alt="3rd image">
                 </div>
-                <div class="caption center-text">
-                  <h3>Lorem Ipsum</h3>
-                  <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                <div class="step-text caption center-text">
+                  <h3 class="caption-head">Approval</h3>
+                  <p>Your listing will be approved and shown to our customer renters.</p>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
+          <div class="step-container col-md-3">
             <div class="fade-slider svg-wrapper-lg">
                 <div><img class="img-responsive" src="images/how-it-works-desk.svg" alt="1st image"></div>
                 <div><img class="img-responsive" src="images/fast-service.jpg" alt="2nd image"></div>
                 <div><img class="img-responsive" src="images/hand-shake-hut.svg" alt="3rd image"></div>
             </div>
             <div class="caption center-text">
-                <h3>Lorem Ipsum</h3>
-                <p>Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum</p>
+                <h3 class="caption-head">Sit Back, Relax</h3>
+                <p>We will notify you when a renters shows interest in your house.</p>
             </div>
+          </div>
+          </div>
           </div>
         </div>
       </div>
       <div class="panel with-nav-tabs panel-primary" style="border-style:none;">
-                <div class="panel-heading">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab1primary" data-toggle="tab">For Owner</a></li>
-                            <li><a href="#tab2primary" data-toggle="tab">For Tenants</a></li>
-                        </ul>
-                </div>
-                <div class="panel-body">
-                    <div class="tab-content">
-                        <div class="tab-pane fade in active" id="tab1primary">Owner Content</div>
-                        <div class="tab-pane fade" id="tab2primary">Tenant Content</div>
-                    </div>
-                </div>
+        {{> benefits}}
       </div>
       </div>
       {{> footer}}

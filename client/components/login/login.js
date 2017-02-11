@@ -27,7 +27,6 @@ Template.loginForm.events({
 
 Template.loginModal.onCreated(function(){
     $("#google-login").click(function(event){
-        console.log("Logging in with google");
         Meteor.loginWithGoogle();
     });
     $('#login-modal').one('shown.bs.modal',function(){

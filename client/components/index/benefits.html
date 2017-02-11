@@ -1,0 +1,13 @@
+<template name="benefits">
+	<div class="benefits-container container">
+		<h1 class="benefits-h1">Benefits for Owner</h1>
+		<div class="col-md-6">
+			{{#each phrases}}
+				<h1 class="benefits-head">{{this}}</h1>
+			{{/each}}
+		</div>
+		<div class="col-md-6 benefits-img-container">
+			<img class="benefits-img" src="images/benefits/{{index}}.png">
+		</div>
+	</div>
+</template>
