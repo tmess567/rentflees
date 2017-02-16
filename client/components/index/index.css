@@ -104,7 +104,7 @@
   text-align: center;
   color: grey;
   font-size: 35px;
-  font-family: Arial;
+  font-family: "Open Sans",Arial,sans-serif ;
   font-weight: bold;
   color: #990909;
 }
@@ -125,8 +125,9 @@
 
 .salient-feature h4{
   margin-top: 10px;
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid #2196f3;
   padding-bottom: 5px;
+  letter-spacing: -1px;
 }
 
 .guide-div{
@@ -145,7 +146,7 @@
 .guide-div p b{
     font-weight: bold;
     font-size: 20px;
-    font-family: CURSIVE;
+    font-family: "Open Sans",Arial,sans-serif;
 }
 
 .city-card{

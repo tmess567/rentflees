@@ -8,7 +8,7 @@ body {
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+  font-family: "Open Sans",Arial,sans-serif !important;
 }
 
 .bg-grey{
@@ -941,6 +941,11 @@ a,a:hover,a:visited,a:link{
 
 .center-text{
   text-align: center;
+}
+
+.center-text p {
+  color: #37474f;
+
 }
 
 svg{
