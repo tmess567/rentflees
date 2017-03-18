@@ -7,7 +7,13 @@
 		<div class="container-fluid no-padding bg-grey">
 			<div class="main-image">
 				<div class="listing-photo-carousel">
-						<div><img src="http://dev3.rentflees.com/upload/{{listing.image}}"></div>
+						{{#each listing.image}}
+							<div style="display: inline-block; text-align: center">
+								<img style="width: 500px;
+									height: 500px;"
+									src="http://rentflees.com/upload/{{this}}">
+							</div>
+						{{/each}}
 					</div>
 			</div>
 			<div class="row">

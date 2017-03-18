@@ -14,7 +14,7 @@ coordsSchema = new SimpleSchema({
 */
 Listings.attachSchema(new SimpleSchema({
 	image: {
-		type: String,
+		type: [String],
 		label: "Image",
 		optional: true,
     autoform: {
@@ -60,10 +60,20 @@ Listings.attachSchema(new SimpleSchema({
     max: 200
   },
   rent: {
-		type: Number,
-		label: "Rent",
-		min: 0
-	},
+    type: Number,
+    label: "Rent",
+    min: 0
+  },
+  bhk: {
+    type: Number,
+    label: "BHK",
+    min: 0
+  },
+  bathrooms: {
+    type: Number,
+    label: "Bathrooms",
+    min: 0
+  },
 	security: {
 		type: Number,
 		label: "Security",
@@ -83,11 +93,16 @@ Listings.attachSchema(new SimpleSchema({
 		label: "Description",
 		optional: true
 	},
-	foodServices: {
-		type: [String],
-		label: "Food Services",
-		optional: true
-	},
+  foodServices: {
+    type: [String],
+    label: "Food Services",
+    optional: true
+  },
+  tenantPref: {
+    type: [String],
+    label: "Tenant Preference",
+    optional: true
+  },
 	rules: {
 		type: [String],
 		label: "Rules",
@@ -139,11 +154,11 @@ Listings.attachSchema(new SimpleSchema({
   	label: "furnishing",
   	optional: true
   }, 
-  tenantPref: {
+/*  tenantPref: {
   	type: String,
   	label: "tenantPref",
   	optional: true
-  }, 
+  }, */
   occupation: {
   	type: String,
   	label: "occupation",
@@ -180,9 +195,14 @@ Listings.attachSchema(new SimpleSchema({
   	optional: true
   }, 
   amenitiesstr: {
-  	type: String,
-  	label: "amenitiesstr",
-  	optional: true
+    type: String,
+    label: "amenitiesstr",
+    optional: true
+  }, 
+  tenantPrefstr: {
+    type: String,
+    label: "tenantPrefstr",
+    optional: true
   }, 
 
 

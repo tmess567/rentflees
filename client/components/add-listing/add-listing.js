@@ -120,7 +120,7 @@ function readURL(input) {
 }
 
 Meteor.subscribe('listings');
-var imageName = null;
+var imageName = [];
 var latitude = 30.325558;
 var longitude = 77.9470939;
 
@@ -129,7 +129,8 @@ Uploader.finished = function(index, fileInfo, templateContext) {
 	//console.log(Meteor.user().services.facebook.id);
 	document.getElementById("uploadedImg").style.display = "block";
 	document.getElementById("uploadedImg").src = '/upload/' + fileInfo.uploadedName;
-	imageName = fileInfo.uploadedName;
+	imageName.push(fileInfo.uploadedName);
+  console.log(imageName);
 }
 
 AutoForm.hooks({
@@ -139,12 +140,12 @@ AutoForm.hooks({
       // Inserting the coordinates
       insertDoc.XCoordinate = latitude;
       insertDoc.YCoordinate = longitude;
-  		if(imageName != null){
+  		if(imageName.length !== 0){
   			insertDoc.image = imageName;
   			Listings.insert(insertDoc);
   			console.log("Done");
         alert("Listing added");
-        //Router.go('/');
+        Router.go('/');
   		} else {
         alert("Problem with Listing");
   			this.done(new Error("Submission failed"));
@@ -167,11 +168,20 @@ Template.addListing.events({
     let title = $("#listingTitle").val();
     let type = $("#listingType")[0].options[$("#listingType")[0].selectedIndex].innerText;
     let furnishing = $("#furnishing")[0].options[$("#furnishing")[0].selectedIndex].innerText;
-    let tenantPref = $('input[name=tenantPref]:checked').val();
+//    let tenantPref = $('input[name=tenantPref]:checked').val();
     let occupation = $('input[name=occupation]:checked').val();
     let rent = $("#rent").val();
+    let bhk = $("#bhk").val();
+    let bathrooms = $("#bathrooms").val();
     let security = $("#security").val();
     
+    let tenantPrefarr = [];
+    let tenantPrefstr = "";
+    $('input[name=tenantPref]:checked').each(function(){
+      tenantPrefarr.push(this.value);
+      tenantPrefstr += this.value + " ";
+    });
+
     let foodarr = [];
     let foodstr = "";
     $('input[name=food]:checked').each(function(){
@@ -198,9 +208,9 @@ Template.addListing.events({
 
     let avail = $("#avail").val();
 
-    let imageNameAddListing =  null;
-    if(imageName != null){
-        imageNameAddListing = imageName;
+    let imageNameAddListing =  [];
+    if(imageName.length !== 0){
+        imageNameAddListing = [];
     } else {
       //show error
     }
@@ -219,13 +229,15 @@ Template.addListing.events({
       title: title,
       address: address,
       rent: rent,
+      bhk: bhk,
+      bathrooms: bathrooms,
       security: security,
       type: type,
       foodServices: foodarr,
       amenities: amenities,
 
       furnishing: furnishing,
-      tenantPref: tenantPref,
+      tenantPref: tenantPrefarr,
       occupation: occupation,
       city: city,
       locality: locality,
@@ -236,7 +248,7 @@ Template.addListing.events({
 
       score: score,
       verified: verified,
-      image: imageNameAddListing,
+      image: imageName,
 
       author: Meteor.userId(),
       owner: Meteor.userId(),
@@ -244,7 +256,11 @@ Template.addListing.events({
 
       //To allow Easy search indexing
       foodstr: foodstr,
-      amenitiesstr: amenitiesstr
+      amenitiesstr: amenitiesstr,
+      tenantPrefstr: tenantPrefstr
     });
+    
+        alert("Listing added");
+        Router.go('/');
   }
 });

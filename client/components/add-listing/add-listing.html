@@ -69,15 +69,15 @@
         <div class="col-md-6">
         <div class="form-group">
           <label>Tentant Preference (Gender)</label>
-          <div>
+          <div class="negMargin">
             <div class="col-md-4 col-sm-12 col-xs-12">
-              <input type="radio" name="tenantPref" value="Male"> Male
+              <input type="checkbox" name="tenantPref" value="Male"> Male
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12">
-              <input type="radio" name="tenantPref" value="Female"> Female
+              <input type="checkbox" name="tenantPref" value="Female"> Female
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12">
-              <input type="radio" name="tenantPref" value="Family"> Family
+              <input type="checkbox" name="tenantPref" value="Family"> Family
             </div>
           </div>
         </div>
@@ -97,12 +97,32 @@
         </div>
         </div>
 
+        <div class="col-md-6 pull-left">
+        <div class="form-group">
+        <label for="rent" >Number of Rooms</label>
+        <div class="input-group">
+        <input type="number" class="form-control" id="bhk" placeholder="0">
+        <span class="input-group-addon">BHK</span>
+        </div>
+        </div>
+        </div>
+
+        <div class="col-md-6">
+        <div class="form-group">
+        <label for="rent" >Number of Bathrooms</label>
+        <div class="input-group">
+        <input type="number" class="form-control" id="bathrooms" placeholder="0">
+        </div>
+        </div>
+        </div>
+
+
         <div class="col-md-6">
         <div class="form-group">
         <label for="rent" >Monthly Rent</label>
         <div class="input-group">
         <span class="input-group-addon">₹</span>
-        <input type="number" class="form-control" id="rent" placeholder="Mahine ka kitna loge">
+        <input type="number" class="form-control" id="rent" placeholder="Rent Expected">
         <span class="input-group-addon">per month</span>
         </div>
         </div>

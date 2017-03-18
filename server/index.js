@@ -15,11 +15,11 @@ Meteor.startup(() => {
     finished: function(fileInfo, formFields) {
       fileInfo.uploadedName = uploadedName;
       let http = require('http');
-      let newurl = fileInfo.url.substr(0, fileInfo.url.lastIndexOf('/')+1) + uploadedName;
+      /*let newurl = fileInfo.url.substr(0, fileInfo.url.lastIndexOf('/')+1) + uploadedName;
       http.get({
         host: 'dev3.rentflees.com',
         path: '/uploadimg.php?file='+uploadedName+'&url='+newurl
-      });
+      });*/
    	},
     mimeTypes: {
     //"html": "text/html",

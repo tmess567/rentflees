@@ -9,7 +9,11 @@
 }
 
 .row-head{
-  color: #2684B6;
+  color: #2684B6 !important;
+
+  font-weight: 100px;
+  font-family: "Open Sans",Arial,sans-serif;
+
 }
 
 #top-cities-div{
@@ -52,7 +56,7 @@
 .bg-chennai{
   background-image: url("images/bg-chennai.png");
 }
-}
+
 
 .banner{
   display: block;
@@ -104,7 +108,7 @@
   text-align: center;
   color: grey;
   font-size: 35px;
-  font-family: "Open Sans",Arial,sans-serif ;
+  font-family: "Open Sans",Arial,sans-serif;
   font-weight: bold;
   color: #990909;
 }
@@ -128,6 +132,8 @@
   border-bottom: 1px solid #2196f3;
   padding-bottom: 5px;
   letter-spacing: -1px;
+  color: #d32f2f;
+  font-size: 19px;
 }
 
 .guide-div{
@@ -242,6 +248,8 @@
 }
 .caption-head{
   text-align: center;
+  color: #000000;
+  font-family: "Open Sans",Arial,sans-serif !important;
 }
 .step-container{
   padding-left: 0px !important;
@@ -322,4 +330,5 @@
 .with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
 .with-nav-tabs.panel-primary .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
     background-color: #4a9fe9;
+}
 }

@@ -1,3 +1,7 @@
+.negMargin{
+  margin: -7px;
+}
+
 .slick-slide{
   width: 100vw;
 }

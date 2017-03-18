@@ -27,7 +27,8 @@ Template.listview.helpers({
 	  	return this.verified === "true";
 	},
 	isAdmin : function() {
-	  	return Meteor.user().username === "Tushar Mishra";
+		console.log(Meteor.user()._id + " mhKAqhoR76bQQfpPc");
+	  	return Meteor.user()._id === "mhKAqhoR76bQQfpPc";
 	},
 	mapShown : function(){
 		mapAddedDep.depend();

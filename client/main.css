@@ -59,10 +59,10 @@ body {
 
 /* Rentflees. Launching Soon.*/
 .section-header{
-  color: #015249;
+  color: #282b2b;
   text-align: center;
-  font-weight: 900;
-  font-size: 36px;
+  font-weight: 400;
+  font-size: 29px;
   min-height: 80px;
   padding-top: 30px;
 }
@@ -941,6 +941,7 @@ a,a:hover,a:visited,a:link{
 
 .center-text{
   text-align: center;
+  color: #424242;
 }
 
 .center-text p {

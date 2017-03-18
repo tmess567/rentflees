@@ -19,7 +19,7 @@ Template.listing_info.helpers({
 	},
 	isAdmin : function() { 
 	    console.log("checking admin");
-		return Meteor.user().username === "Tushar Mishra";
+		return Meteor.user()._id === "mhKAqhoR76bQQfpPc";
 	},
 	isVerified : function(){
 		currListingDep.depend();
@@ -51,7 +51,7 @@ Template.listing_info.helpers({
 	},
 	convenienceFee: function(){
 		let rent = Listings.findOne({_id: currListingID}).rent;
-		return 0.02*rent;
+		return 0;
 	},
 	gatewayCharge: function(){
 		let rent = Listings.findOne({_id: currListingID}).rent;
@@ -59,7 +59,7 @@ Template.listing_info.helpers({
 	},
 	totalCost: function(){
 		let rent = Listings.findOne({_id: currListingID}).rent;
-		return rent + 0.02*rent + 0.05*rent;
+		return rent + 0.05*rent;
 	}
 });
 
