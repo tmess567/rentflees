@@ -116,7 +116,18 @@ Listings.attachSchema(new SimpleSchema({
 
 	owner: {
 		type: String,
-		label: "Owner's Name",
+		label: "Owner's Name"
+	},
+	
+	score: {
+		type: Number,
+		label: "Listing Score",
+		defaultValue: 0
+	},
+	
+	verified: {
+		type: Boolean,
+		label: "Verified?"
 	},
 
 	createdAt: {
